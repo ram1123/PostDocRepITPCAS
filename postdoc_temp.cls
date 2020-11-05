@@ -231,6 +231,16 @@
 
 \newcommand{\acadperiod}[1]{\renewcommand{\@acadperiod}{#1}}
 \newcommand{\@acadperiod}{2017 -2020}
+
+\newcommand{\nclass}[1]{\renewcommand{\@nclass}{#1}}
+\newcommand{\@nclass}{}
+\newcommand{\nsecret}[1]{\renewcommand{\@nsecret}{#1}}
+\newcommand{\@nsecret}{}
+\newcommand{\udc}[1]{\renewcommand{\@udc}{#1}}
+\newcommand{\@udc}{}
+\newcommand{\nschem}[1]{\renewcommand{\@nschem}{#1}}
+\newcommand{\@nschem}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\chapterhdrname}{}
 \newif\if@cuerpo \@cuerpofalse
