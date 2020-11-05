@@ -1,41 +1,21 @@
 %%
 %% This is file `phd_trieste.cls',
-%% generated with the docstrip utility.
 %%
-%% The original source files were:
-%%
-%% classes.dtx  (with options: `book')
+%% The original source files was: book.cls 
 %% 
-%% This is a generated file.
 %% 
 %% Copyright 1993-2020
-%% The LaTeX3 Project and any individual authors listed elsewhere
-%% in this file.
+%% The LaTeX3 Project, Kelvin Titimbo, Kevin Hernandez 
+%% and any other individual authors listed elsewhere in this file.
 %% 
 %% This file was generated from file(s) of the LaTeX base system.
 %% --------------------------------------------------------------
-%% 
-%% It may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3c
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.3c or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
-%% 
-%% This file has the LPPL maintenance status "maintained".
 %% 
 %% This file may only be distributed together with a copy of the LaTeX
 %% base system. You may however distribute the LaTeX base system without
 %% such generated files.
 %% 
-%% The list of all files belonging to the LaTeX base distribution is
-%% given in the file `manifest.txt'. See also `legal.txt' for additional
-%% information.
 %% 
-%% The list of derived (unpacked) files belonging to the distribution
-%% and covered by LPPL is defined by the unpacking scripts (with
-%% extension .ins) which are part of the distribution.
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -53,7 +33,7 @@
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{postdoc_temp}
-              [2007/10/19 v1.4h
+              [2020/11/05 v1
  Standard LaTeX document class]
 \newcommand\@ptsize{}
 \newif\if@restonecol
@@ -292,8 +272,8 @@
     \centering
     \renewcommand{\arraystretch}{2}
     \noindent\begin{tabular}{@{}lcp{2cm}lc}
-        \zhs{分类号:} & \underline{\makebox[8em]{numero}} & & \zhs{密级:} & \underline{\makebox[8em]{numero}} \\
-         U D C: & \underline{\makebox[8em]{numero}} & &\zhs{编号:} & \underline{\makebox[8em]{numero}}
+        \zhs{分类号:} & \underline{\makebox[8em]{\@nclass}} & & \zhs{密级:} & \underline{\makebox[8em]{\@nsecret}} \\
+         U D C: & \underline{\makebox[8em]{\@udc}} & &\zhs{编号:} & \underline{\makebox[8em]{\@nschem}}
     \end{tabular}
     \vskip 5em
 	\Huge{\textbf{\@instZH}}
@@ -466,8 +446,6 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \newcommand*\chaptermark[1]{}
 \setcounter{secnumdepth}{2}
 \newcounter {part}
@@ -930,7 +908,7 @@
 \newcommand\contentsname{Contents}
 \newcommand\listfigurename{List of Figures}
 \newcommand\listtablename{List of Tables}
-\newcommand\bibname{Bibliography}
+\newcommand\bibname{References}
 \newcommand\indexname{Index}
 \newcommand\figurename{Figure}
 \newcommand\tablename{Table}
@@ -960,4 +938,4 @@
 \fi
 \endinput
 %%
-%% End of file `book.cls'.
+%% End of file `postdoc_temp.cls'.
