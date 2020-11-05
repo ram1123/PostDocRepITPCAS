@@ -4,20 +4,15 @@
 \usepackage[scr=boondox]{mathalfa}
 \RequirePackage[pdfa,bookmarksnumbered=true, pdfstartview=FitH, pdfpagelayout=OneColumn,pdftex,pdfauthor={Kelvin Titimbo},pdftitle={Photodetachment in complex field configuration},pdfsubject={PostDoctoral Report ITP-CAS - December, 2020},pdfkeywords={Closed-orbit theory, photodetachment, electron dynamics, semiclassical methods},pdfproducer={postdoc_temp},pdfcreator={Kelvin Titimbo and Kevin Hernandez},colorlinks = true,linkcolor = blue]{hyperref}
 
-%\renewcommand{\theHchapter}{\thechapter} % <------ 11/25/14 % Acomoda las etiquetas de referencia que crea hyperref para eliminar el conflicto entre capitulos y apendices
 \usepackage{graphicx}
 \usepackage{siunitx}
 \usepackage{lipsum}
 \usepackage{multirow,tabularx}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{float,subcaption}
-%\usepackage{tocbibind}
 \usepackage{cite,notoccite}
-\usepackage{feynmp}
 \usepackage{indentfirst}
-\DeclareGraphicsRule{*}{mps}{*}{}
-\graphicspath{{./pdf_figures/}}
-
+\graphicspath{{./figures/}}
 
 \usepackage{titlesec}
 \makeatletter
@@ -39,51 +34,6 @@
   \fancyhead[el,or]{\thepage}
   \fancyhead[er,ol]{\chapterhdrname}}
   
-
-
-%%%%%%%%%%%%%%%% FUNCTIONS %%%%%%%%%%%%%%%%
-\DeclareMathOperator{\tr}{Tr}
-\newcommand{\Tr}[1]{\tr\left[ #1 \right]}
-\DeclareMathOperator{\e}{e}
-\DeclareMathOperator{\hc}{h.c.}
-\DeclareMathOperator{\PV}{PV}
-\newcommand{\conj}[1]{\overline{#1}}
-\newcommand{\aop}{\hat{a}}
-\newcommand{\cop}{\hat{a}^{\dag}}
-\newcommand{\gao}[1]{\hat{#1}}
-\newcommand{\gco}[1]{\hat{#1}^{\dag}}
-\newcommand{\elr}[2]{\left| #1 \right\rangle \left\langle #2 \right|}
-\newcommand{\bk}[2]{\left< #1 \vphantom{#2} \right|
- \left. #2 \vphantom{#1} \right>}%{\left\langle \: #1 \: |\: #2 \:\right\rangle}
-\newcommand{\bra}[1]{\left< #1 \right|}%{\left\langle \: #1 \: \right|}
-\newcommand{\Bra}[1]{\bigl< #1 \bigr|}%
-\newcommand{\ket}[1]{\left| #1 \right>}%\left|\: #1 \:\right\rangle}
-\newcommand{\Ket}[1]{\bigl| #1 \bigr>}%
-\newcommand{\acomm}[2]{\left\lbrace #1 ,  #2 \right\rbrace }
-%\newcommand{\comm}[2]{\left[\: #1 , #2 \:\right]}
-\newcommand{\comm}[2]{[ \makebox{\,$#1$} , \, \makebox{$#2$\,} ]}
-\newcommand{\mval}[1]{\left< #1 \right>}%{\left\langle #1 \right\rangle}
-\newcommand{\MVal}[1]{\bigl< #1 \bigr>}%{\left\langle #1 \right\rangle}
-\newcommand{\modu}[1]{\left| #1 \right|}
-\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
-\newcommand{\bkmv}[3]{\left< #1 \vphantom{#2#3} \right|
- #2 \left| #3 \vphantom{#1#2} \right>}%{\left\langle \; #1 \; |\; #2 \; | \; #3 \:\right\rangle}
-\newcommand{\BKmv}[3]{\bigl< #1 \bigm| #2 \bigm| #3 \bigr>}
-\newcommand{\thqu}[3]{\left\lbrace #1 , #2 , #3 \right\rbrace}
-\newcommand{\twqu}[2]{\left\lbrace #1 , #2 \right\rbrace}
-\newcommand{\onqu}[1]{\left\lbrace #1 \right\rbrace}
-\newcommand{\Elr}[4]{\left| \: #1 \: \right>\left< \: #2 \: \vert \: #3 \: \right>\left< \: #4 \: \right|}
-%-------------------------------------------------
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{example}{Example}[chapter]
-%-------------------------------------------------
-\newtheorem{definition}{Definition}[chapter]
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{remark}{Remark}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\renewcommand{\tabularxcolumn}[1]{>{\centering\arraybackslash}m{#1}}
-
 
 %%%%%%%%%%% FRONT PAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Kelvin Rub\'en Titimbo Chaparro}
@@ -133,9 +83,3 @@
 \input{ack}
 \input{cv}
 \end{document}
-
-\  - a large space
-\; - a thick space
-\: - a medium space
-\, - a thin space
-\! - a negative thin space
