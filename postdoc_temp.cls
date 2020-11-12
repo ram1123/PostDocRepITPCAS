@@ -190,36 +190,36 @@
 
 
 \newcommand{\supervisor}[1]{\renewcommand{\@supervisor}{#1}}
-\newcommand{\@supervisor}{MengLi Du}
+\newcommand{\@supervisor}{Supervisor name (english)}
 \newcommand{\supervZH}[1]{\renewcommand{\@supervZH}{#1}}
-\newcommand{\@supervZH}{\zhs{杜孟利}}
+\newcommand{\@supervZH}{supervisor name \zhs{中文}}
 
 
 \newcommand{\dateZH}[1]{\renewcommand{\@dateZH}{#1}}
-\newcommand{\@dateZH}{\zhs{2020 年 12}}
+\newcommand{\@dateZH}{\zhs{\number\year~年 \medspace \number\month~月}}
 \newcommand{\datese}[1]{\renewcommand{\@datese}{#1}}
-\newcommand{\@datese}{\zhs{2017 年 03 月 -- 2020 年 12 月}}
+\newcommand{\@datese}{\zhs{year 年 month 月 -- year 年 month 月}}
 
 \newcommand{\psector}[1]{\renewcommand{\@psector}{#1}}
 \newcommand{\@psector}{Phys}
 \newcommand{\ssector}[1]{\renewcommand{\@ssector}{#1}}
 \newcommand{\@ssector}{Theo}
 \newcommand{\psectZH}[1]{\renewcommand{\@psectZH}{#1}}
-\newcommand{\@psectZH}{\zhs{物}}
+\newcommand{\@psectZH}{\zhs{物理学}}
 \newcommand{\ssectZH}[1]{\renewcommand{\@ssectZH}{#1}}
-\newcommand{\@ssectZH}{\zhs{理}}
+\newcommand{\@ssectZH}{\zhs{理论物理}}
 
 \newcommand{\acadperiod}[1]{\renewcommand{\@acadperiod}{#1}}
 \newcommand{\@acadperiod}{2017 -2020}
 
 \newcommand{\nclass}[1]{\renewcommand{\@nclass}{#1}}
-\newcommand{\@nclass}{}
+\newcommand{\@nclass}{top left}
 \newcommand{\nsecret}[1]{\renewcommand{\@nsecret}{#1}}
-\newcommand{\@nsecret}{}
+\newcommand{\@nsecret}{top right}
 \newcommand{\udc}[1]{\renewcommand{\@udc}{#1}}
-\newcommand{\@udc}{}
+\newcommand{\@udc}{bottom left}
 \newcommand{\nschem}[1]{\renewcommand{\@nschem}{#1}}
-\newcommand{\@nschem}{}
+\newcommand{\@nschem}{bottom right}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\chapterhdrname}{}
@@ -329,44 +329,44 @@
 	}
   \end{titlepage}%
 %%%%%%%%%%%%% ENGLISH %%%%%%%%%%%%%%%%%%%%%% 
-  \begin{titlepage}%
-    \newgeometry{left=3.5cm,right=2cm,top=3cm,bottom=3cm}
-    % \AddToShipoutPicture*{\BackgroundIm}
-    % \AddToShipoutPicture{\BackgroundIm}
-    \ClearShipoutPicture
-    \let\footnotesize\small
-    \let\footnoterule\relax
-    \let \footnote \thanks
-    \centering
-    \vspace{-3em}
-    \includegraphics[width=3.5cm]{itp_logo.png}\par\vspace{2ex}
-    \MakeUppercase{\Large \textbf{CHINESE ACADEMY OF SCIENCES}}\par
-    \vskip 1em
-    {\large \MakeUppercase{\textbf{\@institute}}}\par
-    \vskip 30\p@
-    \begin{center}
-      {\large \textbf{ \@acadperiod } \par}
-    \end{center}
-    \par\vspace{5em}
-    \begin{center}%
-      {\LARGE \textbf{ \MakeUppercase{\@title}} \par}%
-      \vskip 1.5em%
-      {\small Scientific Discipline: \@psector, \@ssector \par}
-      \vfill
-      {\large
-       \lineskip 2em%
-       \noindent\begin{tabular}[t]{@{}lp{.5\linewidth}}%
-         \textbf{PostDoctoral Researcher}   \tabularnewline
-	     \hspace{1cm}\@author               \tabularnewline
-         &                     \tabularnewline
-         \textbf{Supervisor}  \tabularnewline
-		 \hspace{1cm}\@supervisor          \tabularnewline
-       \end{tabular}\par}%
-     \vfill
-     {\large \@date \par}%       % Set date in \large size.
-    \end{center}
-    \vfil\null
-  \end{titlepage}%
+%  \begin{titlepage}%
+%    \newgeometry{left=3.5cm,right=2cm,top=3cm,bottom=3cm}
+%    % \AddToShipoutPicture*{\BackgroundIm}
+%    % \AddToShipoutPicture{\BackgroundIm}
+%    \ClearShipoutPicture
+%    \let\footnotesize\small
+%    \let\footnoterule\relax
+%    \let \footnote \thanks
+%    \centering
+%    \vspace{-3em}
+%    \includegraphics[width=3.5cm]{itp_logo.png}\par\vspace{2ex}
+%    \MakeUppercase{\Large \textbf{CHINESE ACADEMY OF SCIENCES}}\par
+%    \vskip 1em
+%    {\large \MakeUppercase{\textbf{\@institute}}}\par
+%    \vskip 30\p@
+%    \begin{center}
+%      {\large \textbf{ \@acadperiod } \par}
+%    \end{center}
+%    \par\vspace{5em}
+%    \begin{center}%
+%      {\LARGE \textbf{ \MakeUppercase{\@title}} \par}%
+%      \vskip 1.5em%
+%      {\small Scientific Discipline: \@psector, \@ssector \par}
+%      \vfill
+%      {\large
+%       \lineskip 2em%
+%       \noindent\begin{tabular}[t]{@{}lp{.5\linewidth}}%
+%         \textbf{PostDoctoral Researcher}   \tabularnewline
+%	     \hspace{1cm}\@author               \tabularnewline
+%         &                     \tabularnewline
+%         \textbf{Supervisor}  \tabularnewline
+%		 \hspace{1cm}\@supervisor          \tabularnewline
+%       \end{tabular}\par}%
+%     \vfill
+%     {\large \@date \par}%       % Set date in \large size.
+%    \end{center}
+%    \vfil\null
+%  \end{titlepage}%
   \restoregeometry
   \setcounter{footnote}{0}%
   \global\let\thanks\relax
