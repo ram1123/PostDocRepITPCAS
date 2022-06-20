@@ -1,0 +1,21 @@
+\chapter{CPPF}
+
+The detection of muons is one of the most important aspects of CMS experiments, especially the detection of high momentum muons.
+Testing is one of the keys to discovering possible new physical phenomena.
+In the Muon detector endcap area, the RPC system can provide very good time resolution, but relatively poor momentum resolution. 
+The pre-upgrade RPC detector endcap area contains a 3-layer station, RE1, RE2, RE3 respectively, 
+and the RPC trigger logic needs to have at least 3 hits, which leads to the end cap region is 
+not well differentiate high $p_T$ the promoter and the low muon $p_T$ promoter, reducing the efficiency of the trigger. Especially for the upgraded LHC, the collision brightness reached $2\times 10^{34}cm^{-2}s^{-1}$, and pileup.
+The problem is very serious, which increases the muon sub-flux of low $p_T$ and occupies almost all trigger rates, 
+resulting in the system is not able to accept the muon sub-trigger of high $p_T$ well .
+To address this, an additional layer of work was added to the endcap area during the RPC detector upgrade station, that is, RE4, so you can use the "four out of three" trigger logic, that is, three out of four. 
+As the muon $p_T$ sentence selected information to enhance high $p_T$ muon sub-trigger, Can be seen through simulation
+After that, the overall triggering efficiency of the system has improved significantly, as shown in Figure 4.1 , which is basically the same as th (| | <0.8) has the same level of trigger efficiency [33].
+
+Figure 4.2 is a wedge-shaped cross-sectional view of the 30-degree upgraded RPC detector, which contains a total of 492 pieces.
+According to the readout fiber, there are 300 barrels and 192 end caps (96 caps and overlapping areas) Reuse).
+
+Among them, CPPF needs to implement data transmission on 192 fibers in the end cap area.
+Reads the single-channel 1.6 Gb / s RPC data sent by the link board and provides some data preprocessing
+Algorithms, including RPC hit cluster search, cluster angle information conversion, and finally the data according to the detector structure And the next level of electronics requirements to map and merge, fan out to 10.0 Gbps single channel transmission rate
+End cap μ Subtrack Finder System (EMTF) and Overlap μ Sub Track Finder System (OMTF).

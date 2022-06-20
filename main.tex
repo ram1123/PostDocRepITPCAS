@@ -55,7 +55,62 @@
 \nsecret{}
 \udc{}
 \nschem{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ggH}{\ensuremath{\Pg\Pg\PH}}
+\newcommand{\VBF}{\ensuremath{\mathrm{VBF}}}
+\newcommand{\qqH}{\ensuremath{\PQq\PAQq\PH}}
+\newcommand{\WH}{\ensuremath{\PW\PH}}
+\newcommand{\ZH}{\ensuremath{\PZ\PH}}
+\newcommand{\VH}{\ensuremath{\PV\PH}}
+\newcommand{\VVV}{\ensuremath{\PV\PV\PV}}
+\newcommand{\ttH}{\ensuremath{\ttbar\PH}}
+\newcommand{\tH}{\ensuremath{\PQt\PH}}
+\newcommand{\bbH}{\ensuremath{\bbbar\PH}}
+\newcommand{\tHq}{\ensuremath{\PQt\PH\PQq}}
+\newcommand{\tHW}{\ensuremath{\PQt\PH\PW}}
+\newcommand{\ZZ}{\ensuremath{\PZ\PZ}}
+\newcommand{\qqZZ}{\ensuremath{\PQq\PAQq\to\PZ\PZ}}
+\newcommand{\ggZZ}{\ensuremath{\Pg\Pg\to\PZ\PZ}}
+\newcommand{\ttZ}{\ensuremath{\ttbar\PZ}}
+\newcommand{\ttZZ}{\ensuremath{\ttbar\PZ\PZ}}
+\newcommand{\ttWW}{\ensuremath{\ttbar\PW\PW}}
+\newcommand{\HZZfl}{\ensuremath{\PH\to\PZ\PZ\to4\ell}}
+\newcommand{\HZZ}{\ensuremath{\PH\to\PZ\PZ}}
+\newcommand{\Hllll}{\ensuremath{\PH\to4\ell}}
+\newcommand{\mH}{\ensuremath{m_{\PH}}}
+\newcommand{\mll}{\ensuremath{m_{\ell\ell}}}
+\newcommand{\mlplm}{\ensuremath{m_{\ell^{+}\ell^{-}}}}
+\newcommand{\mllll}{\ensuremath{m_{4\ell}}}
+\newcommand{\Dalt}{\ensuremath{{\mathcal D}_{\text{alt}}} }
+\newcommand{\Dint}{\ensuremath{{\mathcal D}_{\text{int}}} }
+\newcommand{\Dzm}{\ensuremath{{\mathcal D}_{\text{0-}}} }
+\newcommand{\Dzhp}{\ensuremath{{\mathcal D}_{\text{0h+}}} }
+\newcommand{\DLone}{\ensuremath{{\mathcal D}_{\Lambda\text{1}}} }
+\newcommand{\DLoneZg}{\ensuremath{{\mathcal D}_{\Lambda\text{1}}^{\PZ,\gamma}} }
+\newcommand{\DCP}{\ensuremath{{\mathcal D}_{\text{CP}}} }
+\newcommand{\ptHj}{\ensuremath{{\mathcal D}_{\text{CP}}} }
+\newcommand{\ptHjj}{\ensuremath{{\mathcal D}_{\text{CP}}} }
+\newcommand{\mHj}{\ensuremath{{\mathcal D}_{\text{CP}}} }
+\newcommand{\mHjj}{\ensuremath{{\mathcal D}_{\text{CP}}} }
+\newcommand{\Zll}{\ensuremath{\PZ\to\ell^{+}\ell^{-}}}
+\newcommand{\usedLumiABC}{137\fbinv}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%% ANALYSIS RESULTS %%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\obsXSECFid}{\ensuremath{\sigma_{{\mathrm{fid}}}=2.86^{+0.29}_{-0.27}=2.86^{+0.23}_{-0.22}\stat^{+0.18}_{-0.15}\syst \unit{fb}}}
+\newcommand{\expXSECFid}{\ensuremath{\sigma_{{\mathrm{fid}}}=2.86^{+0.29}_{-0.27}\unit{fb}}}
+%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 \maketitle
@@ -68,7 +123,19 @@
 \cuerpo
 \setlength{\parskip}{0.75em}
 \include{Chapters/introduction}
-\include{Chapters/non-reonanat_HH}
+\include{Chapters/ObjectSelection}
+\include{Chapters/VBS_Studies/Introduction}
+
+\include{Chapters/Non_resonant_HH/HH_main}
+% \include{Chapters/Resonant_production_HH/introduction}
+% 
+\include{Chapters/H4L_Analysis/introduction}
+
+% \include{Chapters/CPPF/introduction}
+
+% \include{Chapters/EGamma_HLT/introduction}
+
+% \include{Chapters/MC_Generators/introduction}
 
 
 \appendix

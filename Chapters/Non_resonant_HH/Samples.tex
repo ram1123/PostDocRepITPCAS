@@ -1,0 +1,39 @@
+\section{Data sample and simulated events} \label{sec:samples}
+
+% DATA
+The analyzed data correspond to a total integrated luminosity of 138 \unit{fb$^{-1}$} and were collected during Run 2 at the LHC from 2016 to 2018.
+Events are selected using double-photon triggers with thresholds on the
+leading (subleading) photon transverse momentum (\pt) of $p_T^{\gamma} > 30 (18)$ GeV
+for the data collected during 2016
+and $p_T^{\gamma} > 30 (22)$ GeV for 2017 and 2018.
+In addition, loose calorimetric identification requirements \cite{Sirunyan:2018ouh}, based
+on the shape of the electromagnetic shower, the isolation of the photon candidate, and the ratio
+between the hadronic and electromagnetic energy deposit of the shower, are imposed on the
+photon candidates at the trigger level.
+
+% SIGNAL
+Di-Higgs signal Monte-Carlo samples in the gluon-gluon fusion production mode are generated using Powheg v2 \cite{Nason:2004rx, Frixione:2007vw, Alioli:2010xd, Heinrich:2019bkc}
+at NLO in QCD including the full top quark mass dependence
+for four different sets of $(\kappa_{\lambda}, \kappa_{t})$ parameter values: $(1, 1)$, $(2.45, 1)$, $(5, 1)$ and $(0, 1)$, where these parameters are defined in section \ref{EFT_parameters_description}. 
+In addition, 12 EFT benchmark samples in a five-dimensional EFT model space are generated at LO \cite{Carvalho:2015ttv} using MadGraph, where the EFT coupling parameter values are defined in the rows labelled 
+1-12 of Tab. \ref{tab:eft_bench}.   
+
+A combination of the four NLO signal simulation samples, in which the EFT parameters are varied as $(\kappa_{\lambda}, \kappa_{t}) = $ $(1, 1)$, $(2.45, 1)$, $(5, 1)$ and $(0, 1)$, is reweighted using an analytic formula derived in \cite{Carvalho:2016rys,Buchalla:2018yce}. The analytic formula is shown in Eq. \ref{eq:rew_3}. 
+The parameter variation signal hypotheses to which this combination of NLO samples is reweighted to are defined as the 20 benchmark scenarios (1-12 \cite{Carvalho:2015ttv}, 8a \cite{Buchalla:2018yce}, 1b-7b \cite{Capozi:2019xsi}), shown in Tab. \ref{tab:eft_bench}. 
+
+% BACKGROUNDS
+The analysis is affected by backgrounds from single Higgs boson production and by non-resonant backgrounds which manifest as a continuum in the $m_{\gamma\gamma}$ spectrum.
+Monte Carlo event generators were used for the simulation of the background from SM single Higgs boson production, including
+gluon gluon fusion ($ggH$), associated production with a $Z$ or $W$ boson ($VH$), associated production with a top quark pair ($ttH$)
+simulated at NLO in QCD precision using MadGraph5\_aMCatNLO \cite{Alwall:2014hca, Artoisenet:2012st} with the FxFx merging scheme \cite{Frederix:2012ps},
+and vector-boson fusion (VBF $H$) using Powheg v2 \cite{Nason:2004rx, Frixione:2007vw}.
+
+The continuum background contribution from SM processes with multiple photons is estimated using data-driven methods described in Sec. \ref{sec:AnalyticFitting_Background}. In the SL and 
+FH final states, MVA methods are employed which use background MC for training.
+The continuum background MC includes $\gamma+$jets modeled with the PYTHIA 8 \cite{Sjostrand:2014zea} generator, $\gamma\gamma+$jets modeled with the SHERPA v.2.2.1 generator \cite{Bothmann:2019yzt}, $0,1,2\gamma+W+$jets, $t\bar{t}$, and $t\bar{t}W$ modeled using MadGraph5\_aMCatNLO \cite{Alwall:2014hca,Artoisenet:2012st,Frederix:2012ps}.
+
+% HADRONISATON & DETECTOR RESPONSE
+The PYTHIA 8 \cite{Sjostrand:2014zea} package is used for parton showering, hadronization, and the underlying event simulation of all signal and background samples (with the exception of $1,2\gamma+$jets MC from SHERPA v.2.2.1),
+with parameters set by the CUETP8M1 tune \cite{Khachatryan:2015pea} (2016 data taking period) and the CP5 tune \cite{Sirunyan:2019dfx} (2017 and 2018 data taking periods). Parton distribution functions (PDFs) are taken from the NNPDF3.0 set \cite{Ball:2014uwa}.
+The response of the CMS detector is modeled using the Geant4 package \cite{AGOSTINELLI2003250}.
+The simulated events include additional $pp$ interactions within the same or nearby bunch crossings (pileup), generated using Pythia and overlaid on the MC events using event weights so that the distribution of the number of collisions matches the data.

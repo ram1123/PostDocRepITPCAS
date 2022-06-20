@@ -1,0 +1,44 @@
+\section{Event selections} \label{sec:event_selection}
+
+For all three final states, the aim is to define a phase space in which di-Higgs signal sensitivity is maximized. 
+
+In order to improve the signal extraction, methods involving DNNs were utilized for the
+FH and SL channels. For the FL channel, a cut based analysis is performed as an MVA approach was deemed unfeasible 
+due to low statistics in this channel. 
+
+After event categorization is performed, a combined fit of the simulated \mgg distribution templates to data is performed simultaneously in all categories.
+
+The number of leptons per event is used to ensure that an event cannot fall into multiple analysis categories. 
+In order to pass the FH, SL, or FL selections, events are required to contain exactly zero, exactly one, or exactly two leptons, respectively. 
+Additionally, all channels are required to contain at least one diphoton candidate based on the photon selections described in Sec. \ref{sec:Objects}.  
+
+\subsection{Fully-hadronic category}
+
+\input{Chapters/Non_resonant_HH/FH_EventSelection}
+
+% \subsection{Semi-leptonic category} \label{sec:SL_Event_Selection}
+
+% \input{Sections/SL_EventSelection.tex}
+
+% \subsection{Fully-leptonic category}
+
+% For events to fall into the FL analysis category, they must contain exactly two oppositely charged leptons ($e^{+}e^{-}$, $\mu^{+}\mu^{-}$, $e^{\pm}\mu^{\mp}$).
+% The leading \pt lepton is required to have \pt $>$ 20$\GeV$, the subleading lepton is required to have \pt $> 10\GeV$, and a distance parameter between the two leading \pt leptons $>$ 0.4 is required.
+% Events are rejected from this category if the event contains a third lepton with \pt $> 10\GeV$ in order to avoid saving events with three high energy leptons, as only two 
+% are expected from this process. In order to identify events with missing transverse momentum due to the two neutrinos from the 
+% leptonically decaying W-bosons, events are required to have $p_T^{miss} > 20 \GeV$. Furthermore, the diphoton candidate in this final state is required to have \pt $> 91 \GeV$, 
+% an invariant mass between each electron candidate and photon candidate which is at least 5 GeV different from the invariant Z boson mass to avoid saving Z$\rightarrow\ell\ell$ events. The invariant mass 
+% from the two leading leptons is required to be $<$ 80 GeV or $>$ 100 GeV in order to suppress VH(H$\rightarrow\gamma\gamma$) events, as shown in Fig.\ref{fig:FL_dilepmass}. In addition, events containing at least one jet 
+% with a b-tagging score greater than a medium working point are removed. The reason a b-veto is applied in this final state and not for the SL and FH final states is because this final state applies 
+% a cut-based selection, and therefore we choose to apply a b-veto as part of the final selections. 
+
+% \begin{figure}[!htbp]
+%   \begin{center}
+% 	\includegraphics[width=0.9\textwidth]{Images/Selections/FL_CutBased/DiLeptonMass.pdf}
+%     \caption{
+%       $m_{ll}$ distribution comparison between signal and VH events, where the signal and VH distributions have been normalized to 1, and the two dashed lines show the final cuts on the di-Lepton mass: $m_{ll}$ $< 80\GeV$ or $m_{ll}$ $> 100\GeV$ .
+%     }
+%     \label{fig:FL_dilepmass}
+%   \end{center}
+% \end{figure}
+
