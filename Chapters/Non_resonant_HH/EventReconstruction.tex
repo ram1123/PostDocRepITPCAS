@@ -1,11 +1,13 @@
 \section{Event reconstruction}
 \label{sec:Objects}
 
-In the CMS detector, the Particle-Flow (PF) algorithm~\cite{Sirunyan:2017ulk} is used to reconstruct and identify each particle.
-Using the combination of all sub-detector information, individual particles are defined as charged and neutral hadrons, leptons, and photons.
-The missing transverse momentum $p_T^{miss}$ is defined as the magnitude of the negative vector sum of the transverse momentum of all the reconstructed particles in the event.
+The objects electrons, muons and jets are selected as described in Section~\ref{sec:4}.
 
-For each event, the primary vertex (PV), defined as the vertex with the highest sum of $p_{T}^{2}$ from charged tracks, is chosen. 
+% In the CMS detector, the Particle-Flow (PF) algorithm~\cite{Sirunyan:2017ulk} is used to reconstruct and identify each particle.
+% Using the combination of all sub-detector information, individual particles are defined as charged and neutral hadrons, leptons, and photons.
+% The missing transverse momentum $p_T^{miss}$ is defined as the magnitude of the negative vector sum of the transverse momentum of all the reconstructed particles in the event.
+
+% For each event, the primary vertex (PV), defined as the vertex with the highest sum of $p_{T}^{2}$ from charged tracks, is chosen. 
 
 Photons are reconstructed using a multivariate technique based on a Boosted Decision Tree (BDT) trained to separate photons from jets~\cite{Sirunyan:2018ouh}.
 Corrections are applied to fix the mis-modelling of radiation lost in material upstream in the ECAL
@@ -17,34 +19,34 @@ Both photons are required to be within the ECAL and tracker region ($|\eta| < 2.
 the invariant mass of the diphoton system is required to be between 100 GeV and 180 GeV.
 If more than one diphoton candidate is present in an event, the one with the highest diphoton $p_T$ is chosen.
 
-The leptons considered are required to be associated with the primary vertex of the event~\cite{Chatrchyan:2014fea}
-to suppress electron candidates originating from photon conversion, and lepton candidates originating
-from in-flight decays of heavy quarks. Additionally, leptons are required to be isolated from the other particles in the event.
-Relative isolation is defined in Eq. \ref{eq:isolation}, where the summation is over all of the charged and neutral hadrons and photons
-in a cone defined by $\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2} = 0.3 (0.4)$ around the trajectory of the electron (muon), 
-and $p_T^{\textnormal{PU}}$ denotes the contribution of neutral particles from pileup~\cite{Khachatryan:2015hwa,Sirunyan:2018fpa}.
+% The leptons considered are required to be associated with the primary vertex of the event~\cite{Chatrchyan:2014fea}
+% to suppress electron candidates originating from photon conversion, and lepton candidates originating
+% from in-flight decays of heavy quarks. Additionally, leptons are required to be isolated from the other particles in the event.
+% Relative isolation is defined in Eq. \ref{eq:isolation}, where the summation is over all of the charged and neutral hadrons and photons
+% in a cone defined by $\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2} = 0.3 (0.4)$ around the trajectory of the electron (muon), 
+% and $p_T^{\textnormal{PU}}$ denotes the contribution of neutral particles from pileup~\cite{Khachatryan:2015hwa,Sirunyan:2018fpa}.
  
-\begin{equation} \label{eq:isolation}
-    R_{iso} = \bigg[\sum_{\substack{charged\\hadrons}}p_T+max \big(0, \sum_{\substack{neutral\\hadrons}}p_T + \sum_{photons}p_T - p_T^{\textnormal{PU}} \big)\bigg]/p_T^{l}
-\end{equation}
+% \begin{equation} \label{eq:isolation}
+%     R_{iso} = \bigg[\sum_{\substack{charged\\hadrons}}p_T+max \big(0, \sum_{\substack{neutral\\hadrons}}p_T + \sum_{photons}p_T - p_T^{\textnormal{PU}} \big)\bigg]/p_T^{l}
+% \end{equation}
 
-This analysis selects loose electrons, and tight muons. Loose electrons are defined as PF electrons which pass a loose cut based ID, which includes a loose isolation selection. Tight muons are defined 
-as PF muons which pass a tight identification score requirement. Loose electrons (tight muons) have an average efficiency of $\approx$ 90\% (90\%), measured using
-a high-purity Drell-Yan MC sample. 
+% This analysis selects loose electrons, and tight muons. Loose electrons are defined as PF electrons which pass a loose cut based ID, which includes a loose isolation selection. Tight muons are defined 
+% as PF muons which pass a tight identification score requirement. Loose electrons (tight muons) have an average efficiency of $\approx$ 90\% (90\%), measured using
+% a high-purity Drell-Yan MC sample. 
 
-In addition to a loose electron ID, electron candidates are required to have $p_{T} > $ 10 GeV, and a pseudorapidity in the range (0 $<$ $|\eta|$ $<$ 1.4442) or (1.566 $<$ $|\eta|$ $<$ 2.5) 
-in order to remain in the CMS tracker region and avoid the ECAL overlap region. Furthermore, a distance parameter value ($\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}}$) greater than 
-0.4 is required between each electron candidate and each of the two photon candidates from the event's highest $p_{T}$ diphoton in order to select isolated electron candidates. A distance parameter value 
-of less than 0.4 is also required between the electron candidate's track and ECAL supercluster position, and a 
-distance parameter value with each jet candidate $>$ 0.4 is required. Finally, the invariant mass of the electron with each photon candidate in the event's highest \pt diphoton 
-candidate must be at least 5 GeV greater or less than the Z boson mass in order to avoid selecting events coming from Z$\rightarrow$ee decays. 
+% In addition to a loose electron ID, electron candidates are required to have $p_{T} > $ 10 GeV, and a pseudorapidity in the range (0 $<$ $|\eta|$ $<$ 1.4442) or (1.566 $<$ $|\eta|$ $<$ 2.5) 
+% in order to remain in the CMS tracker region and avoid the ECAL overlap region. Furthermore, a distance parameter value ($\Delta R = \sqrt{\Delta\eta^{2} + \Delta\phi^{2}}$) greater than 
+% 0.4 is required between each electron candidate and each of the two photon candidates from the event's highest $p_{T}$ diphoton in order to select isolated electron candidates. A distance parameter value 
+% of less than 0.4 is also required between the electron candidate's track and ECAL supercluster position, and a 
+% distance parameter value with each jet candidate $>$ 0.4 is required. Finally, the invariant mass of the electron with each photon candidate in the event's highest \pt diphoton 
+% candidate must be at least 5 GeV greater or less than the Z boson mass in order to avoid selecting events coming from Z$\rightarrow$ee decays. 
 
-In addition to a tight Muon ID, muon candidates are required to have $p_{T} > $ 10 GeV, a pseudorapidity in the range ($|\eta| < 2.4$) to remain in the CMS tracker region, a distance parameter value with each photon candidate $>$ 0.4, a 
-distance parameter value with each jet candidate $>$ 0.4, and an isolation $<$ 0.15, as defined in Eq. \ref{eq:isolation}, in order to select isolated muon candidates. 
+% In addition to a tight Muon ID, muon candidates are required to have $p_{T} > $ 10 GeV, a pseudorapidity in the range ($|\eta| < 2.4$) to remain in the CMS tracker region, a distance parameter value with each photon candidate $>$ 0.4, a 
+% distance parameter value with each jet candidate $>$ 0.4, and an isolation $<$ 0.15, as defined in Eq. \ref{eq:isolation}, in order to select isolated muon candidates. 
 
-Jets are constructed using the anti-$k_{T}$ clustering method, classifying them as AK4 jets with a distance parameter of 0.4. Jet candidates are 
-required to have $p_{T} > $ 25 GeV, an absolute value of pseudorapidity $<$ 2.4, are required to pass a loose PU Jet ID in order to avoid reconstructing
-jets from pileup interactions, a distance parameter value $>$ 0.4 between the jet 
-candidate and each photon candidate from the diphoton candidate, and a distance parameter $>$ 0.4 with any electron and muon candidates which pass the previously defined 
-electron and muon selections. In addition, jets from the hadronization of bottom quarks are tagged using a Deep Neural Network (DNN) that takes secondary vertices and PF 
-candidates as inputs \cite{Sirunyan:2017ezt}. The output of this DNN is referred to as the b-tagging score.
+% Jets are constructed using the anti-$k_{T}$ clustering method, classifying them as AK4 jets with a distance parameter of 0.4. Jet candidates are 
+% required to have $p_{T} > $ 25 GeV, an absolute value of pseudorapidity $<$ 2.4, are required to pass a loose PU Jet ID in order to avoid reconstructing
+% jets from pileup interactions, a distance parameter value $>$ 0.4 between the jet 
+% candidate and each photon candidate from the diphoton candidate, and a distance parameter $>$ 0.4 with any electron and muon candidates which pass the previously defined 
+% electron and muon selections. In addition, jets from the hadronization of bottom quarks are tagged using a Deep Neural Network (DNN) that takes secondary vertices and PF 
+% candidates as inputs \cite{Sirunyan:2017ezt}. The output of this DNN is referred to as the b-tagging score.

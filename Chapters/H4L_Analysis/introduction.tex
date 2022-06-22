@@ -1,7 +1,7 @@
 \chapter{Differential and Fiducial Cross-section measurement}
 
 \section{Introduction} \label{sec:intro}
-In 2012 the ATLAS and CMS collaborations announced the discovery of a new particle~\cite{Aad:2012tfa,Chatrchyan:2012ufa,Chatrchyan:2013lba} and subsequent measurements of its properties~\cite{ATLASPropertiesRun1,CMSPropertiesRun1,ATLASCMSMassRun1,ATLASCMSPropertiesRun1} confirmed it to be consistent with the standard model (SM) expectations for the Higgs (\PH) boson, setting a major breakthrough in the understanding of the electroweak symmetry breaking mechanism~\cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev,Kibble:1967sv}.
+% In 2012 the ATLAS and CMS collaborations announced the discovery of a new particle~\cite{Aad:2012tfa,Chatrchyan:2012ufa,Chatrchyan:2013lba} and subsequent measurements of its properties~\cite{ATLASPropertiesRun1,CMSPropertiesRun1,ATLASCMSMassRun1,ATLASCMSPropertiesRun1} confirmed it to be consistent with the standard model (SM) expectations for the Higgs (\PH) boson, setting a major breakthrough in the understanding of the electroweak symmetry breaking mechanism~\cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev,Kibble:1967sv}.
 
 The large signal-to-background ratio and the completely resolved final state characteristic of the $\HZZfl$ decay channel ($\ell=\Pe,\Pgm$) identify it as one of the pillars to probe the SM predictions and to measure the properties of the \PH boson.
 An extensive set of measurements has been performed using this decay channel bot with the LHC Run 1 data set at center-of-mass energies of 7 and 8\TeV, and the Run 2 data set at 13\TeV, including the determination of
@@ -18,7 +18,7 @@ Additional double differential measurements, where the cross section is extracte
 
 The analysis strategy employed reflects the one used in previous measurements of the \PH boson properties in the four lepton channel \cite{CMSH4lFiducial8TeV, CMSHIG19001}.
 
-This paper is organized as follows. 
+This chapter is organized as follows. 
 The data set used for the analysis is presented in Section~\ref{sec:samples}, along with a description of the simulated signal and background samples.
 The event reconstruction techniques and the selection algorithm used to identify the \PH boson candidates are outlined in Section~\ref{sec:reconstruction}.
 The definition of the restricted phase space region where the differential cross sections are measured is given in Section~\ref{sec:fiducialvolume}.
@@ -91,50 +91,54 @@ In order to simulate the response of the CMS detector a dedicated modelling base
 
 \section{Event reconstruction and selection}
 \label{sec:reconstruction}
-The particle-flow algorithm~\cite{CMS-PRF-14-001} aims to reconstruct and identify each individual particle in an event, with an optimized combination of information from the various elements of the CMS detector. The energy of photons is obtained from the ECAL measurement. The energy of electrons is determined from a combination of the electron momentum at the primary interaction vertex as determined by the tracker, the energy of the corresponding ECAL cluster, and the energy sum of all bremsstrahlung photons spatially compatible with originating from the electron track. The energy of muons is obtained from the curvature of the corresponding track. The energy of charged hadrons is determined from a combination of their momentum measured in the tracker and the matching ECAL and HCAL energy deposits, corrected for the response function of the calorimeters to hadronic showers. Finally, the energy of neutral hadrons is obtained from the corresponding corrected ECAL and HCAL energies.
+% The particle-flow algorithm~\cite{CMS-PRF-14-001} aims to reconstruct and identify each individual particle in an event, with an optimized combination of information from the various elements of the CMS detector. The energy of photons is obtained from the ECAL measurement. The energy of electrons is determined from a combination of the electron momentum at the primary interaction vertex as determined by the tracker, the energy of the corresponding ECAL cluster, and the energy sum of all bremsstrahlung photons spatially compatible with originating from the electron track. The energy of muons is obtained from the curvature of the corresponding track. The energy of charged hadrons is determined from a combination of their momentum measured in the tracker and the matching ECAL and HCAL energy deposits, corrected for the response function of the calorimeters to hadronic showers. Finally, the energy of neutral hadrons is obtained from the corresponding corrected ECAL and HCAL energies.
 
 %% Probably can be removed, as pTmiss is not used in the analysis
 % 23/05: Leave out, does not bring additional information.
 %The missing transverse momentum vector \ptvecmiss is computed as the negative vector sum of the transverse momenta of all the PF candidates in an event, and its magnitude is denoted as \ptmiss~\cite{Sirunyan:2019kia}. The \ptvecmiss is modified to account for corrections to the energy scale of the reconstructed jets in the event. 
 
-The information from the silicon tracker and the muon system~\cite{Sirunyan:2018} is combined to reconstruct muons with $\pt^{\Pgm} > 5\GeV$ and $\abs{\eta^{\Pgm}} < 2.4$. 
-Both tracks from the silicon trackers and from the muon system can be used as seeds for the matching between inner and outer tracks. 
-Cases where inner tracks are matched to segments in only one or two muons stations are also considered to cope with situations of very low-\pt muons that do not traverse the entire detector. 
-Loose requirements on the muons track candidates in the muon system and the inner tracker are used, taking into account their compatibility with small energy deposits in the ECAL and HCAL, to define the muon objects considered in the analysis.
+% The information from the silicon tracker and the muon system~\cite{Sirunyan:2018} is combined to reconstruct muons with $\pt^{\Pgm} > 5\GeV$ and $\abs{\eta^{\Pgm}} < 2.4$. 
+% Both tracks from the silicon trackers and from the muon system can be used as seeds for the matching between inner and outer tracks. 
+% Cases where inner tracks are matched to segments in only one or two muons stations are also considered to cope with situations of very low-\pt muons that do not traverse the entire detector. 
+% Loose requirements on the muons track candidates in the muon system and the inner tracker are used, taking into account their compatibility with small energy deposits in the ECAL and HCAL, to define the muon objects considered in the analysis.
 
-An additional isolation requirement of ${\mathcal I}^{\Pgm}$ is introduced to discriminate between muons \PZ boson decay and those originating from electroweak (EW) decays of hadrons within jets:
+% An additional isolation requirement of ${\mathcal I}^{\Pgm}$ is introduced to discriminate between muons \PZ boson decay and those originating from electroweak (EW) decays of hadrons within jets:
 
-\begin{linenomath}
-	\ifthenelse{\boolean{cms@external}}
-	{
-		\begin{multline}
-		\label{eqn:pfiso}
-		{\mathcal I}^{\Pgm} \equiv \Big( \sum \pt^\text{charged} + \max\big[ 0, \sum \pt^\text{neutral} +\\
-		\sum \pt^{\Pgg} - \pt^{\Pgm,\mathrm{PU}} \big] \Big) / \pt^{\Pgm} .
-		\end{multline}
-	}
-	{
-		\begin{equation}
-		\label{eqn:pfiso}
-		{\mathcal I}^{\Pgm} \equiv \Big( \sum \pt^\text{charged} + \max\big[ 0, \sum \pt^\text{neutral} +
-		\sum \pt^{\Pgg} - \pt^{\Pgm,\mathrm{PU}} \big] \Big) / \pt^{\Pgm} .
-		\end{equation}
-	}
-\end{linenomath}
+% \begin{linenomath}
+% 	\ifthenelse{\boolean{cms@external}}
+% 	{
+% 		\begin{multline}
+% 		\label{eqn:pfiso}
+% 		{\mathcal I}^{\Pgm} \equiv \Big( \sum \pt^\text{charged} + \max\big[ 0, \sum \pt^\text{neutral} +\\
+% 		\sum \pt^{\Pgg} - \pt^{\Pgm,\mathrm{PU}} \big] \Big) / \pt^{\Pgm} .
+% 		\end{multline}
+% 	}
+% 	{
+% 		\begin{equation}
+% 		\label{eqn:pfiso}
+% 		{\mathcal I}^{\Pgm} \equiv \Big( \sum \pt^\text{charged} + \max\big[ 0, \sum \pt^\text{neutral} +
+% 		\sum \pt^{\Pgg} - \pt^{\Pgm,\mathrm{PU}} \big] \Big) / \pt^{\Pgm} .
+% 		\end{equation}
+% 	}
+% \end{linenomath}
 
-{\tolerance=800 A relative isolation of ${\mathcal I}^{\Pgm}<0.35$ is imposed in the analysis. The quantity $\sum \pt^\text{charged}$ represents the scalar sum of the transverse momenta of charge hadrons originating from the primary vertex (PV) selected in the event, while $\sum \pt^\text{neutral}$ and $\sum \pt^{\Pgg}$ define the corresponding scalar sums for neutral hadrons and photons, respectively.
-The isolation requirement is defined within a cone of angular radius $\Delta R=0.3$ around the muon direction at the PV, with the angular distance between two particles $i$ and $j$ defined as $\Delta R(i,j) = \sqrt{\smash[b]{(\eta^i-\eta^j)^{2} + (\phi^i-\phi^j)^{2}}}$.
-The quantity $\pt^{\Pgm,\mathrm{PU}}$ in Eq.~(\ref{eqn:pfiso}) is defined as $\pt^{\Pgm,\mathrm{PU}}\equiv0.5\sum_{i}\pt^\text{\textit{i},PU}$, from the sum of the transvers momenta of all the charged hadrons $i$ originating from the PV corrected for the different fraction of charged and neutral particles in the cone~\cite{PUmitigationCMS} by the 0.5 factor. The $\pt^{\Pgm,\mathrm{PU}}$ contribution is subtracted from ${\mathcal I}^{\Pgm}$ to correct for energy deposits arising from pileup interactions.\par}
+% {\tolerance=800 A relative isolation of ${\mathcal I}^{\Pgm}<0.35$ is imposed in the analysis. The quantity $\sum \pt^\text{charged}$ represents the scalar sum of the transverse momenta of charge hadrons originating from the primary vertex (PV) selected in the event, while $\sum \pt^\text{neutral}$ and $\sum \pt^{\Pgg}$ define the corresponding scalar sums for neutral hadrons and photons, respectively.
+% The isolation requirement is defined within a cone of angular radius $\Delta R=0.3$ around the muon direction at the PV, with the angular distance between two particles $i$ and $j$ defined as $\Delta R(i,j) = \sqrt{\smash[b]{(\eta^i-\eta^j)^{2} + (\phi^i-\phi^j)^{2}}}$.
+% The quantity $\pt^{\Pgm,\mathrm{PU}}$ in Eq.~(\ref{eqn:pfiso}) is defined as $\pt^{\Pgm,\mathrm{PU}}\equiv0.5\sum_{i}\pt^\text{\textit{i},PU}$, from the sum of the transvers momenta of all the charged hadrons $i$ originating from the PV corrected for the different fraction of charged and neutral particles in the cone~\cite{PUmitigationCMS} by the 0.5 factor. The $\pt^{\Pgm,\mathrm{PU}}$ contribution is subtracted from ${\mathcal I}^{\Pgm}$ to correct for energy deposits arising from pileup interactions.\par}
 
-{\tolerance=1200 The information from the ECAL and the tracker is combined to reconstruct electrons~\cite{EGM-17-001} within the geometrical acceptance of the detector, defined by the pseudorapidity region $\abs{\eta^{\Pe}} < 2.5$, and with $\pt^{\Pe} > 7\GeV$.
-The idenfitication of electrons is performed with a BDT algorithm sensitive to the presence of bremsstrahlung along the electron trajectory, the geometrical and momentum-energy matching between the
-electron trajectory and the corresponding cluster in the ECAL, the features of the electromagnetic shower in the ECAL,
-and observables that discriminate against electrons originating from photon conversions.
-Conversly to muons, where the isolation of the PF candidates is performed with the ${\mathcal I}^{\Pgm}$ requirement aforementioned, the isolation sums for electrons are included in the BDT discriminant.
-This choice is proven to enhance the suppression of electrons originating from electroweak decays of hadrons within jets~\cite{DPS-2018} and has a better performance than a cut-based approach on the relative isolation observable.
-The BDT for the identification and isolation of electrons is developed within the \textsc{xgboost}~\cite{Chen:2016btl} library.
-The training is performed on dedicated Drell-Yann + jets simulated events that are not used elsewhere in the analysis in six mutually exclusive regions defined by two transverse momentum (7$<\pt^{\Pe}<$10$\GeV$ and $\pt^{\Pe}>$10$\GeV$) and three pseudorapidity cuts corresponding to the central barrel ($\abs{\eta^{\Pe}}<0.8$), outer barrel ($0.8<\abs{\eta^{\Pe}}<1.479$), and endcaps ($1.479<\abs{\eta^{\Pe}}<2.5$).
-The BDT is trained separately on the three data-taking periods and the selection requirements are defined by requiring the same signal efficiency for all three periods.\par}
+% {\tolerance=1200 The information from the ECAL and the tracker is combined to reconstruct electrons~\cite{EGM-17-001} within the geometrical acceptance of the detector, defined by the pseudorapidity region $\abs{\eta^{\Pe}} < 2.5$, and with $\pt^{\Pe} > 7\GeV$.
+% The idenfitication of electrons is performed with a BDT algorithm sensitive to the presence of bremsstrahlung along the electron trajectory, the geometrical and momentum-energy matching between the
+% electron trajectory and the corresponding cluster in the ECAL, the features of the electromagnetic shower in the ECAL,
+% and observables that discriminate against electrons originating from photon conversions.
+% Conversly to muons, where the isolation of the PF candidates is performed with the ${\mathcal I}^{\Pgm}$ requirement aforementioned, the isolation sums for electrons are included in the BDT discriminant.
+% This choice is proven to enhance the suppression of electrons originating from electroweak decays of hadrons within jets~\cite{DPS-2018} and has a better performance than a cut-based approach on the relative isolation observable.
+% The BDT for the identification and isolation of electrons is developed within the \textsc{xgboost}~\cite{Chen:2016btl} library.
+% The training is performed on dedicated Drell-Yann + jets simulated events that are not used elsewhere in the analysis in six mutually exclusive regions defined by two transverse momentum (7$<\pt^{\Pe}<$10$\GeV$ and $\pt^{\Pe}>$10$\GeV$) and three pseudorapidity cuts corresponding to the central barrel ($\abs{\eta^{\Pe}}<0.8$), outer barrel ($0.8<\abs{\eta^{\Pe}}<1.479$), and endcaps ($1.479<\abs{\eta^{\Pe}}<2.5$).
+% The BDT is trained separately on the three data-taking periods and the selection requirements are defined by requiring the same signal efficiency for all three periods.\par}
+
+The objects electrons, photons, muons and jets are selected as described in Section~\ref{sec:4}.
+
+% The \ref{sec:4}
 
 Final-state radiation (FSR) photons emitted by $\PZ\rightarrow \ell^+\ell^-$ are taken into account for an optimal reconstruction of the $\PH\rightarrow4\ell$ decay. More precisely, PF photon candidates with $\abs{\eta^\Pgg}<2.4$ are considered as FSR objects if they have transverse momentum $\pt^{\Pgg} > 2 \GeV$ and relative isolation factor ${\mathcal I}^{\Pgg} <1.8$, where ${\mathcal I}^{\Pgg}$ is defined as of Eq.~(\ref{eqn:pfiso}) for muons.
 These FSR candidates are associated to the the closest selected lepton in the event and are not retained in the analysis if $\Delta R(\Pgg,\ell)/(\pt^{\Pgg})^2>0.012 \GeV^{-2}$ and $\Delta R(\Pgg,\ell) > 0.5$.
@@ -147,13 +151,13 @@ The decay products of known dilepton resonances are used to calibrate the moment
 
 The efficiency of the reconstruction and selection from prompt leptons is measured in several bins of $\pt^{\ell}$ and $\eta^{\ell}$ by means of a ``tag and probe'' technique~\cite{CMS:2011aa} using samples of $\PZ$ boson events both in data and simulation. The yields of selected events in simulated samples are rescaled by the difference in efficiencies measured in simulation and data.
 
-For each event, hadronic jets are clustered from these reconstructed particles using the infrared and collinear safe anti-\kt algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a distance parameter of 0.4. The jet momentum is determined as the vectorial sum of all particle momenta in the jet, and is found from simulation to be, on average, within 5 to 10\% of the true momentum over the whole \pt spectrum and detector acceptance. Additional proton-proton interactions within the same or nearby bunch crossings can contribute additional tracks and calorimetric energy depositions, increasing the apparent jet momentum. To mitigate this effect, tracks identified to be originating from pileup vertices are discarded and an offset correction is applied to correct for remaining contributions. Jet energy corrections are derived from simulation studies so that the average measured energy of jets becomes identical to that of particle level jets. In situ measurements of the momentum balance in dijet, photon+jet, Z+jet, and multijet events are used to determine any residual differences between the jet energy scale in data and in simulation, and appropriate corrections are made~\cite{Khachatryan:2016kdb}. Additional selection criteria are applied to each jet to remove jets potentially dominated by instrumental effects or reconstruction failures. In this analysis only jets with $\pt^{\text{jet}}>30\GeV$
-and $\abs{\eta^{\text{jet}}} < 4.7$, and with a distance parameter of $\Delta R(\ell/\cPgg,\text{jet})>0.4$ from all selected leptons and FSR photons, are considered. Jets not satisfying the tight identification criteria and the tight working point of pileup jet identification described in Ref.~\cite{PUmitigationCMS} are discarded.
+% For each event, hadronic jets are clustered from these reconstructed particles using the infrared and collinear safe anti-\kt algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a distance parameter of 0.4. The jet momentum is determined as the vectorial sum of all particle momenta in the jet, and is found from simulation to be, on average, within 5 to 10\% of the true momentum over the whole \pt spectrum and detector acceptance. Additional proton-proton interactions within the same or nearby bunch crossings can contribute additional tracks and calorimetric energy depositions, increasing the apparent jet momentum. To mitigate this effect, tracks identified to be originating from pileup vertices are discarded and an offset correction is applied to correct for remaining contributions. Jet energy corrections are derived from simulation studies so that the average measured energy of jets becomes identical to that of particle level jets. In situ measurements of the momentum balance in dijet, photon+jet, Z+jet, and multijet events are used to determine any residual differences between the jet energy scale in data and in simulation, and appropriate corrections are made~\cite{Khachatryan:2016kdb}. Additional selection criteria are applied to each jet to remove jets potentially dominated by instrumental effects or reconstruction failures. In this analysis only jets with $\pt^{\text{jet}}>30\GeV$
+% and $\abs{\eta^{\text{jet}}} < 4.7$, and with a distance parameter of $\Delta R(\ell/\cPgg,\text{jet})>0.4$ from all selected leptons and FSR photons, are considered. Jets not satisfying the tight identification criteria and the tight working point of pileup jet identification described in Ref.~\cite{PUmitigationCMS} are discarded.
 
-Jets originating from {\PQqb}-quarks are tagged using the DeepCSV algorithm~\cite{Sirunyan:2017ezt}, which combines information about impact parameter significance, secondary vertex, and jet kinematics.
-Simulation samples are scaled by the difference in {\PQqb} tagging efficiency measured in simulation and data as a function of jet \pt, $\eta$, and flavor.
+% Jets originating from {\PQqb}-quarks are tagged using the DeepCSV algorithm~\cite{Sirunyan:2017ezt}, which combines information about impact parameter significance, secondary vertex, and jet kinematics.
+% Simulation samples are scaled by the difference in {\PQqb} tagging efficiency measured in simulation and data as a function of jet \pt, $\eta$, and flavor.
 
-The PF objects aforementioned serve as input for the analysis event selection, which targets events containing at least four well-identified and isolated leptons originating from the PV and possibly accompained by an FSR photon candidate. FSR photons are included in the invariant mass computations, unless otherwise stated.
+% The PF objects aforementioned serve as input for the analysis event selection, which targets events containing at least four well-identified and isolated leptons originating from the PV and possibly accompained by an FSR photon candidate. FSR photons are included in the invariant mass computations, unless otherwise stated.
 The event selection closely follows the one employed in Ref.~\cite{CMSHIG19001} and is detailed below.
  
 In the first step of the selection $\PZ$ candidates are formed from pairs of leptons of the same flavor and opposite-charge ($\Pep\Pem$, $\PGmp\PGmm$) passing the requirement $12 < \mlplm  < 120\GeV$. 
@@ -453,21 +457,21 @@ The shape of the \PH resonant signal, hereafter referred to as $\mathcal{P}(\mll
 The parametrisation of the signal model as a function of $\mH$ is obtained independently for each production mechanism by performing a simultaneous fit of several mass points  in the 105 to 160\GeV mass range.
 The non-resonant contribution to the signal in the case of $\WH$, $\ZH$ and $\ttH$ production modes is modelled with the inclusion of a  Landau function in the total probability density function . 
 Each parameter of the double-sided Crystal Ball function has a linear dependence on $\mH$, for a total of 12 free parameters.
-Fig.~\ref{fig:signal_fit} depicts the results of the fit for the $\ggH$ production mode in the $4\Pe$ and $4\mu$ final states. 
+% Fig.~\ref{fig:signal_fit} depicts the results of the fit for the $\ggH$ production mode in the $4\Pe$ and $4\mu$ final states. 
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.49\textwidth]{Images/H4L/Signal/HZZ4e_lineshape.pdf}
-	\includegraphics[width=0.49\textwidth]{Images/H4L/Signal/HZZ4mu_lineshape.pdf}
-	\caption{
-% 		\textcolor{red}{\textbf{EDIT, TAKEN FROM 19001}}
-		The shape of the parametric signal model for each year of simulated data, and for the sum of all years together.
-		The black points represent weighted simulation events of the $\ggH$ production mechanism for $\mH=125\GeV$ and the blue line the corresponding model.
-		Also shown is the $\sigma_{\text{CB}}$ value (half the width of the narrowest interval containing 68\% of the invariant mass distribution) in the gray shaded area.
-		The contribution of the signal model from each year of data-taking is illustrated with the dotted lines.
-		The models are shown for the $4\Pe$ (\cmsLeft) and $4\Pgm$ (\cmsRight) final states in the untagged event category.
-		\label{fig:signal_fit}}
-\end{figure}
+% \begin{figure}[!htb]
+% 	\centering
+% 	\includegraphics[width=0.49\textwidth]{Images/H4L/Signal/HZZ4e_lineshape.pdf}
+% 	\includegraphics[width=0.49\textwidth]{Images/H4L/Signal/HZZ4mu_lineshape.pdf}
+% 	\caption{
+% % 		\textcolor{red}{\textbf{EDIT, TAKEN FROM 19001}}
+% 		The shape of the parametric signal model for each year of simulated data, and for the sum of all years together.
+% 		The black points represent weighted simulation events of the $\ggH$ production mechanism for $\mH=125\GeV$ and the blue line the corresponding model.
+% 		Also shown is the $\sigma_{\text{CB}}$ value (half the width of the narrowest interval containing 68\% of the invariant mass distribution) in the gray shaded area.
+% 		The contribution of the signal model from each year of data-taking is illustrated with the dotted lines.
+% 		The models are shown for the $4\Pe$ (\cmsLeft) and $4\Pgm$ (\cmsRight) final states in the untagged event category.
+% 		\label{fig:signal_fit}}
+% \end{figure}
 
 \section{Measurement methodology}
 \label{sec:measurement}
@@ -691,20 +695,20 @@ For all these reasons, in the following the \PZ\PZ$^\star$ normalisation is take
 	\end{tabular}
 \end{table*}
 
-\clearpage
+%\clearpage
 
 \subsection{Differential cross sections: production}
 Fiducial cross sections are measured in differential bins of variables sensitive to the production side in the $\HZZfl$ channel.
 The results for the transverse momentum and rapidity of the Higgs boson are shown in Fig.~\ref{fig:fidPTH},\ref{fig:fidYH}, respectively.
-Fig.~\ref{fig:fidNJ},\ref{fig:fidPTJ1},\ref{fig:fidPTJ2} show the measurements of the fiducial cross sections in differential bins of jet-related observables, namely: the number of associated jets in the event and the transverse momentum of the leading and sub-leading jet in the event.
-The fiducial cross section is also measured in bins of the inveriant mass of the dijet system, as shown in Fig.~\ref{fig:fidMJJ}. This measurement, performed for the first time in the $4\ell$ channel, allows to enhance the sensitivity of the analysis to phase space regions of $\VBF$ and $\ttH$ production mechanisms, where a larger jet-multiplicity is expected.
+% Fig.~\ref{fig:fidNJ},\ref{fig:fidPTJ1},\ref{fig:fidPTJ2} show the measurements of the fiducial cross sections in differential bins of jet-related observables, namely: the number of associated jets in the event and the transverse momentum of the leading and sub-leading jet in the event.
+% The fiducial cross section is also measured in bins of the inveriant mass of the dijet system, as shown in Fig.~\ref{fig:fidMJJ}. This measurement, performed for the first time in the $4\ell$ channel, allows to enhance the sensitivity of the analysis to phase space regions of $\VBF$ and $\ttH$ production mechanisms, where a larger jet-multiplicity is expected.
 
-This analysis presents also the results for the cross sections measured in bins of observables of the \PH+j and \PH+jj systems. These results meet the constantly increasing interest from the theory community, as they allow to probe the QCD emission pattern with experimental data.
-The measurements of the fiducial cross section in differential bins of the invariant mass and transverse momentum of the \PH+j system are presented in Fig.~\ref{fig:fidMHJ} and \ref{fig:fidPTHJ}, respectively, while Fig.~\ref{fig:fidPTHJJ} shows the results in differential bins of the transverse momentum of the \PH+jj system.
+% This analysis presents also the results for the cross sections measured in bins of observables of the \PH+j and \PH+jj systems. These results meet the constantly increasing interest from the theory community, as they allow to probe the QCD emission pattern with experimental data.
+% The measurements of the fiducial cross section in differential bins of the invariant mass and transverse momentum of the \PH+j system are presented in Fig.~\ref{fig:fidMHJ} and \ref{fig:fidPTHJ}, respectively, while Fig.~\ref{fig:fidPTHJJ} shows the results in differential bins of the transverse momentum of the \PH+jj system.
 
-With the same goal of enhancing the sensitivity to phase space regions that probe directly the departure from LO kinematics and thus the QCD emission pattern, the cross sections in differential bins of the rapidity-weighted jet-vetoes introduced in Sec.~\ref{sec:observables} are also measured. Fig.~\ref{fig:fidTC} presents the results for  $\mathcal{T}_{\text{C}}$, while the results for  $\mathcal{T}_{\text{B}}$ are shown in Fig.~\ref{fig:fidTB}.
+% With the same goal of enhancing the sensitivity to phase space regions that probe directly the departure from LO kinematics and thus the QCD emission pattern, the cross sections in differential bins of the rapidity-weighted jet-vetoes introduced in Sec.~\ref{sec:observables} are also measured. Fig.~\ref{fig:fidTC} presents the results for  $\mathcal{T}_{\text{C}}$, while the results for  $\mathcal{T}_{\text{B}}$ are shown in Fig.~\ref{fig:fidTB}.
 
-\clearpage
+% %\clearpage
 
 \begin{center}
 	\begin{figure}[!htbp]
@@ -722,7 +726,7 @@ With the same goal of enhancing the sensitivity to phase space regions that prob
 	\end{figure}
 \end{center}
 
-\clearpage
+%\clearpage
 
 \begin{center}
 	\begin{figure}[!htbp]
@@ -737,103 +741,103 @@ With the same goal of enhancing the sensitivity to phase space regions that prob
 	\end{figure}
 \end{center}
 
-\clearpage
+%\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/njets_pt30_eta2p5_unfoldwith_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_njets_pt30_eta4p7_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the number of associated jets in the event (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidNJ}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/njets_pt30_eta2p5_unfoldwith_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_njets_pt30_eta4p7_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the number of associated jets in the event (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidNJ}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+%\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/pTj1_unfoldwith_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTj1_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the \pt of the leading jet in the event (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidPTJ1}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/pTj1_unfoldwith_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTj1_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the \pt of the leading jet in the event (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidPTJ1}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+%\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/pTj2_unfoldwith_SM_125_logscale_asimov.pdf}	\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTj2_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the \pt of the sub-leading jet in the event (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidPTJ2}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/pTj2_unfoldwith_SM_125_logscale_asimov.pdf}	\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTj2_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the \pt of the sub-leading jet in the event (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidPTJ2}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%% Dijet system %%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%% Dijet system %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/mjj_unfoldwith_SM_125_logscale_asimov.pdf}	\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_mjj_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the invariant mass of the di-jet system $m_{jj}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The first bin comprises all those events with less than two jets, for which $m_{jj}$  is undefined.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidMJJ}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/mjj_unfoldwith_SM_125_logscale_asimov.pdf}	\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_mjj_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the invariant mass of the di-jet system $m_{jj}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The first bin comprises all those events with less than two jets, for which $m_{jj}$  is undefined.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidMJJ}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
 
-%%%%%%%%%%%%%%%%%%%%%%%% Dijet system %%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%% Dijet system %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/mHj_unfoldwith_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_mHj_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the invariant mass of the \PH+leading-jet system $m_{\PH j}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The first bin comprises all those events with less than one jet, for which $m_{\PH j}$  is undefined.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidMHJ}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/mHj_unfoldwith_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_mHj_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the invariant mass of the \PH+leading-jet system $m_{\PH j}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The first bin comprises all those events with less than one jet, for which $m_{\PH j}$  is undefined.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidMHJ}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/pTHj_unfoldwith_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTHj_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the transverse momentum of the \PH+leading-jet system $\pt^{\PH j}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The first bin comprises all those events with less than one jet, for which $\pt^{\PH j}$  is undefined.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidPTHJ}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/pTHj_unfoldwith_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTHj_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the transverse momentum of the \PH+leading-jet system $\pt^{\PH j}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The first bin comprises all those events with less than one jet, for which $\pt^{\PH j}$  is undefined.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidPTHJ}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+%\clearpage
 
 %\begin{center}
 %\begin{figure}[!htb]
@@ -848,55 +852,55 @@ With the same goal of enhancing the sensitivity to phase space regions that prob
 %\end{figure}
 %\end{center}
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/pTHjj_unfoldwith_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTHjj_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the transverse momentum of the \PH+di-jet system $\pt^{\PH jj}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The first bin comprises all those events with less than two jet, for which $\pt^{\PH jj}$  is undefined.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidPTHJJ}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/pTHjj_unfoldwith_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTHjj_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the transverse momentum of the \PH+di-jet system $\pt^{\PH jj}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The first bin comprises all those events with less than two jet, for which $\pt^{\PH jj}$  is undefined.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidPTHJJ}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+%\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%% Jet Veto T_B,C %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/TCjmax_unfoldwith_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_TCjmax_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the rapidity-weighed jet veto $\mathcal{T}_{\text{C}}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The first bin comprises all those events with less than one jet, for which $\mathcal{T}_{\text{C}}$ is undefined.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidTC}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/TCjmax_unfoldwith_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_TCjmax_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the rapidity-weighed jet veto $\mathcal{T}_{\text{C}}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The first bin comprises all those events with less than one jet, for which $\mathcal{T}_{\text{C}}$ is undefined.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidTC}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/TBjmax_unfoldwith_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_TBjmax_v3.pdf}\\
-		\caption{
-			Differential cross sections as a function of the rapidity-weighed jet veto $\mathcal{T}_{\text{B}}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The first bin comprises all those events with less than one jet, for which $\mathcal{T}_{\text{B}}$ is undefined.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidTB}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/TBjmax_unfoldwith_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_TBjmax_v3.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the rapidity-weighed jet veto $\mathcal{T}_{\text{B}}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The first bin comprises all those events with less than one jet, for which $\mathcal{T}_{\text{B}}$ is undefined.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidTB}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+%\clearpage
 
 \subsection{Differential cross sections: decay}
 One of the distinguishing features of the $\Hllll$ decay is the composition of the final state, where intereference effects between the same flavour and different flavours final states are present.
@@ -904,395 +908,395 @@ To resolve these effects and therefore enhance the model independence of the res
 
 The cross sesctions measured in bins of the invariant mass of the two \PZ boson candidates in the event are shown in Fig.\ref{fig:fidMZ1} and \ref{fig:fidMZ2}, respectively.
 As discussed in Sec.~\ref{sec:observables}, the $\Hllll$ decay is completely defined by seven degrees of freedom, two of which are the invariant masses of the two \PZ boson candidates in the event. The measurement of the differential cross sections in bins of these two observables are shown in Fig.\ref{fig:fidMZ1} and \ref{fig:fidMZ2}, respectively.
-The additional five degrees of freedom are the angles that characterise the decay of the \PH boson and the planes that contain the two \PZ bosons produced. 
-The angle $\theta^\star$ is defined as the angle between the beam axis and the direction of the $\PZ_1$ candidate in the event, while the angles between the $\PZ_1$ and $\PZ_2$ flight directions and the planes containing the di-lepton systems originating from their decay are denoted as  $\theta_1$ and $\theta_2$.
-The measurements in differential bins of the cosine of these angles are presented in Fig.~\ref{fig:fidCOSTS} ,~\ref{fig:fidCOSZ1}, and \ref{fig:fidCOSZ2}, respectively.
-The $\phi$ and $\phi_1$ are defined as the angles between the three planes containing the \PH boson and the decay products of the $\PZ_1$ and $\PZ_2$ candidates and the corresponding differential cross sections are presented in Fig.~\ref{fig:fidPHI} and Fig.~\ref{fig:fidPHISTAR}. 
+% The additional five degrees of freedom are the angles that characterise the decay of the \PH boson and the planes that contain the two \PZ bosons produced. 
+% The angle $\theta^\star$ is defined as the angle between the beam axis and the direction of the $\PZ_1$ candidate in the event, while the angles between the $\PZ_1$ and $\PZ_2$ flight directions and the planes containing the di-lepton systems originating from their decay are denoted as  $\theta_1$ and $\theta_2$.
+% The measurements in differential bins of the cosine of these angles are presented in Fig.~\ref{fig:fidCOSTS} ,~\ref{fig:fidCOSZ1}, and \ref{fig:fidCOSZ2}, respectively.
+% The $\phi$ and $\phi_1$ are defined as the angles between the three planes containing the \PH boson and the decay products of the $\PZ_1$ and $\PZ_2$ candidates and the corresponding differential cross sections are presented in Fig.~\ref{fig:fidPHI} and Fig.~\ref{fig:fidPHISTAR}. 
 
-These observables completely characterise the $\Hllll$ decay and can be used to compute matrix element discriminants sensitive to the presence of possible BSM physics. The main advantage of using these discriminants lies in the fact that they fully encapsulate all the information present in the $\Hllll$ decay and are directly sensitive to \PH boson anomalous couplings and CP-violation.
+% These observables completely characterise the $\Hllll$ decay and can be used to compute matrix element discriminants sensitive to the presence of possible BSM physics. The main advantage of using these discriminants lies in the fact that they fully encapsulate all the information present in the $\Hllll$ decay and are directly sensitive to \PH boson anomalous couplings and CP-violation.
 
-This analysis measures cross sections in differential bins of six kinematic discriminants sensitive to different HVV anomalous couplings and their possible interference: \Dzm, \Dzhp, \DCP, \Dint, \DLone, and \DLoneZg. An more detailed description of these discriminants is given in Sec.~\ref{sec:discriminants} and Ref.~\cite{CMSHIG19009}.
-The results of these measurements are shown in Fig.~\ref{fig:fidDZM}, \ref{fig:fidDOHP}, \ref{fig:fidDCP}, \ref{fig:fidDINT}, \ref{fig:fidDL1}, and \ref{fig:fidDL1ZG}.
+% This analysis measures cross sections in differential bins of six kinematic discriminants sensitive to different HVV anomalous couplings and their possible interference: \Dzm, \Dzhp, \DCP, \Dint, \DLone, and \DLoneZg. An more detailed description of these discriminants is given in Sec.~\ref{sec:discriminants} and Ref.~\cite{CMSHIG19009}.
+% The results of these measurements are shown in Fig.~\ref{fig:fidDZM}, \ref{fig:fidDOHP}, \ref{fig:fidDCP}, \ref{fig:fidDINT}, \ref{fig:fidDL1}, and \ref{fig:fidDL1ZG}.
 
-\clearpage
+%\clearpage
 
 \begin{center}
 	\begin{figure}[!htb]
 		\centering
 		\includegraphics[width=0.48\textwidth]{Images/H4L/ZCands/model_v4/massZ1_unfoldwith_4l_SM_125_asimov.pdf}
 		\includegraphics[width=0.48\textwidth]{Images/H4L/ZCands/model_v4/massZ1_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_massZ1_v4.pdf}\\	
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_massZ1_v4.pdf}\\	
 		\caption{
 			Differential cross sections as a function of the invariant mass of the leading di-lepton pair $m_{\PZ_{1}}$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
 			\label{fig:fidMZ1}}
 	\end{figure}
 \end{center}
 
-\clearpage
+%\clearpage
 
 \begin{center}
 	\begin{figure}[!htb]
 		\centering
 		\includegraphics[width=0.48\textwidth]{Images/H4L/ZCands/model_v4/massZ2_unfoldwith_4l_SM_125_asimov.pdf}
 		\includegraphics[width=0.48\textwidth]{Images/H4L/ZCands/model_v4/massZ2_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_massZ2_v4.pdf}\\	
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_massZ2_v4.pdf}\\	
 		\caption{
 			Differential cross sections as a function of the invariant mass of the sub-leading di-lepton pair $m_{\PZ_{2}}$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
 			\label{fig:fidMZ2}}
 	\end{figure}
 \end{center}
 
-\clearpage
+%\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetastar_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetastar_unfoldwith_2e2mu_SM_125_asimov.pdf} \\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_costhetastar_v4.pdf} \\
-		\caption{
-			Differential cross sections as a function of  $\cos \theta^\star$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidCOSTS}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetastar_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetastar_unfoldwith_2e2mu_SM_125_asimov.pdf} \\
+% % 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_costhetastar_v4.pdf} \\
+% 		\caption{
+% 			Differential cross sections as a function of  $\cos \theta^\star$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% % 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidCOSTS}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetaZ1_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetaZ1_unfoldwith_2e2mu_SM_125_asimov.pdf} \\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_costhetaZ1_v4.pdf} \\
-		\caption{
-			Differential cross sections as a function of $\cos \theta_\text{1}$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidCOSZ1}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetaZ1_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetaZ1_unfoldwith_2e2mu_SM_125_asimov.pdf} \\
+% % 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_costhetaZ1_v4.pdf} \\
+% 		\caption{
+% 			Differential cross sections as a function of $\cos \theta_\text{1}$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% % 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidCOSZ1}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+%\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetaZ2_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetaZ2_unfoldwith_2e2mu_SM_125_asimov.pdf} \\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_costhetaZ2_v4.pdf} \\
-		\caption{
-			Differential cross sections as a function of  $\cos \theta_\text{2}$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidCOSZ2}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetaZ2_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/costhetaZ2_unfoldwith_2e2mu_SM_125_asimov.pdf} \\
+% % 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_costhetaZ2_v4.pdf} \\
+% 		\caption{
+% 			Differential cross sections as a function of  $\cos \theta_\text{2}$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% % 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidCOSZ2}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/phi_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/phi_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_phi_v4.pdf} \\
-		\caption{
-			Differential cross sections as a function of the angle $\Phi$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidPHI}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/phi_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/phi_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
+% % 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_phi_v4.pdf} \\
+% 		\caption{
+% 			Differential cross sections as a function of the angle $\Phi$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% % 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidPHI}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/phistar_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/phistar_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_phistar_v4.pdf} \\
-		\caption{
-			Differential cross sections as a function of the angle $\Phi_\text{1}$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidPHISTAR}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/phistar_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/angles/model_v4/phistar_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_phistar_v4.pdf} \\
+% 		\caption{
+% 			Differential cross sections as a function of the angle $\Phi_\text{1}$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidPHISTAR}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-%\subsection{Matrix element discriminants}
-%The $\Pp\Pp\to\Hllll$ fiducial cross section is measured in bins of matrix element discriminants and the results are compared both with the SM predictions and the BSM distributions obtained for significative BSM scenarios, corresponding to the introduction of anomalous HVV couplings in the SM Lagrangian:
-%\begin{widetext}
-%	\begin{align}
-	%	A(\PH\PV_1\PV_2) =
-	%	\frac{1}{v}
-	%	\left[ a_{1}^{\PV\PV}
-	%	+ \frac{\kappa_1^{\PV\PV}q_{\PV1}^2 + \kappa_2^{\PV\PV} q_{\PV2}^{2}}{\left(\Lambda_{1}^{\PV\PV} \right)^{2}} 
-	%	+ \frac{\kappa_3^{\PV\PV}(q_{\PV1} + q_{\PV2})^{2}}{\left(\Lambda_{Q}^{\PV\PV} \right)^{2}} \right]
-	%	m_{\PV1}^2 \epsilon_{\PV1}^* \epsilon_{\PV2}^*  
-	%	\nonumber \\
-	%	+ \frac{1}{v}a_{2}^{\PV\PV}  f_{\mu \nu}^{*(1)}f^{*(2),\mu\nu}
-	%	+ \frac{1}{v}a_{3}^{\PV\PV}   f^{*(1)}_{\mu \nu} {\tilde f}^{*(2),\mu\nu} ,
-	%	\label{eq:formfact-fullampl-spin0}
-	%	\end{align}
-%\end{widetext}
-%where $f^{(i){\mu \nu}} = \epsilon_{{\PV}i}^{\mu}q_{{\PV}i}^{\nu} - \epsilon_{{\PV}i}^\nu q_{{\PV}i}^{\mu}$,
-%${\tilde f}^{(i)}_{\mu \nu} = \frac{1}{2} \epsilon_{\mu\nu\rho\sigma} f^{(i),\rho\sigma}$, and
-%$\epsilon_{{\PV}i}$, $q_{{\PV}i}$, and $m_{{\PV}i}$ are the polarization vector, four-momentum, and pole mass 
-%of a gauge boson $i=1$ or 2. The constants $\Lambda_{1}$ and $\Lambda_{Q}$ are the scales 
-%of BSM physics necessary to keep the $\kappa_i^{\PV\PV}$ couplings unitless, 
-%and $a_1^{\PV\PV}$, $a_2^{\PV\PV}$, $a_3^{\PV\PV}$, $\kappa_1^{\PV\PV}$, $\kappa_2^{\PV\PV}$, and $\kappa_3^{\PV\PV}$ 
-%are real numbers that modify the corresponding amplitude terms.
+% %\subsection{Matrix element discriminants}
+% %The $\Pp\Pp\to\Hllll$ fiducial cross section is measured in bins of matrix element discriminants and the results are compared both with the SM predictions and the BSM distributions obtained for significative BSM scenarios, corresponding to the introduction of anomalous HVV couplings in the SM Lagrangian:
+% %\begin{widetext}
+% %	\begin{align}
+% 	%	A(\PH\PV_1\PV_2) =
+% 	%	\frac{1}{v}
+% 	%	\left[ a_{1}^{\PV\PV}
+% 	%	+ \frac{\kappa_1^{\PV\PV}q_{\PV1}^2 + \kappa_2^{\PV\PV} q_{\PV2}^{2}}{\left(\Lambda_{1}^{\PV\PV} \right)^{2}} 
+% 	%	+ \frac{\kappa_3^{\PV\PV}(q_{\PV1} + q_{\PV2})^{2}}{\left(\Lambda_{Q}^{\PV\PV} \right)^{2}} \right]
+% 	%	m_{\PV1}^2 \epsilon_{\PV1}^* \epsilon_{\PV2}^*  
+% 	%	\nonumber \\
+% 	%	+ \frac{1}{v}a_{2}^{\PV\PV}  f_{\mu \nu}^{*(1)}f^{*(2),\mu\nu}
+% 	%	+ \frac{1}{v}a_{3}^{\PV\PV}   f^{*(1)}_{\mu \nu} {\tilde f}^{*(2),\mu\nu} ,
+% 	%	\label{eq:formfact-fullampl-spin0}
+% 	%	\end{align}
+% %\end{widetext}
+% %where $f^{(i){\mu \nu}} = \epsilon_{{\PV}i}^{\mu}q_{{\PV}i}^{\nu} - \epsilon_{{\PV}i}^\nu q_{{\PV}i}^{\mu}$,
+% %${\tilde f}^{(i)}_{\mu \nu} = \frac{1}{2} \epsilon_{\mu\nu\rho\sigma} f^{(i),\rho\sigma}$, and
+% %$\epsilon_{{\PV}i}$, $q_{{\PV}i}$, and $m_{{\PV}i}$ are the polarization vector, four-momentum, and pole mass 
+% %of a gauge boson $i=1$ or 2. The constants $\Lambda_{1}$ and $\Lambda_{Q}$ are the scales 
+% %of BSM physics necessary to keep the $\kappa_i^{\PV\PV}$ couplings unitless, 
+% %and $a_1^{\PV\PV}$, $a_2^{\PV\PV}$, $a_3^{\PV\PV}$, $\kappa_1^{\PV\PV}$, $\kappa_2^{\PV\PV}$, and $\kappa_3^{\PV\PV}$ 
+% %are real numbers that modify the corresponding amplitude terms.
 
-%The fiducial differential cross sections measured are shown in Figure \ref{fig:fiducial_diff_Dzm}, where the results are compared with the SM prediction for the inclusive $\Pp\Pp\to\Hllll$ cross section and the corresponding distribution obtained for the introduction of HVV anomalous coupling in the decay.
+% %The fiducial differential cross sections measured are shown in Figure \ref{fig:fiducial_diff_Dzm}, where the results are compared with the SM prediction for the inclusive $\Pp\Pp\to\Hllll$ cross section and the corresponding distribution obtained for the introduction of HVV anomalous coupling in the decay.
 
-%		Differential cross sections as a function of $\Dzm$ (top left), $\Dzhp$ (top right), and $\DCP$ (bottom).
+% %		Differential cross sections as a function of $\Dzm$ (top left), $\Dzhp$ (top right), and $\DCP$ (bottom).
 
 
-\begin{center}%%%%%%%%%%%%%%%%%%%%%%%% Discriminants %%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/D0m_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/D0m_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_D0m_v4.pdf}\\
-		\caption{
-			Differential cross sections as a function of the matrix element kinematic discriminant $\Dzm$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
-			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
-			\label{fig:fidDZM}}
-	\end{figure}
-\end{center}
+% \begin{center}%%%%%%%%%%%%%%%%%%%%%%%% Discriminants %%%%%%%%%%%%%%%%%%%%%%%%%
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/D0m_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/D0m_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_D0m_v4.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the matrix element kinematic discriminant $\Dzm$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
+% 			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
+% 			\label{fig:fidDZM}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/D0hp_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/D0hp_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_D0hp_v4.pdf}\\
-		\caption{
-			Differential cross sections as a function of the matrix element kinematic discriminant $\Dzhp$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
-			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
-			\label{fig:fidDOHP}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/D0hp_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/D0hp_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_D0hp_v4.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the matrix element kinematic discriminant $\Dzhp$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
+% 			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
+% 			\label{fig:fidDOHP}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/Dcp_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/Dcp_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_Dcp_v4.pdf}\\
-		\caption{
-			Differential cross sections as a function of the matrix element kinematic discriminant $\DCP$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
-			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
-			\label{fig:fidDCP}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/Dcp_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/Dcp_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_Dcp_v4.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the matrix element kinematic discriminant $\DCP$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
+% 			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
+% 			\label{fig:fidDCP}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/Dint_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/Dint_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_Dint_v4.pdf}\\
-		\caption{
-			Differential cross sections as a function of the matrix element kinematic discriminant $\Dint$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
-			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
-			\label{fig:fidDINT}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/Dint_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/Dint_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_Dint_v4.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the matrix element kinematic discriminant $\Dint$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
+% 			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
+% 			\label{fig:fidDINT}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/DL1_unfoldwith_4l_SM_125_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/DL1_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_DL1_v4.pdf}\\
-		\caption{
-			Differential cross sections as a function of the matrix element kinematic discriminant $\DLone$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
-			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
-			\label{fig:fidDL1}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/DL1_unfoldwith_4l_SM_125_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/DL1_unfoldwith_2e2mu_SM_125_asimov.pdf}\\
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_DL1_v4.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the matrix element kinematic discriminant $\DLone$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
+% 			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
+% 			\label{fig:fidDL1}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/DL1Zg_unfoldwith_4l_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/DL1Zg_unfoldwith_2e2mu_SM_125_logscale_asimov.pdf}\\
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_DL1Zg_v4.pdf}\\
-		\caption{
-			Differential cross sections as a function of the matrix element kinematic discriminant $\DLoneZg$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
-			The bottom plot shows the correlation matrix between the observed differential cross sections.
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
-			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
-			\label{fig:fidDL1ZG}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/DL1Zg_unfoldwith_4l_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/discriminants/model_v4/DL1Zg_unfoldwith_2e2mu_SM_125_logscale_asimov.pdf}\\
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_DL1Zg_v4.pdf}\\
+% 		\caption{
+% 			Differential cross sections as a function of the matrix element kinematic discriminant $\DLoneZg$ in the same-flavor (top left) and opposite-flavor (top right)  final states.
+% 			The bottom plot shows the correlation matrix between the observed differential cross sections.
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue) generator.
+% 			The HVV anomalous coupling distributions, labelled as AC, are computed with $f_{a3} = 1$, $f_{a2} = 1$, and $f_{a3} = 0.5$, respectively.
+% 			\label{fig:fidDL1ZG}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\subsection{Double differential cross sections}
-The differential cross section measurements presented so far ensure a good coverage of the production and decay phase sapces in the $\Hllll$ channel, together with a separation of possible interference effects present in the same and opposite flavour final states.
-In order to ensure a complete characterisation of this decay channel and to have a maximal coverage and separation of the different phase space regions, a set of double-differential measurements is also performed.
+% \subsection{Double differential cross sections}
+% The differential cross section measurements presented so far ensure a good coverage of the production and decay phase sapces in the $\Hllll$ channel, together with a separation of possible interference effects present in the same and opposite flavour final states.
+% In order to ensure a complete characterisation of this decay channel and to have a maximal coverage and separation of the different phase space regions, a set of double-differential measurements is also performed.
 
-Cross sections are measured in bins of $\abs{y^{\PH}}$ vs $\pt^{\PH}$ (Fig.~\ref{fig:fidYHPTH}), number of associated jets vs  $\pt^{\PH}$ (Fig.~\ref{fig:fidNJPTH}), $\pt^{\PH j}$ vs $\pt^{\PH}$ (Fig.~\ref{fig:fidPTHPTHJ}), $\mathcal{T}_{\text{C}}$ vs $\pt^{\PH}$ (Fig.~\ref{fig:fidTCPTH}), $m_{\PZ_{1}}$ vs $m_{\PZ_{2}}$ (Fig.~\ref{fig:fidMZ1MZ2}), and \pt of the leading  vs sub-leading jet (Fig.~\ref{fig:fidPTJ1PTJ2}).
+% Cross sections are measured in bins of $\abs{y^{\PH}}$ vs $\pt^{\PH}$ (Fig.~\ref{fig:fidYHPTH}), number of associated jets vs  $\pt^{\PH}$ (Fig.~\ref{fig:fidNJPTH}), $\pt^{\PH j}$ vs $\pt^{\PH}$ (Fig.~\ref{fig:fidPTHPTHJ}), $\mathcal{T}_{\text{C}}$ vs $\pt^{\PH}$ (Fig.~\ref{fig:fidTCPTH}), $m_{\PZ_{1}}$ vs $m_{\PZ_{2}}$ (Fig.~\ref{fig:fidMZ1MZ2}), and \pt of the leading  vs sub-leading jet (Fig.~\ref{fig:fidPTJ1PTJ2}).
 
-\clearpage
+% %\clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%% Double diff pTH %%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%% Double diff pTH %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/rapidity4l_pT4l_unfoldwith_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_rapidity4l_pT4l_v3.pdf}\\
-		\caption{
-			Double differential cross sections in bins of $\abs{y^{\PH}}$ vs $\pt^{\PH}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidYHPTH}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/rapidity4l_pT4l_unfoldwith_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_rapidity4l_pT4l_v3.pdf}\\
+% 		\caption{
+% 			Double differential cross sections in bins of $\abs{y^{\PH}}$ vs $\pt^{\PH}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidYHPTH}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/plot_njets_pt30_eta2p5_pT4l.png}
-% 		\includegraphics[width=0.48\textwidth]{example-image-a}\\
-		\caption{
-			Double differential cross sections in bins of the number of associated jets in the event vs $\pt^{\PH}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidNJPTH}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/plot_njets_pt30_eta2p5_pT4l.png}
+% % 		\includegraphics[width=0.48\textwidth]{example-image-a}\\
+% 		\caption{
+% 			Double differential cross sections in bins of the number of associated jets in the event vs $\pt^{\PH}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidNJPTH}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/pT4l_pTHj_unfoldwith_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pT4l_pTHj_v3.pdf}\\
-		\caption{
-			Double differential cross sections in bins of $\pt^{\PH j}$ vs $\pt^{\PH}$  (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidPTHPTHJ}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/pT4l_pTHj_unfoldwith_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pT4l_pTHj_v3.pdf}\\
+% 		\caption{
+% 			Double differential cross sections in bins of $\pt^{\PH j}$ vs $\pt^{\PH}$  (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidPTHPTHJ}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/TCjmax_pT4l_unfoldwith_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_TCjmax_pT4l_v3.pdf}\\
-		\caption{
-			Double differential cross sections in bins of $\mathcal{T}_{\text{C}}$ vs $\pt^{\PH}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidTCPTH}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/TCjmax_pT4l_unfoldwith_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_TCjmax_pT4l_v3.pdf}\\
+% 		\caption{
+% 			Double differential cross sections in bins of $\mathcal{T}_{\text{C}}$ vs $\pt^{\PH}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidTCPTH}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/massZ1_massZ2_unfoldwith_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_massZ1_massZ2_v3.pdf}\\
-		\caption{
-			Double differential cross section as a function of $m_{\PZ_{1}}$ vs $m_{\PZ_{2}}$ (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidMZ1MZ2}}
-	\end{figure}
-\end{center}
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/massZ1_massZ2_unfoldwith_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_massZ1_massZ2_v3.pdf}\\
+% 		\caption{
+% 			Double differential cross section as a function of $m_{\PZ_{1}}$ vs $m_{\PZ_{2}}$ (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidMZ1MZ2}}
+% 	\end{figure}
+% \end{center}
 
-\clearpage
+% %\clearpage
 
-\begin{center}
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/pTj1_pTj2_unfoldwith_SM_125_logscale_asimov.pdf}
-		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTj1_pTj2_v3.pdf}\\
-		\caption{
-			Double differential cross section as a function of \pt of the leading  vs sub-leading jet (left) and the correlation matrix between the observed differential cross sections (right).
-			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
-			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
-			\label{fig:fidPTJ1PTJ2}}
-	\end{figure}
-\end{center}
-\clearpage
+% \begin{center}
+% 	\begin{figure}[!htb]
+% 		\centering
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/doublediff/pTj1_pTj2_unfoldwith_SM_125_logscale_asimov.pdf}
+% 		\includegraphics[width=0.48\textwidth]{Images/H4L/correlations/corr_pTj1_pTj2_v3.pdf}\\
+% 		\caption{
+% 			Double differential cross section as a function of \pt of the leading  vs sub-leading jet (left) and the correlation matrix between the observed differential cross sections (right).
+% 			The acceptance and theoretical uncertainties in the differential bins are calculated using the \POWHEG (blue), NNLOPS (orange), and MadGraph\_aMC@NLO (pink) generators.
+% 			The sub-dominant component of the signal ($\VBF + \VH + \ttH$) is denoted as XH and it is fixed to the SM.
+% 			\label{fig:fidPTJ1PTJ2}}
+% 	\end{figure}
+% \end{center}
+% %\clearpage
 
-\section{Interpretations}
-\label{sec:interpretations}
+% \section{Interpretations}
+% \label{sec:interpretations}
 
-\subsection{Constraints on the H boson self-coupling}
-The differential cross section measurement as a function of the $\PH$ boson transverse momentum $\pt^\PH$ is used to extract limits on the  $\PH$ boson self coupling, following the approach described in references \cite{Degrassi:2016wml,Maltoni:2017ims,DiVita:2017eyz}.
-At NLO in pQCD the $\PH$ boson production includes processes sensitive to the trilinear coupling ($\lambda_3$). 
-The production modes in association with a pair of top quarks ($\ttH$) or with vector bosons ($\VH$, $V=W$ or $Z$) introduce seizable contributions to the $\PH$ boson self-coupling due to the large mass of the vector bosons and of the top quarks, whereas the contribution from gluon-fusion ($\ggH$) and vector-boson fusion ($\VBF$) are responsible of much smaller contributions to the loop and therefore are less sensitive to the trilinear coupling $\lambda_3$.
+% \subsection{Constraints on the H boson self-coupling}
+% The differential cross section measurement as a function of the $\PH$ boson transverse momentum $\pt^\PH$ is used to extract limits on the  $\PH$ boson self coupling, following the approach described in references \cite{Degrassi:2016wml,Maltoni:2017ims,DiVita:2017eyz}.
+% At NLO in pQCD the $\PH$ boson production includes processes sensitive to the trilinear coupling ($\lambda_3$). 
+% The production modes in association with a pair of top quarks ($\ttH$) or with vector bosons ($\VH$, $V=W$ or $Z$) introduce seizable contributions to the $\PH$ boson self-coupling due to the large mass of the vector bosons and of the top quarks, whereas the contribution from gluon-fusion ($\ggH$) and vector-boson fusion ($\VBF$) are responsible of much smaller contributions to the loop and therefore are less sensitive to the trilinear coupling $\lambda_3$.
 
-The cross sections of the different production mechanisms of the H boson are parameterized as a function of $\kappa_\lambda = \lambda_3/\lambda_3^\text{SM}$ in order to account for NLO terms arising from the H boson trilinear self-coupling.
-The signal model defined in Sec.~\ref{sec:signal} is modified by fixing all the cross sections and branching fractions to their SM expectation and introducing scaling functions $\mu_{i,j}(\kappa_\lambda)$ in each bin $i$ of $\pt^\PH$, for all the production mechanisms $j$.
-In order to compute the scaling functions, $\mu_{i,j}(\kappa_\lambda)$, LO parton-level events are generated for all the production modes using \MGvATNLO~2.5.5 and are reweighted on an event-by-event basis using a dedicated electroweak reweighting tool \cite{EWKReweight}, which computes the corresponding NLO $\lambda_3$-corrections ($\mathcal{O}(\lambda_3)$).
-The ratio between the $\mathcal{O}(\lambda_3)$ and LO distributions in the bins of $\pt^\PH$ used for the measurement is used as input for the definition of the scaling functions $\mu_{i,j}(\kappa_\lambda)$ as detailed in Ref.~\cite{Maltoni:2017ims}.
+% The cross sections of the different production mechanisms of the H boson are parameterized as a function of $\kappa_\lambda = \lambda_3/\lambda_3^\text{SM}$ in order to account for NLO terms arising from the H boson trilinear self-coupling.
+% The signal model defined in Sec.~\ref{sec:signal} is modified by fixing all the cross sections and branching fractions to their SM expectation and introducing scaling functions $\mu_{i,j}(\kappa_\lambda)$ in each bin $i$ of $\pt^\PH$, for all the production mechanisms $j$.
+% In order to compute the scaling functions, $\mu_{i,j}(\kappa_\lambda)$, LO parton-level events are generated for all the production modes using \MGvATNLO~2.5.5 and are reweighted on an event-by-event basis using a dedicated electroweak reweighting tool \cite{EWKReweight}, which computes the corresponding NLO $\lambda_3$-corrections ($\mathcal{O}(\lambda_3)$).
+% The ratio between the $\mathcal{O}(\lambda_3)$ and LO distributions in the bins of $\pt^\PH$ used for the measurement is used as input for the definition of the scaling functions $\mu_{i,j}(\kappa_\lambda)$ as detailed in Ref.~\cite{Maltoni:2017ims}.
 
-The results of the likelihood scan as a function of $\kappa_\lambda$ are shown in Figure~\ref{fig:klambda_Scan}. 
-The corresponding expected limit on $\kappa_\lambda$ at 68\% CL is:
-\begin{linenomath*}
-	\begin{equation}
-	\kappa_\lambda = 1.0^{+13}_{-5.9} = 1.0^{+12}_{-5.2}\stat^{+5}_{-2.7}~\syst
-	\end{equation}
-\end{linenomath*}
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.6\textwidth]{Images/H4L/kappaLambda/lhscan_compare_pT4l_kL_kappa_lambda.pdf}
-	\caption{
-		Likelihood scan as a function of $\kappa_\lambda$.
-		The scan is shown both with (solid line) and without (dashed line) systematic uncertainties profiled in the fit.
-		\label{fig:klambda_Scan}}
-\end{figure}
+% The results of the likelihood scan as a function of $\kappa_\lambda$ are shown in Figure~\ref{fig:klambda_Scan}. 
+% The corresponding expected limit on $\kappa_\lambda$ at 68\% CL is:
+% \begin{linenomath*}
+% 	\begin{equation}
+% 	\kappa_\lambda = 1.0^{+13}_{-5.9} = 1.0^{+12}_{-5.2}\stat^{+5}_{-2.7}~\syst
+% 	\end{equation}
+% \end{linenomath*}
+% \begin{figure}[!htb]
+% 	\centering
+% 	\includegraphics[width=0.6\textwidth]{Images/H4L/kappaLambda/lhscan_compare_pT4l_kL_kappa_lambda.pdf}
+% 	\caption{
+% 		Likelihood scan as a function of $\kappa_\lambda$.
+% 		The scan is shown both with (solid line) and without (dashed line) systematic uncertainties profiled in the fit.
+% 		\label{fig:klambda_Scan}}
+% \end{figure}
 
-% \section{Summary}
-% \label{sec:summary}
+% % \section{Summary}
+% % \label{sec:summary}

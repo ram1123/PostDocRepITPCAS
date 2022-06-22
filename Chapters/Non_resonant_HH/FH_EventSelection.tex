@@ -12,16 +12,18 @@ This helps remove the large contamination from the $bb\gamma\gamma$ and Fully-Ha
 For the $bb\gamma\gamma$ killer DNN, a $bb\gamma\gamma$ sample was used as a signal. The list
 of backgrounds used for the training includes Fully-Hadronic $WW\gamma\gamma$, diphoton, $\gamma+$jets, QCD, $tt\gamma\gamma$, and $tt\gamma$.
 
-The modelling of QCD and $\gamma+$jets has a large underprediction in MC. This comes from the lower region of minimum photon ID MVA, defined as the minimum value of the photon MVA scores 
-between the two photon candidates from the highest $\pt$ diphoton candidate in the event. In order to properly model these processes,
-their shapes are defined using a data-driven technique using the data sideband, defined as the regions 100-115 and 135-180 GeV in the $m_{\gamma\gamma}$ spectrum, 
-where a QCD and $\gamma+$jets dominant region in data, the low photon ID side-band (ID $<$ -0.7), is used to model these processes. 
-This is performed in a similar way as described in \cite{Sirunyan:2020sum}.
-The overall normalization of events from the low photon ID
-side-band region should not be expected, a priori, to be the same as the number of QCD and $\gamma$+jets events in the pre-selection.
-To address this, a simultaneous fit in the minimum and maximum photon ID MVA's, defined as the lower and greater photon ID values between the two photons making up the 
-highest $\pt$ diphoton candidate in each event, is performed. This includes a simultaneous fit to data in the high-ID region (ID$>$-0.7) in the data sidebands, with the addition of 
-$\gamma\gamma+$jets and tt from MC, to extract the QCD $+$ $\gamma+$jets normalization.
+The dominating background for the Fully-Hadronic, channel is QCD and $\gamma+$jets. In order to get the proper modelling of these background, it is computed from the data itself, where one photon candidate is failing the requirement of the photon ID~\cite{Sirunyan:2020sum}.
+
+% The modelling of QCD and $\gamma+$jets has a large underprediction in MC. This comes from the lower region of minimum photon ID MVA, defined as the minimum value of the photon MVA scores 
+% between the two photon candidates from the highest $\pt$ diphoton candidate in the event. In order to properly model these processes,
+% their shapes are defined using a data-driven technique using the data sideband, defined as the regions 100-115 and 135-180 GeV in the $m_{\gamma\gamma}$ spectrum, 
+% where a QCD and $\gamma+$jets dominant region in data, the low photon ID side-band (ID $<$ -0.7), is used to model these processes. 
+% This is performed in a similar way as described in \cite{Sirunyan:2020sum}.
+% The overall normalization of events from the low photon ID
+% side-band region should not be expected, a priori, to be the same as the number of QCD and $\gamma$+jets events in the pre-selection.
+% To address this, a simultaneous fit in the minimum and maximum photon ID MVA's, defined as the lower and greater photon ID values between the two photons making up the 
+% highest $\pt$ diphoton candidate in each event, is performed. This includes a simultaneous fit to data in the high-ID region (ID$>$-0.7) in the data sidebands, with the addition of 
+% $\gamma\gamma+$jets and tt from MC, to extract the QCD $+$ $\gamma+$jets normalization.
 
 Additionally, a fully-connected binary DNN is trained in order to separate Fully-Hadronic WW$\gamma\gamma$ events from all other background events.
 For this the list of backgrounds includes diphoton, $\gamma+$jets, QCD, $tt\gamma\gamma$ and $tt\gamma$.
