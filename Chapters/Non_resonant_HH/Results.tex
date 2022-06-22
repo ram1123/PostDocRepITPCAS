@@ -6,38 +6,53 @@ of the di-Higgs self-coupling, coupling of two Higgs bosons to two top quarks, a
 of $\kappa_{\lambda}$, $\kappa_{t}$, $c_{2}$, $c_{g}$, $c_{2g}$ defined in Tab. \ref{tab:eft_bench}. 
 
 Expected (observed) results are obtained by performing a simultaneous likelihood fit of the signal and 
-background templates to Asimov (observed) data, in categories defined by selections from a multiclassifier DNN in the SL final state, a combination 
-of two binary DNN's in the FH final state, and a group of cut based selections in the FL final state. For the $\kappa_{\lambda}$ scan, the same categorization methods are used as for the 
+background templates to Asimov (observed) data, in categories defined by selections a combination 
+of two binary DNN's. For the $\kappa_{\lambda}$ scan, the same categorization methods are used as for the 
 SM case, but applied to three HH simulated samples corresponding to $\kappa_{\lambda}$ = [1, 2.45, 5], where a weighted linear combination and shape interpolation of the three is made in order to estimate 
 the expected yield and shape for $\kappa_{\lambda}$ hypotheses between -30 and 30. The effects of anomalous $\kappa_{\lambda}$ values on the Higgs boson branching ratios and on the single Higgs cross sections are taken into account using the modeling provided in Ref.~\cite{Degrassi:2016wml} and \cite{Maltoni:2017ims}.
 
 For the $c_{2}$ scan, a similar approach is taken but with the use of 6 EFT signal models obtained via a reweighting of 4 NLO samples. 
 
-The 20 EFT benchmark node results are extracted in categories defined based on a parametric DNN in the SL final state, and a reweighting of SM MC events for the FH and FL final states.  
+The 20 EFT benchmark node results are extracted in categories defined based on a reweighting of SM MC events.  
 
 As it is not possible to observe a signal given the sensitivity of the analysis on the available dataset, a modified frequentist method $CL_s$ \cite{CLS1, CLS2} is used to 
 calculate the 95\% confidence-level ($CL_{s}$) exclusion limits with the asymptotic approximation \cite{Cowan:2010js}. This method is applied in order to determine the upper limit 
 on the production cross section of each signal hypothesis. Each upper limit is extracted by positively scaling the corresponding 
 HH signal model until it is incompatibile with the background-only hypothesis (expected), or data (observed), at a 95\% $CL_{s}$.   
 
-Combining the SL results with the FL and FH WW$\gamma\gamma$ (+ZZ$\gamma\gamma$+bb$\gamma \gamma$ for fully hadronic case) channels leads to the combined
-Run 2 results shown in Table \ref{tab:Run2Results}.
+Combining all categories of FH WW$\gamma\gamma$ (+ZZ$\gamma\gamma$+bb$\gamma \gamma$  channels leads to the combined Run 2 results shown in Table \ref{tab:Run2Results}.
 
 \begin{table}[h!]
   \begin{center}
-    \begin{tabular}{c|c|ccccc}
+    \begin{tabular}{|c|ccccc|}
       \hline
-        & Observed limit & $-2\sigma$ & $-1\sigma$ & Expected Limit & $+1\sigma$ & $+2\sigma$ \\ \hline
-          Fully-Leptonic &  278.2   &   81.4 & 119.3 & 189.4 & 326.8 & 546.7  \\ \hline
-          Fully-Hadronic &  312.6  &   70.4 & 97.6 & 143.0 & 228.5 & 352.6   \\ \hline
-          Semi-Leptonic  &  71.3  &   29.5 & 41.9 & 64.0 & 106.3 & 170.4 \\ \hline
-          Combination    &  96.8  &   24.8 & 35.0 & 52.5 & 85.6 & 134.8  \\ \hline
+         Observed limit & $-2\sigma$ & $-1\sigma$ & Expected Limit & $+1\sigma$ & $+2\sigma$ \\ \hline
+        %   278.2   &   81.4 & 119.3 & 189.4 & 326.8 & 546.7  \\ \hline
+          312.6  &   70.4 & 97.6 & 143.0 & 228.5 & 352.6   \\ \hline
+        %   71.3  &   29.5 & 41.9 & 64.0 & 106.3 & 170.4 \\ \hline
+        %   96.8  &   24.8 & 35.0 & 52.5 & 85.6 & 134.8  \\ \hline
           \end{tabular}
   \end{center}
-  \caption{Full Run2 Combination results, including SL, FL and FH categories,
+  \caption{Full Run2 Combination results
   on $\frac{\sigma(HH)}{\sigma_{SM}(HH)}$, assuming an NLO standard model cross section of about 31.05 fb}
   \label{tab:Run2Results}
 \end{table}  
+
+% \begin{table}[h!]
+%   \begin{center}
+%     \begin{tabular}{c|c|ccccc}
+%       \hline
+%         & Observed limit & $-2\sigma$ & $-1\sigma$ & Expected Limit & $+1\sigma$ & $+2\sigma$ \\ \hline
+%           Fully-Leptonic &  278.2   &   81.4 & 119.3 & 189.4 & 326.8 & 546.7  \\ \hline
+%           Fully-Hadronic &  312.6  &   70.4 & 97.6 & 143.0 & 228.5 & 352.6   \\ \hline
+%           Semi-Leptonic  &  71.3  &   29.5 & 41.9 & 64.0 & 106.3 & 170.4 \\ \hline
+%           Combination    &  96.8  &   24.8 & 35.0 & 52.5 & 85.6 & 134.8  \\ \hline
+%           \end{tabular}
+%   \end{center}
+%   \caption{Full Run2 Combination results, including SL, FL and FH categories,
+%   on $\frac{\sigma(HH)}{\sigma_{SM}(HH)}$, assuming an NLO standard model cross section of about 31.05 fb}
+%   \label{tab:Run2Results}
+% \end{table}  
 
 A combined median value of 96.8 (52.5 expected) times the NLO approximation of the standard model gluon gluon HH cross section is obtained, considering a standard model cross section of 31.05 fb. 
 

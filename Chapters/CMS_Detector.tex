@@ -1,0 +1,54 @@
+\section{The CMS detector}\label{section:CMS_Detector}
+
+A detailed description of the CMS detector, together with a definition of the coordinate system used and the relevant
+kinematic variables, can be found in Ref.~\cite{Chatrchyan:2008zzk}.
+
+The central feature of the CMS apparatus is a superconducting solenoid of 6 \unit{m} internal diameter, providing a
+magnetic field of 3.8 \unit{T}. Within the solenoid volume are a silicon pixel and strip tracker, a lead tungstate
+crystal electromagnetic calorimeter (ECAL), and a brass and scintillator hadron calorimeter (HCAL), each composed of a
+barrel and two endcap sections. Forward calorimeters extend the pseudorapidity coverage provided by the barrel and
+endcap detectors. Muons are measured in gaseous detectors embedded in the steel flux-return yoke outside the solenoid.
+The particle-flow algorithm~\cite{CMS-PRF-14-001} reconstructs and identifies each individual particle in an event, with
+an optimized combination of information from the various elements of the CMS detector.  The energy of photons is
+obtained from the ECAL measurement.  The energy of electrons is determined from a combination of the electron momentum
+at the primary interaction vertex as measured by the tracker, the energy of the corresponding ECAL cluster, and the
+energy sum of all bremsstrahlung photons spatially compatible with originating from the electron track.  The energy of
+muons is obtained from the curvature of the corresponding track.  The energy of charged hadrons is determined from a
+combination of their momentum measured in the tracker and the matching ECAL and HCAL energy deposits, corrected for the
+response function of the calorimeters to hadronic showers.  Finally, the energy of neutral hadrons is obtained from the
+corresponding corrected ECAL and HCAL energies.
+
+Events of interest are selected using a two-tiered trigger system.  The first level, composed of custom hardware
+processors, uses information from the calorimeters and muon detectors to select events at a rate of up to 100\unit{kHz}
+within a fixed latency of about 4\mus~\cite{Sirunyan:2020zal}.  The second level, known as the high-level trigger,
+consists of a farm of processors running a version of the full event reconstruction software optimized for fast
+processing, and reduces the event rate to around 1\unit{kHz} before data storage~\cite{Khachatryan:2016bia}.
+
+
+% All of the answers are here: https://twiki.cern.ch/twiki/bin/viewauth/CMS/Internal/PubDetector
+
+% \chapter{The CMS detector} \label{section:CMS_Detector}
+
+
+
+% Events of interest are selected using a two-tiered trigger system. The first level (L1), composed of custom hardware processors, uses information from the 
+% calorimeters and muon detectors to select events at a rate of around 100\unit{kHz} within a fixed latency of about 4\mus~\cite{CMS:2020cmk}. The second level, 
+% known as the high-level trigger (HLT), consists of a farm of processors running a version of the full event reconstruction software optimized for fast processing, 
+% and reduces the event rate to around 1\unit{kHz} before data storage~\cite{CMS:2016ngn}.
+
+% for now just including a bit on photons since they are the most key object in the analysis since their invariant mass defines our signal region - maybe consider adding 
+% additional object info since this analysis uses many objects. 
+
+The electromagnetic calorimeter consists of 75\,848 lead tungstate crystals, which provide coverage in pseudorapidity $\abs{\eta} < 1.48 $ in a barrel region (EB) 
+and $1.48 < \abs{\eta} < 3.0$ in two endcap regions (EE). Preshower detectors consisting of two planes of silicon sensors interleaved with a total of $3 X_0$ of 
+lead are located in front of each EE detector.
+
+In the barrel section of the ECAL, an energy resolution of about 1\% is achieved for unconverted or late-converting photons in the tens of GeV energy range. 
+The energy resolution of the remaining barrel photons is about 1.3\% up to $\abs{\eta} = 1$, changing to about 2.5\% at $\abs{\eta} = 1.4$. In the endcaps, 
+the energy resolution is about 2.5\% for unconverted or late-converting photons, and between 3 and 4\% for the other ones~\cite{CMS:2015myp}.
+
+The diphoton mass resolution, as measured in \Htogg decays, is typically in the 1--2\% range, depending on the measurement of the photon 
+energies in the ECAL and the topology of the photons in the event~\cite{CMS:2020xrn}.
+
+The integrated luminosities for the 2016, 2017, and 2018 data-taking years have 1.2--2.5\% individual uncertainties~\cite{CMS-LUM-17-003,CMS-PAS-LUM-17-004,CMS-PAS-LUM-18-002}, 
+while the overall uncertainty for the 2016--2018 period is 1.6\%.
