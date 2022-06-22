@@ -381,93 +381,93 @@ distributions are fitted in the signal phase space regions, combining the two di
 the yields in the control regions are used only to normalize the {\PW}+jets and top quark backgrounds.
 
 
-\section{Systematic uncertainties}\label{sec:7}
+% \section{Systematic uncertainties}\label{sec:7}
 
-In the signal extraction fit, each uncertainty is represented by a nuisance parameter that changes the shapes of the
-distributions for the signal and background processes or scales their total normalization.  Different sources of
-uncertainty are treated as completely uncorrelated in the fit, whereas each uncertainty effect is treated as correlated
-or uncorrelated between different channels and processes depending on the case.
-In Table~\ref{tab:uncertainty_breakdown} the uncertainties are split into various categories by evaluating the effect on
-the total signal strength of freezing each component independently in the fit.
+% In the signal extraction fit, each uncertainty is represented by a nuisance parameter that changes the shapes of the
+% distributions for the signal and background processes or scales their total normalization.  Different sources of
+% uncertainty are treated as completely uncorrelated in the fit, whereas each uncertainty effect is treated as correlated
+% or uncorrelated between different channels and processes depending on the case.
+% In Table~\ref{tab:uncertainty_breakdown} the uncertainties are split into various categories by evaluating the effect on
+% the total signal strength of freezing each component independently in the fit.
 
-The integrated luminosities of the 2016, 2017, and 2018 data-taking periods are individually known with uncertainties in
-the 1.2--2.5\%
-range~\cite{CMS-LUM-17-003,CMS-PAS-LUM-17-004,CMS-PAS-LUM-18-002},
-whereas the total Run~2 (2016--2018)
-integrated luminosity has an uncertainty of 1.6\%.  The improvement in precision reflects the (uncorrelated) time
-evolution of some systematic effects.
+% The integrated luminosities of the 2016, 2017, and 2018 data-taking periods are individually known with uncertainties in
+% the 1.2--2.5\%
+% range~\cite{CMS-LUM-17-003,CMS-PAS-LUM-17-004,CMS-PAS-LUM-18-002},
+% whereas the total Run~2 (2016--2018)
+% integrated luminosity has an uncertainty of 1.6\%.  The improvement in precision reflects the (uncorrelated) time
+% evolution of some systematic effects.
 
-Discrepancies in the lepton reconstruction and identification efficiencies between data and MC simulation are
-compensated by applying correction factors to all samples as functions of the lepton \pt and $\eta$.  Their impact on
-the signal region is less than 1\% for both electrons and muons.  The trigger efficiency uncertainty is also smaller
-than 1\%.  The electron and muon momentum scale uncertainties are computed by varying the lepton momenta within their
-$\pm 1\sigma$ uncertainty, and the resulting uncertainty in the signal yield is less than 1\%. Similarly, jet energy
-scale and resolution uncertainties are evaluated by shifting the \pt value of the jets, and thus directly affecting the
-reconstructed jet multiplicity and \ptmiss measurement \cite{Khachatryan:2016kdb}; several independent sources are
-considered and partially correlated among different data sets, resulting in up to 4\% uncertainty in the signal
-strength.
+% Discrepancies in the lepton reconstruction and identification efficiencies between data and MC simulation are
+% compensated by applying correction factors to all samples as functions of the lepton \pt and $\eta$.  Their impact on
+% the signal region is less than 1\% for both electrons and muons.  The trigger efficiency uncertainty is also smaller
+% than 1\%.  The electron and muon momentum scale uncertainties are computed by varying the lepton momenta within their
+% $\pm 1\sigma$ uncertainty, and the resulting uncertainty in the signal yield is less than 1\%. Similarly, jet energy
+% scale and resolution uncertainties are evaluated by shifting the \pt value of the jets, and thus directly affecting the
+% reconstructed jet multiplicity and \ptmiss measurement \cite{Khachatryan:2016kdb}; several independent sources are
+% considered and partially correlated among different data sets, resulting in up to 4\% uncertainty in the signal
+% strength.
 
-The {\PQb}-tagging data/MC corrections are associated with different uncertainty sources and correlated among all
-processes.  Since these uncertainties migrate events between the signal region and top quark control region, they have a
-large effect, 5\%, on the signal and background.  Uncertainty in the \ptmiss estimation due to unclustered energy is
-also included and calculated by varying the momenta of particles that are not identified with either a jet or a lepton;
-its effect is negligible.  Finally, the uncertainty in the pileup modeling is applied to all the relevant MC samples by
-varying the minimum bias cross section used to generate the pileup distribution by $\pm 1\sigma$ \cite{CMS:2018mlc} and
-estimated to be less than 1\%.
+% The {\PQb}-tagging data/MC corrections are associated with different uncertainty sources and correlated among all
+% processes.  Since these uncertainties migrate events between the signal region and top quark control region, they have a
+% large effect, 5\%, on the signal and background.  Uncertainty in the \ptmiss estimation due to unclustered energy is
+% also included and calculated by varying the momenta of particles that are not identified with either a jet or a lepton;
+% its effect is negligible.  Finally, the uncertainty in the pileup modeling is applied to all the relevant MC samples by
+% varying the minimum bias cross section used to generate the pileup distribution by $\pm 1\sigma$ \cite{CMS:2018mlc} and
+% estimated to be less than 1\%.
 
-The uncertainty due to the finite number of events in the fitted templates has a significant impact, 10\%, on the signal
-measurement. This contribution is dominated by the uncertainty in the nonprompt template estimation, given by the
-limited number of data events in the tails and by the large variation of the (positive and negative) weights applied to
-model the lepton misidentification probability. Leaving the normalization of the top quark and W+jets (split into many
-subcategories) backgrounds floating in the fit results in an uncertainty in the signal strength of 8\%.
-
-
-The most important theoretical uncertainty is related to the choice of the renormalization and factorization scales in
-the MC simulation of events.  The uncertainty in the signal and background yields is computed by taking the largest
-variation given by changing such scales up and down independently by a factor of two with respect to their nominal
-value, ignoring the extreme case where they are shifted in opposite directions \cite{Cacciari:2003fi,Catani:2003zt}.
-The theoretical scale uncertainty is uncorrelated for each background and signal process.  Only shape effects are
-included by varying the scales for {\PW}+jets and top quark backgrounds, since their normalization is directly measured
-from data in the fit.  Both the shape and normalization effects are included for the other backgrounds.  For the signal,
-only the shape effect of the theoretical scales uncertainty is considered while measuring the signal cross section and
-significance, whereas the normalization effect is included for the signal strength determination.  Inclusively, the
-theoretical scale uncertainty for the EW-only $\PW\PV$ signal is 5\%, and for the QCD-associated diboson production is
-25\%.  The overall impact on the EW-only signal strength determination from the choice of renormalization and
-factorization scales is 11\%.
-
-The uncertainty in the modeling of the parton shower is also included, by using the weights corresponding to variations
-of $\alpS^{\mathrm{ISR}}$ and $\alpS^{\mathrm{FSR}}$ computed by the parton shower programs, and uncorrelated for each
-process: the impact on the signal strength determination is 4\%.  The PDF and related strong coupling {\alpS}
-uncertainties are evaluated using the eigenvalues of the PDF set following the NNPDF prescription~\cite{Rojo:2016ymp}.
-These uncertainties, as well as the one from the modeling of the underlying event, are included for all the processes
-apart from top quark and {\PW}+jets backgrounds, and they have a negligible impact on the signal measurement.
+% The uncertainty due to the finite number of events in the fitted templates has a significant impact, 10\%, on the signal
+% measurement. This contribution is dominated by the uncertainty in the nonprompt template estimation, given by the
+% limited number of data events in the tails and by the large variation of the (positive and negative) weights applied to
+% model the lepton misidentification probability. Leaving the normalization of the top quark and W+jets (split into many
+% subcategories) backgrounds floating in the fit results in an uncertainty in the signal strength of 8\%.
 
 
-\begin{table}[!htb]
-  \caption{Breakdown of the uncertainties in the EW $\PW\PV$ VBS signal strength
-  measurement.}
-  \label{tab:uncertainty_breakdown}
-  \centering
-  \begin{tabular}{ l c }
-  Uncertainty source & $\Delta \mu_{\mathrm{EW}}$ \\
-  \hline
-  Statistical & 0.12\\
-  Limited sample size & 0.10 \\
-  Normalization of backgrounds   & 0.08 \\
-  Experimental & \\
-  \hspace{2em}  {\PQb}-tagging & 0.05 \\
-  \hspace{2em}  Jet energy scale and resolution &  0.04 \\
-  \hspace{2em} Integrated luminosity & 0.01 \\
-  \hspace{2em} Lepton identification & 0.01 \\
-  \hspace{2em} Boosted {\PV} boson identification & 0.01 \\
-  \hspace{2em} Total & 0.06 \\
-  Theory & \\
-  \hspace{2em} Signal modeling & 0.09 \\
-  \hspace{2em} Background modeling & 0.08 \\
-  \hspace{2em} Total & 0.12 \\
-  \hline {Total} & 0.22 \\
-  \end{tabular}
-\end{table}
+% The most important theoretical uncertainty is related to the choice of the renormalization and factorization scales in
+% the MC simulation of events.  The uncertainty in the signal and background yields is computed by taking the largest
+% variation given by changing such scales up and down independently by a factor of two with respect to their nominal
+% value, ignoring the extreme case where they are shifted in opposite directions \cite{Cacciari:2003fi,Catani:2003zt}.
+% The theoretical scale uncertainty is uncorrelated for each background and signal process.  Only shape effects are
+% included by varying the scales for {\PW}+jets and top quark backgrounds, since their normalization is directly measured
+% from data in the fit.  Both the shape and normalization effects are included for the other backgrounds.  For the signal,
+% only the shape effect of the theoretical scales uncertainty is considered while measuring the signal cross section and
+% significance, whereas the normalization effect is included for the signal strength determination.  Inclusively, the
+% theoretical scale uncertainty for the EW-only $\PW\PV$ signal is 5\%, and for the QCD-associated diboson production is
+% 25\%.  The overall impact on the EW-only signal strength determination from the choice of renormalization and
+% factorization scales is 11\%.
+
+% The uncertainty in the modeling of the parton shower is also included, by using the weights corresponding to variations
+% of $\alpS^{\mathrm{ISR}}$ and $\alpS^{\mathrm{FSR}}$ computed by the parton shower programs, and uncorrelated for each
+% process: the impact on the signal strength determination is 4\%.  The PDF and related strong coupling {\alpS}
+% uncertainties are evaluated using the eigenvalues of the PDF set following the NNPDF prescription~\cite{Rojo:2016ymp}.
+% These uncertainties, as well as the one from the modeling of the underlying event, are included for all the processes
+% apart from top quark and {\PW}+jets backgrounds, and they have a negligible impact on the signal measurement.
+
+
+% \begin{table}[!htb]
+%   \caption{Breakdown of the uncertainties in the EW $\PW\PV$ VBS signal strength
+%   measurement.}
+%   \label{tab:uncertainty_breakdown}
+%   \centering
+%   \begin{tabular}{ l c }
+%   Uncertainty source & $\Delta \mu_{\mathrm{EW}}$ \\
+%   \hline
+%   Statistical & 0.12\\
+%   Limited sample size & 0.10 \\
+%   Normalization of backgrounds   & 0.08 \\
+%   Experimental & \\
+%   \hspace{2em}  {\PQb}-tagging & 0.05 \\
+%   \hspace{2em}  Jet energy scale and resolution &  0.04 \\
+%   \hspace{2em} Integrated luminosity & 0.01 \\
+%   \hspace{2em} Lepton identification & 0.01 \\
+%   \hspace{2em} Boosted {\PV} boson identification & 0.01 \\
+%   \hspace{2em} Total & 0.06 \\
+%   Theory & \\
+%   \hspace{2em} Signal modeling & 0.09 \\
+%   \hspace{2em} Background modeling & 0.08 \\
+%   \hspace{2em} Total & 0.12 \\
+%   \hline {Total} & 0.22 \\
+%   \end{tabular}
+% \end{table}
 
 
 
