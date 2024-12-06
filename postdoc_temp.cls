@@ -263,7 +263,7 @@
  \newcommand\maketitle{
    \pagenumbering{Alph} % <------ 11/25/14 % Elimina el conflicto de paginas con las paginas de titulo.
    \pagestyle{empty}
-   \newgeometry{left=4cm,right=3cm,top=4cm,bottom=4cm}
+   \newgeometry{left=2.5cm,right=1.5cm,top=2cm,bottom=2cm}
 %%%%%%%%%%%%% CHINESE %%%%%%%%%%%%%%%%%%%%%% 
   \begin{titlepage}%
     \let\footnotesize\small
@@ -302,9 +302,11 @@
     \let \footnote \thanks
     \centering
 	\Huge{\textbf{\@instZH}}
-	\vskip 0.5em
-	\Huge{\textbf{\zhs{博士后研究工作报告}}}
-	\vskip 4em
+% 	\vskip 0.5em
+% 	\Huge{\textbf{\zhs{博士后研究工作报告}}}
+	\vskip 2em
+	\textbf{\zhs{在13TeV的质子-质子对撞实验中，利用矢量玻色子散射、双希格斯玻色子产生过程和测量希格斯微分及基准截面来间接搜寻新物理}}\par
+    \vskip 1em
 	\MakeUppercase{\Large \textbf{\@title}}\par
     \vskip 3em
     \large{
