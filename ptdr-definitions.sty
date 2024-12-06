@@ -1,0 +1,53 @@
+% File: ptdr-definitions.sty
+% Purpose: Common definitions and macros for a CMS-style thesis or report
+
+% Prevent multiple inclusions
+\ProvidesPackage{ptdr-definitions}
+
+% Text and Formatting Commands
+\newcommand{\etal}{\textit{et al.}}       % Use for "et al."
+\newcommand{\eg}{\textit{e.g.}}           % Use for "e.g."
+\newcommand{\ie}{\textit{i.e.}}           % Use for "i.e."
+\newcommand{\etc}{\textit{etc.}}          % Use for "etc."
+\newcommand{\cms}{CMS\xspace}             % Proper formatting for CMS
+
+% Common Physics Symbols
+\newcommand{\pt}{\ensuremath{p_\mathrm{T}}\xspace} % Transverse momentum
+\newcommand{\ET}{\ensuremath{E_\mathrm{T}}\xspace} % Transverse energy
+\newcommand{\MET}{\ensuremath{\not\!\! E_\mathrm{T}}\xspace} % Missing transverse energy
+\newcommand{\HT}{\ensuremath{H_\mathrm{T}}\xspace} % Scalar sum of transverse momentum
+\newcommand{\mH}{\ensuremath{m_\mathrm{H}}\xspace} % Higgs mass
+
+% Units
+\newcommand{\GeV}{\ensuremath{\mathrm{GeV}}\xspace}
+\newcommand{\TeV}{\ensuremath{\mathrm{TeV}}\xspace}
+\newcommand{\invfb}{\ensuremath{\mathrm{fb}^{-1}}\xspace}
+\newcommand{\invpb}{\ensuremath{\mathrm{pb}^{-1}}\xspace}
+
+% Particle Names
+\newcommand{\Wboson}{\ensuremath{\mathrm{W}}\xspace}
+\newcommand{\Zboson}{\ensuremath{\mathrm{Z}}\xspace}
+\newcommand{\Higgs}{\ensuremath{\mathrm{H}}\xspace}
+\newcommand{\ttbar}{\ensuremath{\mathrm{t\bar{t}}}\xspace} % Top-antitop pair
+
+% Mathematical Symbols
+\newcommand{\order}[1]{\ensuremath{\mathcal{O}(#1)}\xspace} % Order of magnitude
+\newcommand{\deriv}[2]{\ensuremath{\frac{\mathrm{d}#1}{\mathrm{d}#2}}\xspace} % Derivative
+\newcommand{\pderiv}[2]{\ensuremath{\frac{\partial#1}{\partial#2}}\xspace}    % Partial Derivative
+
+% Abbreviations for Experiments
+\newcommand{\LHC}{LHC\xspace}
+\newcommand{\ATLAS}{ATLAS\xspace}
+\newcommand{\CMS}{CMS\xspace}
+
+% Color Definitions (Optional)
+\usepackage{xcolor}
+\definecolor{cmsblue}{RGB}{0, 63, 135}
+\definecolor{cmsorange}{RGB}{245, 121, 0}
+
+% Miscellaneous
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}} % Highlight TODO items
+\newcommand{\xspace}{\hspace{0.2em}}            % Extra space for some macros
+
+% End of package
+\endinput
