@@ -25,15 +25,33 @@
 \newcommand{\invpb}{\ensuremath{\mathrm{pb}^{-1}}\xspace}
 
 % Particle Names
+% define lepton ell
+% \newcommand{\ell}{\ensuremath{\ell^{+}}\xspace}
 \newcommand{\Wboson}{\ensuremath{\mathrm{W}}\xspace}
 \newcommand{\Zboson}{\ensuremath{\mathrm{Z}}\xspace}
 \newcommand{\Higgs}{\ensuremath{\mathrm{H}}\xspace}
+\newcommand{\HiggsBSM}{\ensuremath{\mathrm{Y}}\xspace}
 \newcommand{\ttbar}{\ensuremath{\mathrm{t\bar{t}}}\xspace} % Top-antitop pair
 
 % Mathematical Symbols
 \newcommand{\order}[1]{\ensuremath{\mathcal{O}(#1)}\xspace} % Order of magnitude
 \newcommand{\deriv}[2]{\ensuremath{\frac{\mathrm{d}#1}{\mathrm{d}#2}}\xspace} % Derivative
 \newcommand{\pderiv}[2]{\ensuremath{\frac{\partial#1}{\partial#2}}\xspace}    % Partial Derivative
+
+% HH->WWGammaGamma->4qGammaGamma, lnuqqGammaGamma
+\newcommand{\HHWW}{\ensuremath{X \rightarrow\Higgs\Higgs/\HiggsBSM\Higgs\rightarrow\Wboson\Wboson\gamma\gamma}\xspace}
+
+% X->ZZ->2l2q/2l2nu
+\newcommand{\TwoLTwoQ}{\ensuremath{2l2q}\xspace} % Two leptons, two quarks
+\newcommand{\TwoLTwoNu}{\ensuremath{2l2\nu}\xspace} % Two leptons, two neutrinos
+\newcommand{\XZZ}{\ensuremath{X \rightarrow\Zboson\Zboson\rightarrow\TwoLTwoQ}\xspace}
+\newcommand{\XZZv}{\ensuremath{X \rightarrow\Zboson\Zboson\rightarrow\TwoLTwoNu}\xspace}
+
+% pp -> W+W- -> lnuqq aTGC
+\newcommand{\WpWm}{\ensuremath{pp \rightarrow \Wboson^+\Wboson^- \rightarrow \ell\nu qq}\xspace}
+
+% Higgs mass measurement using H->GammaGamma channel
+\newcommand{\HGG}{\ensuremath{\Higgs\rightarrow\gamma\gamma}\xspace}
 
 % Abbreviations for Experiments
 \newcommand{\LHC}{LHC\xspace}

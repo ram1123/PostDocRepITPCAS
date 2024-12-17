@@ -1,7 +1,7 @@
 % \documentclass[12pt,a4paper]{report}
 \documentclass[12pt,a4paper]{postdoc_temp}
 % \documentclass[a4paper,12pt,twoside]{postdoc_temp}
-% \documentclass{postdoc_temp}
+
 % Include necessary packages
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -15,6 +15,10 @@
 \usepackage{ptdr-definitions}
 \usepackage{topcapt}% for captions at top, i.e., tables
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Style of chapter headings: START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{titlesec}
 \makeatletter
 \titleformat{\chapter}[frame]{\large}{\filright\enspace \@chapapp~\thechapter\enspace}{10pt}{\LARGE\bfseries\filcenter}
@@ -34,7 +38,9 @@
   \if@openright\cleardoublepage\else\clearpage\fi
   \fancyhead[el,or]{\thepage}
   \fancyhead[er,ol]{\chapterhdrname}}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Style of chapter headings: END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % Title and Author
@@ -55,10 +61,18 @@
 \includeonly{
     abstract,
     chapters/introduction,
+    chapters/cms_detector,
     % chapters/literature_review,
-    % % chapters/methodology,
     % chapters/results,
     % chapters/conclusion,
+    % chapters/highMassSearches,
+    % chapters/diHiggsSearcehs,
+    % chapters/aTGC,
+    % chapters/massMeasurement,
+    % chapters/VH,
+    % chapters/hgcal,
+    % chapters/differentialFiducialXS_H4l,
+    % chapters/EFTStudies,
     % appendix/appendix
 }
 
@@ -81,7 +95,17 @@
 % Chapters
 \include{chapters/introduction}
 \include{chapters/literature_review}
-% \include{chapters/methodology}
+\include{chapters/cms_detector}
+\include{chapters/highMassSearches}
+\include{chapters/diHiggsSearcehs}
+\include{chapters/aTGC}
+\include{chapters/massMeasurement}
+\include{chapters/VH}
+\include{chapters/hgcal}
+\include{chapters/differentialFiducialXS_H4l}
+\include{chapters/EFTStudies}
+
+% Results and Conclusion
 \include{chapters/results}
 \include{chapters/conclusion}
 
