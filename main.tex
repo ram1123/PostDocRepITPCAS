@@ -1,5 +1,5 @@
 % \documentclass[12pt,a4paper]{report}
-\documentclass[12pt,a4paper]{postdoc_temp}
+\documentclass[11pt,a4paper]{postdoc_temp}
 % \documentclass[a4paper,12pt,twoside]{postdoc_temp}
 
 % Include necessary packages
@@ -8,8 +8,15 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{geometry}
-\usepackage{hyperref}
-\geometry{a4paper, margin=1in}
+\usepackage[colorlinks]{hyperref}
+% \geometry{a4paper, margin=1in}
+
+% Include packages for todo notes
+\usepackage{lineno} % in preamble
+\usepackage[table]{xcolor}
+\usepackage[colorinlistoftodos]{todonotes}
+% \usepackage[disable]{todonotes}  % To disable todo notes, uncomment this line
+
 
 % Include custom CMS definitions
 \usepackage{ptdr-definitions}
@@ -45,7 +52,7 @@
 
 % Title and Author
 \author{Ram Krishna Sharma}
-\title{Indirect search of new physics using vector boson scattering, double Higgs production and Higgs differential and fiducial cross-section measurement using p-p collision at 13 TeV}
+\title{New physics searches in the Higgs boson sector at the CMS experiment}
 \instZH{\zhs{中国科学院高能物理研究所}} %Institute of Theoretical Physics
 \supervZH{Prof. Mingshui Chen \zhs{陈明水}}
 \dateZH{\zhs{\number\year~年 \number\month~月}} % Current date year - month
@@ -59,10 +66,9 @@
 
 % Include additional files
 \includeonly{
-    abstract,
-    chapters/introduction,
-    chapters/cms_detector,
-    % chapters/diHiggsSearcehs,
+    % abstract,
+    % chapters/introduction,
+    chapters/diHiggsSearcehs,
     % chapters/highMassSearches,
     % chapters/differentialFiducialXS_H4l,
     % chapters/EFTStudies,
@@ -77,24 +83,24 @@
 }
 
 \begin{document}
-
+% \linenumbers
+\listoftodos
 % Title Page
-\maketitle
-\preambulo
+% \maketitle
+% \preambulo
 
 % Abstract
-\include{abstract}
+% \include{abstract}
 
 % Table of Contents
-\tableofcontents
-\listoffigures
-\listoftables
+% \tableofcontents
+% \listoffigures
+% \listoftables
 
-\cuerpo
-\setlength{\parskip}{0.75em}
+% \cuerpo
+% \setlength{\parskip}{0.75em}
 % Chapters
 \include{chapters/introduction}
-\include{chapters/cms_detector}
 \include{chapters/diHiggsSearcehs}
 \include{chapters/highMassSearches}
 \include{chapters/differentialFiducialXS_H4l}
