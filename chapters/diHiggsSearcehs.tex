@@ -97,7 +97,7 @@ The event selection optimizes sensitivity to semi-leptonic and fully hadronic ch
             \footnote{For the boosted regime, where the two photons are close by, the photon ID score was modified to
             account for reduced selection efficiency.
             This modified score is referred to as the ``modified photon ID," detailed in
-            Appendix~\ref{appendix:ModifiedPhotonID}}.
+            Appendix~\ref{appendix:ModifiedPhotonID}}. The photon $ID > -0.7$ is used as a preselection criterion.
     \item Leading photon \(p_T > 35\)~GeV and subleading photon \(p_T > 25\)~GeV.
     \item Photon transverse momentum fractions: \(p_T/m_{\gamma\gamma} > 0.33\) (leading) and \(> 0.25\) (subleading).
     \item Diphoton invariant mass requirement: \(100 < m_{\gamma\gamma} < 180\)~GeV.
@@ -106,208 +106,454 @@ The event selection optimizes sensitivity to semi-leptonic and fully hadronic ch
 
 \subsection*{Lepton Selection}
 \begin{itemize}
-    \item \todo[inline]{Missing the ID for isolated as well as non-isolated leptons}
-    \item Isolated leptons: \(p_T > 10\)~GeV, \(|\eta| < 2.4\), with \(\Delta R(l,\gamma) > 0.4\)
-    \item Non-isolated leptons: \(\Delta R(l, \text{FatJet}) < 0.8\), with relaxed isolation criteria.
-    \item \(Z\)-veto: \(|m_{l\gamma} - 91.2| > 5\)~GeV to suppress \(Z\)-boson contamination.
+    \item \textbf{Kinematics:} \(p_T > 10\)~GeV, \(|\eta| < 2.4\), and \(\Delta R(l, \gamma) > 0.4\).
+    \item \textbf{\(Z\)-veto:} \(|m_{l\gamma} - 91.2| > 5\)~GeV to suppress contamination from \(Z\)-boson events.
+    \item \textbf{ID requirements:}
+        \begin{itemize}
+            \item \textbf{For isolated electrons:} Use the isolated MVA ID with a signal efficiency of 80\%.
+            \item \textbf{For isolated muons:} Require global muons with tight ID and an isolation threshold of 0.15.
+            \item \textbf{For non-isolated electrons:} Use the non-isolated MVA ID with a signal efficiency of 80\%, ensuring \(\Delta R < 0.8\) with a good FatJet (as defined in the jet selection).
+            \item \textbf{For non-isolated muons:} Require high \(p_T\) ID\todo[fancyline]{define High pT ID} without isolation criteria, ensuring \(\Delta R < 0.8\) with a good FatJet (as defined in the jet selection\todo[fancyline]{cite jet section}).
+        \end{itemize}
 \end{itemize}
 
-\subsection*{Jet Selection}
+\subsection*{Small Radius Jets (AK4 CHS)}
 \begin{itemize}
-    \item AK4 jets: \(p_T > 30\)~GeV, \(|\eta| < 2.4\), passing tight jet ID \todo[inline]{Define ID}.
-    \item AK8 jets: \(p_T > 200\)~GeV, \(|\eta| < 2.4\), with jet mass consistent with \(W\)- or Higgs-like jets.
-    \item Boosted Higgs tagging uses ParticleNet \todo[inline]{define particleNet in the footnote} with a score threshold of 0.2.
+    \item \textbf{ID:} Tight
+    \item \textbf{PU Jet ID:} Tight
+    \item \textbf{Kinematics:} \(p_T > 20\)~GeV, \(|\eta| < 2.4\)
+    \item \textbf{Separation criteria:}
+        \begin{itemize}
+            \item \(\Delta R(\gamma, \text{jet}) > 0.4\)
+            \item \(\Delta R(\text{Isolated Lepton, jet}) > 0.4\)
+        \end{itemize}
 \end{itemize}
 
-\subsection*{Event Topologies}
-Four jet categories are defined:
+\subsection*{FatJets (AK8 PUPPI)}
 \begin{itemize}
-    \item \textbf{1-jet:} A single AK8 jet tagged as a Higgs jet.
-    \item \textbf{2-jet:} Two AK8 jets, one tagged as a Higgs jet and the other as a \(W\)-jet.
-    \item \textbf{3-jet:} One AK8 jet combined with two AK4 jets.
-    \item \textbf{4-jet:} Fully resolved topology with four AK4 jets.
+    \item \textbf{Kinematics:} \(p_T > 100~\text{GeV}, |\eta| < 2.4\), with Tight Jet ID.
+    \item \textbf{Separation criteria:}
+    \begin{itemize}
+        \item \(\Delta R(\gamma, \text{jet}) > 0.8\).
+    \end{itemize}
+    \item \textbf{Boosted \(H_{bb}\) jet veto:} \(X_{bb}/X_{\text{qcd}} < 0.9\).
+    \item \textbf{Fully Hadronic Higgs Jet:}
+    \begin{itemize}
+        \item Particle Transformer\todo{define particle transformer in the footnote} Higgs Tagging score \(> 0.2\).
+    \end{itemize}
+    \item \textbf{Semi-Leptonic Higgs Jet:}
+    \begin{itemize}
+        \item \(\Delta R(\text{Non-isolated lepton}, \text{FatJet}) < 0.8\).
+    \end{itemize}
+    \item \textbf{Boosted \(W\)-Jet:}
+    \begin{itemize}
+        \item ParticleNet\todo{define particleNet in the footnote} loose working point for W-jet tagging.
+        \item \(\Delta R(\text{Isolated leptons}, \text{FatJet}) > 0.8\).
+    \end{itemize}
 \end{itemize}
+
+\subsection*{Event Selection}
+The event selection is optimized for the semi-leptonic and fully hadronic channels and is summarized in Fig.~\ref{fig:event_selection_workflow}.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/diHiggsSearches/EventSelectionWorkflow.pdf}
+    \caption{Event selection workflow for the \(X \to HH \to WW\gamma\gamma\) analysis.}
+    \label{fig:event_selection_workflow}
+\end{figure}
 
 
 \section{Data-Driven Background Estimation}
-Accurate estimation of backgrounds is crucial for isolating the signal in the \(X \to HH \to WW\gamma\gamma\) analysis.
+Accurately estimating background processes is crucial for isolating the \(X \to HH \to WW\gamma\gamma\) signal.
 The dominant backgrounds include non-resonant diphoton production, single Higgs processes, and multijet events
 where fake photons mimic the signal.
-A data-driven strategy is employed to estimate fake photon backgrounds, inspired by CMS analysis HIG-19-013.
+A data-driven approach is used to estimate fake photon contributions~\cite{CMS:2020cga}.
 
 \subsection{Motivation}
-The low statistics of QCD Monte Carlo (MC) samples result in poor modeling of important input features to multivariate analyses. To
-ensure agreement between data and MC and unbiased training of machine learning models, a data-driven approach is adopted. The method
-uses events from the photon ID MVA sideband to model fake photon contributions.
+The limited statistics of QCD Monte Carlo (MC) samples lead to poor modeling of key input features for multivariate analyses.
+To ensure reliable machine learning training and data-MC agreement, a data-driven method is adopted~\cite{CMS:2020cga}.
+This approach uses events from the photon ID MVA sideband to model fake photon contributions.
 
 \subsection{Methodology}
-The following steps outline the data-driven background estimation strategy:
-
+The data-driven background estimation follows these steps:
 \begin{enumerate}
     \item \textbf{Photon ID Sideband Selection:}
-    Events that fail the preselection cut on the photon ID MVA are used to model fake photons. The sideband regions are chosen as:
+    Events failing the photon ID MVA preselection cut are used to model fake photons.
+    The sideband regions are defined as:
     \begin{itemize}
-        \item Resolved category: Minimum photon ID MVA in the range \([-0.9, -0.7]\),
-        \item Boosted category: Minimum photon ID MVA in the range \([-0.95, -0.9]\).
+        \item Resolved category: Photon ID MVA in \([-0.9, -0.7]\).
+        \item Boosted category: Photon ID MVA in \([-0.95, -0.9]\).
     \end{itemize}
 
     \item \textbf{PDF Generation for Fake Photons:}
-    A probability density function (PDF) for the photon ID MVA distribution of fake photons is obtained from MC samples (e.g.,
-    \(\gamma + \text{jets}\)). The sideband events are reweighted to match the fake photon PDF in the signal region.
+    A probability density function (PDF) for the photon ID MVA distribution of fake photons is
+    derived from MC samples (e.g., \(\gamma + \text{jets}\)).
+    Sideband events are reweighted to match the PDF in the signal region.
 
     \item \textbf{Reweighting and Normalization:}
-    Events in the photon ID sideband are assigned per-event weights to reshape the maximum photon ID MVA distribution. The weight
-     \(w\) is defined as:
-    \begin{equation}
+    Per-event weights are applied to sideband events to reshape the photon ID MVA distribution.
+    The weight \(w\) is defined as:
+    \[
         w = \frac{\int_{\text{minID}}^{\text{maxID}} \text{fakePDF}(x) \, dx}
                  {\int_{\text{sidebandMinID}}^{\text{sidebandMaxID}} \text{fakePDF}(x) \, dx}.
-    \end{equation}
-    Different weight functions are applied for resolved and boosted categories.
+    \]
+    Separate weights are applied for resolved and boosted categories.
 
     \item \textbf{Validation:}
-    The reweighted MC is normalized to data to ensure consistency. Comparisons before and after applying the data-driven method demonstrate improved agreement in key variables, such as \(m_{\gamma\gamma}\).
+    The reweighted MC is normalized to data, and comparisons before and after reweighting show improved agreement in key variables like \(m_{\gamma\gamma}\).
 \end{enumerate}
 
 \subsection{Challenges and Solutions}
-The data-driven method is validated for both fully hadronic (FH) and semi-leptonic (SL) channels. However, specific challenges arise:
+Despite its success, this method presents some challenges:
 \begin{itemize}
-    \item \textbf{Muon Channel in SL Events:}
-    While the method improves data-MC agreement in the electron channel, it worsens agreement in the muon channel. Possible solutions include:
+    \item \textbf{Muon Channel in Semi-Leptonic (SL) Events:}
+    While the method improves agreement in the electron channel, it worsens the muon channel.
+    Potential solutions include:
     \begin{itemize}
-        \item Use the data-driven approach for the electron channel only.
-        \item Perform separate reweighting for the electron and muon channels.
+        \item Applying the data-driven approach only to the electron channel.
+        \item Using separate reweighting for electron and muon channels.
     \end{itemize}
-    Currently, a combined reweighting technique is applied to correct control plots, ensuring consistent results without relying
-    heavily on MC samples.
+    For now, we are using the additional MVA reweighting on top of this method to improve the overall agreement. As we don't use the MC for the signal extraction, the impact of this method on the signal extraction is minimal.
 
     \item \textbf{Photon ID Sidebands:}
-    Assumptions underlying the sideband method include:
+    Key assumptions in this method include:
     \begin{enumerate}
-        \item Other variables used in the analysis are minimally correlated with the photon ID MVA.
-        \item The low photon ID sideband is dominated by fake photons (e.g., from QCD and \(\gamma + \text{jets}\)).
-        \item Photons in the low ID sideband are always fake.
+        \item Photon ID MVA has minimal correlation with other analysis variables.
+        \item The sideband is dominated by fake photons (e.g., QCD and \(\gamma + \text{jets}\)).
+        \item Sideband photons are assumed to be entirely fake.
     \end{enumerate}
 \end{itemize}
 
 \subsection{Implementation in Different Channels}
-The method is applied to both fully hadronic and semi-leptonic channels:
+The method is applied to both fully hadronic (FH) and semi-leptonic (SL) channels:
 \begin{itemize}
     \item \textbf{Fully Hadronic Channel:}
-    Dominated by QCD backgrounds, where the photon ID MVA sideband reliably models fake photon contributions.
+    Dominated by QCD backgrounds, with the photon ID sideband effectively modeling fake photon contributions.
     \item \textbf{Semi-Leptonic Channel:}
-    Includes fake photon contributions from \(W\gamma\gamma\) and \(t\bar{t}\) processes, with non-isolated leptons contributing to
-    the final background estimation.
+    Includes contributions from \(W\gamma\gamma\) and \(t\bar{t}\) processes, with non-isolated leptons playing a key role in background estimation.
 \end{itemize}
 
 \subsection{Impact of the Data-Driven Method}
-The results of the data-driven background estimation are as follows:
+The data-driven background estimation significantly improves the analysis:
 \begin{itemize}
-    \item Significant improvement in the modeling of photon-related variables in both resolved and boosted categories.
-    \item Enhanced agreement between data and MC distributions in control regions, as shown in Figure~\ref{fig:control_plots}.
-    \item Improved sensitivity to the \(X \to HH \to WW\gamma\gamma\) signal, particularly in high-mass regions.
+    \item Enhanced modeling of photon-related variables in resolved and boosted categories.
+    \item Improved agreement between data and MC in control regions, as shown in Fig.~\ref{fig:control_plots}.
+    \missingfigure{control plots}\label{fig:control_plots}
 \end{itemize}
-
-The control plots for the resolved and boosted regions before and after applying the data-driven method demonstrate the
-effectiveness of this strategy. Future improvements will address challenges in the muon channel and refine the photon ID sideband
-methodology.
 
 \section{Multivariate Analysis Using Parameterized Neural Network (pNN)}
 
 To maximize the sensitivity of the search for resonant \(X \to HH \to WW\gamma\gamma\), a multivariate analysis (MVA) is performed
 using a Parameterized Neural Network (pNN). The pNN method allows for simultaneous training across multiple signal hypotheses,
-parameterized by the mass of the heavy resonance \(m_X\). This approach ensures a more robust discrimination between signal and
+parameterized by the mass of the heavy resonance \(m_X\). This approach ensures a robust discrimination between signal and
 background across a wide range of masses, from 250~GeV to 3000~GeV.
 
-\subsection{Overview of pNN Methodology}
-The pNN method is implemented as a deep feed-forward neural network. The network inputs include kinematic and topological features of the events, while the resonance mass \(m_X\) is used as a parameter to generalize the signal hypothesis. The key features of the pNN method are:
-\begin{itemize}
-    \item \textbf{Parameterized Mass Input:} The network is trained with the resonance mass \(m_X\) as an input variable, enabling simultaneous training for multiple signal mass points.
-    \item \textbf{Dropout Layer:} Introduced to prevent overtraining and enhance generalization.
-    \item \textbf{Optimizer:} The Adam optimizer is used for training with stochastic gradient descent.
-    \item \textbf{GPU-Based Training:} Training is accelerated using GPUs for efficient processing of large datasets.
-\end{itemize}
+The pNN is implemented as a deep feed-forward neural network. Its inputs include kinematic and topological features of the events, with the resonance mass \(m_X\) incorporated as a parameter to generalize across different signal hypotheses. The network is trained using the Adam optimizer with stochastic gradient descent, and GPU acceleration is used for efficient processing of large datasets. Additional features, such as dropout layers, are included to prevent overfitting and enhance model generalization.
 
-\subsection{Training Strategy}
-Separate pNNs are trained for the **boosted** and **resolved** topologies due to the distinct event kinematics in these categories:
-\begin{itemize}
-    \item \textbf{Boosted Category:} Events where \(W\)-bosons' decay products are merged into single AK8 jets.
-    \item \textbf{Resolved Category:} Events where \(W\)-bosons' decay products are reconstructed as individual AK4 jets.
-\end{itemize}
-
-The input features for the pNN are selected based on their ability to discriminate signal from background. These features include photon, jet, and missing transverse energy (\(E_T^{\text{miss}}\)) observables.
-
-\subsection{Input Features}
-The key input variables used for training the pNN are listed in Tables~\ref{tab:pnn_boosted_inputs} and \ref{tab:pnn_resolved_inputs}.
-
-\begin{table}[h!]
+Separate pNNs are trained for the boosted and resolved topologies to account for the distinct event kinematics in these categories.
+The boosted category includes events where \(W\)-bosons' decay products are merged into single AK8 jets, while the resolved category reconstructs \(W\)-bosons' decay products as individual AK4 jets.
+Input features, such as photon, jet, and missing transverse energy (\(E_T^{\text{miss}}\)) observables, are carefully selected based on their ability to discriminate signal from background. These features include variables like the diphoton \(p_T/m_{\gamma\gamma}\), the angular separation (\(dR\)) between photons, and jet kinematics. The full list of input variables used for the boosted pNN training is provided in Table~\ref{tab:inputvariables_boosted} and for the resolved pNN training in Table~\ref{tab:inputvariables_resolved}.
+\begin{table}[htbp!]
     \centering
-    \caption{Input variables for the pNN in the boosted category.}
-    \label{tab:pnn_boosted_inputs}
-    \begin{tabular}{ll}
-        \hline
-        \textbf{Feature} & \textbf{Description} \\
-        \hline
-        Diphoton \(p_T/m_{\gamma\gamma}\) & Transverse momentum of diphoton system normalized to \(m_{\gamma\gamma}\) \\
-        Diphoton \(dR\) & Angular separation between leading and subleading photons \\
-        Leading Photon \(p_T/m_{\gamma\gamma}\) & Leading photon \(p_T\) normalized to \(m_{\gamma\gamma}\) \\
-        Subleading Photon \(p_T/m_{\gamma\gamma}\) & Subleading photon \(p_T\) normalized to \(m_{\gamma\gamma}\) \\
-        FatJet \(p_T\), \(m\), \(\eta\), \(\phi\) & Transverse momentum, mass, pseudorapidity, and azimuthal angle of leading AK8 jets \\
-        \(E_T^{\text{miss}}\) & Missing transverse energy \\
-        FatJet-diphoton \(dR\) & Angular separation between leading fatjet and diphoton system \\
-        \hline
-    \end{tabular}
+    \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Feature} & \textbf{Description} \\
+    \hline
+    Diphoton\_pTom & Transverse momentum of the diphoton system over the mass of the diphoton system \\
+    Diphoton\_dR & Delta R between the two photons \\
+    Diphoton\_eta & Pseudorapidity of the diphoton system \\
+    Diphoton\_phi & Azimuthal angle of the diphoton system \\
+    LeadPhoton\_pTom & Transverse momentum of the leading photon over the mass of the diphoton system \\
+    SubleadPhoton\_pTom & Transverse momentum of the subleading photon over the mass of the diphoton system \\
+    LeadPhoton\_eta & Pseudorapidity of the leading photon \\
+    LeadPhoton\_phi & Azimuthal angle of the leading photon \\
+    SubleadPhoton\_eta & Pseudorapidity of the subleading photon \\
+    SubleadPhoton\_phi & Azimuthal angle of the subleading photon \\
+    fatjet\_1\_pT & Transverse momentum of the leading fatjet \\
+    fatjet\_1\_eta & Pseudorapidity of the leading fatjet \\
+    fatjet\_1\_phi & Azimuthal angle of the leading fatjet \\
+    fatjet\_1\_mass & Mass of the leading fatjet \\
+    fatjet\_2\_pT & Transverse momentum of the subleading fatjet \\
+    fatjet\_2\_eta & Pseudorapidity of the subleading fatjet \\
+    fatjet\_2\_phi & Azimuthal angle of the subleading fatjet \\
+    fatjet\_2\_mass & Mass of the subleading fatjet \\
+    fatjet\_1\_2\_dR & Delta R between the two fatjets \\
+    fatjet\_1\_diphoton\_dR & Delta R between the leading fatjet and the diphoton system \\
+    fatjet\_2\_diphoton\_dR & Delta R between the subleading fatjet and the diphoton system \\
+    fatjet\_1\_leadphoton\_dR & Delta R between the leading fatjet and the leading photon \\
+    fatjet\_1\_subleadphoton\_dR & Delta R between the leading fatjet and the subleading photon \\
+    fatjet\_2\_leadphoton\_dR & Delta R between the subleading fatjet and the leading photon \\
+    fatjet\_2\_subleadphoton\_dR & Delta R between the subleading fatjet and the subleading photon \\
+    max\_fatjets\_mass & Maximum mass of the two fatjets \\
+    nGoodAK4jets & Number of good AK4 jets \\
+    nGoodAK8jets & Number of good AK8 jets \\
+    Third leading jets\_pT & Transverse momentum of the third leading jets \\
+    Third leading jets\_eta & Pseudorapidity of the third leading jets \\
+    Third leading jets\_phi & Azimuthal angle of the third leading jets \\
+    Third leading jets\_mass & Mass of the third leading jets \\
+    PuppiMET\_pt & Transverse momentum of the missing transverse energy \\
+    dphi\_jet1\_PuppiMET & Azimuthal angle difference between the first jet and missing transverse energy \\
+    dphi\_jet2\_PuppiMET & Azimuthal angle difference between the second jet and missing transverse energy \\
+    PuppiMET\_sumEt & Sum of the transverse energy of the missing transverse energy \\
+    MX & Invariant mass of the resonance X \\
+    \hline
+    \end{tabularx}
+    \caption{Input variables used for the boosted PNN training.}
+    \label{tab:inputvariables_boosted}
+\end{table}
+\begin{table}[htbp!]
+    \centering
+    \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+    \textbf{Feature} & \textbf{Description} \\
+    \hline
+    MX & Invariant mass of the resonance X \\
+    Diphoton\_pTom & Transverse momentum of the diphoton system over the mass of the diphoton system \\
+    Diphoton\_eta & Pseudorapidity of the diphoton system \\
+    Diphoton\_phi & Azimuthal angle of the diphoton system \\
+    LeadPhoton\_pTom & Transverse momentum of the leading photon over the mass of the diphoton system \\
+    SubleadPhoton\_pTom & Transverse momentum of the subleading photon over the mass of the diphoton system \\
+    LeadPhoton\_eta & Pseudorapidity of the leading photon \\
+    LeadPhoton\_phi & Azimuthal angle of the leading photon \\
+    SubleadPhoton\_eta & Pseudorapidity of the subleading photon \\
+    SubleadPhoton\_phi & Azimuthal angle of the subleading photon \\
+    Diphoton\_dR & Delta R between the two photons \\
+    Diphoton\_dEta & Delta pseudorapidity between the two photons \\
+    jet\_1\_2\_pt & Transverse momentum of the combined leading and subleading jets \\
+    jet\_1\_2\_mass & Mass of the combined leading and subleading jets \\
+    jet\_1\_2\_dR & Delta R between the leading and subleading jets \\
+    jet\_1\_pt & Transverse momentum of the leading jet \\
+    jet\_2\_pt & Transverse momentum of the subleading jet \\
+    photon1\_jet1\_dR & Delta R between the leading photon and the leading jet \\
+    photon1\_jet2\_dR & Delta R between the leading photon and the subleading jet \\
+    photon1\_jet1\_2\_dR & Delta R between the leading photon and the combined leading and subleading jets \\
+    Diphoton\_jet1\_2\_dR & Delta R between the diphoton system and the combined leading and subleading jets \\
+    Diphoton\_jet1\_dR & Delta R between the diphoton system and the leading jet \\
+    Diphoton\_jet2\_dR & Delta R between the diphoton system and the subleading jet \\
+    photon2\_jet1\_dR & Delta R between the subleading photon and the leading jet \\
+    photon2\_jet2\_dR & Delta R between the subleading photon and the subleading jet \\
+    photon2\_jet1\_2\_dR & Delta R between the subleading photon and the combined leading and subleading jets \\
+    Diphoton\_jet\_1\_2\_dEta & Delta pseudorapidity between the diphoton system and the combined leading and subleading jets \\
+    Diphoton\_jet\_1\_dEta & Delta pseudorapidity between the diphoton system and the leading jet \\
+    Diphoton\_jet\_2\_dEta & Delta pseudorapidity between the diphoton system and the subleading jet \\
+    Diphoton\_jet\_1\_2\_dPhi & Delta phi between the diphoton system and the combined leading and subleading jets \\
+    Diphoton\_jet\_1\_dPhi & Delta phi between the diphoton system and the leading jet \\
+    Diphoton\_jet\_2\_dPhi & Delta phi between the diphoton system and the subleading jet \\
+    PuppiMET\_pt & Transverse momentum of the missing transverse energy \\
+    nGoodAK4jets & Number of good AK4 jets \\
+    nGoodisoleptons & Number of good isolated leptons \\
+    leading\_bscore & B-tagging score of the leading jet \\
+    subleading\_bscore & B-tagging score of the subleading jet \\
+    sum\_two\_max\_bscores & Sum of the two highest b-tagging scores \\
+
+    \hline
+    \end{tabularx}
+    \caption{Input variables used for the resolved PNN training.}
+    \label{tab:inputvariables_resolved}
 \end{table}
 
-\begin{table}[h!]
-    \centering
-    \caption{Input variables for the pNN in the resolved category.}
-    \label{tab:pnn_resolved_inputs}
-    \begin{tabular}{ll}
-        \hline
-        \textbf{Feature} & \textbf{Description} \\
-        \hline
-        Diphoton \(p_T/m_{\gamma\gamma}\) & Transverse momentum of diphoton system normalized to \(m_{\gamma\gamma}\) \\
-        Diphoton \(dR\) & Angular separation between leading and subleading photons \\
-        Leading Jet \(p_T\), \(m\), \(\eta\), \(\phi\) & Kinematic properties of leading AK4 jets \\
-        Subleading Jet \(p_T\), \(m\), \(\eta\), \(\phi\) & Kinematic properties of subleading AK4 jets \\
-        Diphoton-jet \(dR\) & Angular separation between diphoton system and jets \\
-        \(E_T^{\text{miss}}\) & Missing transverse energy \\
-        B-jet Scores & Highest and second-highest b-tagging scores for AK4 jets \\
-        \hline
+The performance of the pNN is evaluated using metrics such as the area under the curve (AUC) and signal-to-background ratio improvements. The pNN demonstrates significant enhancement in discrimination between signal and background across the entire mass range. Feature importance plots highlight the critical role of variables such as diphoton \(p_T/m_{\gamma\gamma}\) and photon angular separations in improving sensitivity. Separate training for the boosted and resolved categories further optimizes the analysis for these topologies.
+
+The output of the pNN serves as the final discriminant for signal extraction in the \(m_{\gamma\gamma}\) distribution. By combining the boosted and resolved categories, the analysis achieves a 60\% improvement in sensitivity compared to previous results. Control plots of key variables before and after applying the pNN show excellent agreement between data and Monte Carlo, validating the robustness of the method.
+
+The parameterized neural network approach thus provides a powerful framework for signal extraction in the \(X \to HH \to WW\gamma\gamma\) analysis. By training across multiple mass hypotheses and incorporating advanced multivariate techniques, the pNN significantly improves the sensitivity to resonant di-Higgs production, particularly in high-mass regions.
+
+\section{Systematic uncertainties}
+\label{section:Systematics}
+The systematic uncertainties detailed below are taken into account in the statistical model via profiling of nuisance parameters according to a frequentist approach.
+Effect from several sources are considered, including theoretical uncertainties, experimental uncertainties, and uncertainties in the background modeling.
+
+Most systematic uncertainties are represented by log-normal probability distribution functions, which parameterize the event yield in each signal region. These uncertainties impact the overall normalization of the signal and resonant background processes in each signal region (and can vary by region) but do not affect the shape of the \mgg distribution.
+
+The second type of systematic uncertainty affects the shape (and potentially the normalization) of the \mgg distributions for both signal and resonant background processes, as well as the non-resonant background modeled from data. These uncertainties are incorporated as nuisance parameters in the signal models for each signal region.
+Specifically, the uncertainty related to the choice of function for background modeling is handled as a discrete nuisance parameter, using the discrete profiling method~\cite{Dauncey:2014xga}.
+
+The different sources of uncertainties and their ranges are summarized in Table~\ref{table:sys-tab}.
+  \begin{table}[!htbp]
+    \begin{center}
+    \resizebox*{1\textwidth}{!}{
+    \begin{tabular}{l | c | c | c | c | c | c}
+    \hline
+    Source & Correlation(2017/2018) & Category(FH/SL,Resolved/Boosted) &  Type & Effect in WW$\gamma\gamma$ & Effect in bb$\gamma\gamma$ & Effect in ZZ$\gamma\gamma$\\ \hline
+    \hline
+
+    % AlphaS & lnN & - & - & - \\
+    Branching ratio $H\rightarrow \gamma\gamma$ & Correlated & All & lnN &  0.9874/1.0214 & 0.9874/1.0214 & 0.9874/1.0214 \\
+    Branching ratio $H\rightarrow WW$ &  Correlated & All & lnN &  0.9848/1.0153 & - & - \\
+    Branching ratio $H\rightarrow bb$ &  Correlated & All & lnN &  - & 0.9874/1.0124 & - \\
+    Branching ratio $H\rightarrow ZZ$ &  Correlated & All & lnN &  - & - & 0.9848/1.0153 \\
+    % Parton shower & shape & - & - & - \\
+    % \textcolor{red}{QCD scale acceptance} & shape & - & - & - \\
+    % \textcolor{red}{PDF acceptance} & shape & - & - & - \\
+
+    \hline
+
+    Luminosity & Uncorrelated & All & lnN & 1.010-1.020 & 1.010-1.020 & 1.010-1.020 \\
+    Luminosity & Correlated & All & lnN & 1.006-1.020 & 1.006-1.020 & 1.006-1.020 \\
+    Photon Trigger & Uncorrelated & All & lnN & 1.0021 & 1.0021 & 1.0021 \\
+    Photon Energy Scaling & Uncorrelated & All & shape & \checkmark & \checkmark & \checkmark \\
+    Photon Energy Resolution & Uncorrelated & All & shape & \checkmark & \checkmark & \checkmark \\
+    ECAL Material & Correlated & All & shape & \checkmark & \checkmark & \checkmark \\
+    FNUF  & Correlated & All & shape &  \checkmark & \checkmark & \checkmark \\
+    L1 Pre-fire & Uncorrelated & All & lnN & 0.988-0.999 & 0.989-0.999 & 0.99-0.999 \\
+    Pileup & Uncorrelated & All &  lnN & 0.994-1.001 & 0.981-1.019 & 0.992-1.012 \\
+    % \textcolor{red}{Pileup Jet ID} & Correlated & All & lnN & \textcolor{red}{-}  & \textcolor{red}{-} & \textcolor{red}{-} \\
+    {Pileup Jet ID} & Correlated & All & lnN & 0.928-1.076  & 0.948,1.064 & 0.98-1.021 \\
+    \hline
+    {b-tag lf/hf stats} & Uncorrelated & FH Resolved & lnN & 0.928-1.28  & 0.903-1.357 & 0.931-1.312 \\
+    {b-tag JES} & Correlated & FH Resolved & lnN & 0.962-1.025  & 0.958-1.036 & 0.962-1.031 \\
+    {b-tag Purity} & Correlated & FH Resolved & lnN &  0.952-1.261  & 0.919-1.431 & 0.961-1.215 \\
+    {b-tag Charm Jets} & Correlated & FH Resolved & lnN & 0.805-1.256  & 0.762-1.431 & 0.821-1.218 \\
+    \hline
+    Electron-veto SF & Uncorrelated & SL All & lnN & 1.001-1.003 & 1.001-1.002 & 1.001-1.003 \\
+    Electron Reconstruction & Uncorrelated & SL All & lnN & 0.952-1.048 & 0.983-1.026 & 0.952-1.046 \\
+    Electron Identification & Uncorrelated & SL All & lnN & 1.001-1.008 & 1.001-1.007 & 1.006-1.013 \\
+    Muon Identification & Uncorrelated & SL All & lnN & 1.001-1.003 & 1.002 & 1.002-1.003 \\
+    Muon Isolation & Uncorrelated & SL All & lnN & 1.001-1.003 & 1.002 & 1.002-1.003 \\
+    DiPhoton Preselection SF & Uncorrelated & All & lnN & 0.954-1.047 & 0.954-1.047 & 0.954-1.047 \\
+    Photon Identification & Uncorrelated & All & lnN & 0.957-1.044 & 0.952-1.049 & 0.956-1.044 \\
+    \hline
+    JEC  &  Uncorrelated & All & lnN & 0.875-1.156 & 0.834-1.166 & 0.882-1.105 \\
+    % JEC Absolute\_YEAR  &  Uncorrelated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC BBEC1  &  Correlated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC BBEC1\_YEAR  &  Uncorrelated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC EC2  &  Correlated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC EC2\_YEAR  &  Uncorrelated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC HF  &  Correlated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC HF\_YEAR  &  Uncorrelated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC RelativeBal  &  Correlated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC RelativeSample\_YEAR  &  Uncorrelated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    % JEC FlavorQCD  &  Correlated & All & lnN & 0.997-1.006 & 0.997-1.003 & 0.998-1.005 \\
+    \hline
+    JER & Uncorrelated & All & lnN & 1.001-1.002 & 1.001-1.003 & 1.001 \\
+    MET Unclustered Energy & Uncorrelated & All &  lnN & - & - & - \\
+    Muon Momentum Rochester Correction & Uncorrelated & SL All  & lnN & - & 1.001-1.002 & - \\
+    PNet bb-tag efficiency & Uncorrelated & FH Boosted  &  lnN & - & 0.77-1.472 & -\\
+    % \textcolor{red}{PNet bb-tag efficiency} & Uncorrelated & FH Boosted  &  lnN & - & 0.77-1.472 & -\\
+    PNet WvsQCD efficiency & Uncorrelated & FH Boosted & lnN & 0.995-1.005  & 0.992-1.009 & 0.987-1.013 \\
+    ParT HvsQCD efficiency & Uncorrelated & FH Boosted & lnN & 0.775-1.198 & 0.829-1.151 & 0.768-1.204 \\
+
+    \hline
+    \hline
     \end{tabular}
-\end{table}
+    }
+    % \caption{Summary of systematic uncertainties (top: theoretical, bottom: experimental). Uncertainties in \textcolor{red}{red} are not yet implemented in the datacards.}
+    \caption{Summary of systematic uncertainties (top: theoretical, bottom: experimental).}
+    \label{table:sys-tab}
+    \end{center}
+  \end{table}
 
-\subsection{Performance and Validation}
-The performance of the pNN is validated using standard metrics such as the area under the curve (AUC) and signal-to-background ratio improvements. The following observations are noted:
+  \subsection{Theoretical uncertainties}
+The theory uncertainties can affect the normalization of both the signal processes and the background single higgs processes.
 \begin{itemize}
-    \item The pNN significantly enhances discrimination between signal and background across the entire mass range.
-    \item Feature importance plots indicate that the most discriminating variables are the diphoton \(p_T/m_{\gamma\gamma}\), \(dR\) between photons, and jet kinematics.
-    \item Separate training for the boosted and resolved categories optimizes sensitivity in their respective regions.
+    \item \textbf{parton density functions (PDF) uncertainties}: The combined uncertainty on the parton density functions (PDF) is directly adapted from ~\cite{CMS:gghhrecommendations} where the size of these uncertainties is less than 3\%. Only single Higgs production is considered to add the PDF uncertainties.
+\end{itemize}
+\begin{itemize}
+      \item \textbf{QCD scale variation} This variation is related to the uncertainty of the QCD renormalization and factorization scales. As a theoretical uncertainty it is also fully correlated among years and analysis bins. The migration uncertainty between analysis bins caused by the QCD scales are estimated by varying both scales by a factor of 2 in the same direction simultaneously. Only single Higgs production is considered to add the QCD scale uncertainties.
+  \end{itemize}
+\begin{itemize}
+      \item \textbf{\alpS uncertainy} This uncertainty is related to the variation of the value of the strong force coupling constant. As the PDF uncertainty it is taken from the \textsc{pdf4lhc} prescription. It is evaluated in the same way as the QCD scale uncertainty by varying \alpS instead of the scales. Only single Higgs production is considered to add the \alpS uncertainties.
+  \end{itemize}
+  \begin{itemize}
+      \item \textbf{$H \rightarrow \gamma\gamma$ branching fraction}: Values are taken from Ref.~\cite{florian2016handbook} and are estimated to be around 2\%.
+      \item \textbf{$H \rightarrow WW$ branching fraction}: Values are taken from Ref.~\cite{run2HHcombination} and are estimated to be around 1.5\%.
+      \item \textbf{$H \rightarrow ZZ$ branching fraction}: Values are taken from Ref.~\cite{run2HHcombination} and are estimated to be around 1.5\%.
+      \item \textbf{$H \rightarrow bb$ branching fraction}: Values are taken from Ref.~\cite{run2HHcombination} and are estimated to be around 1.2\%.
+  \end{itemize}
+
+\subsection{Experimental uncertainties}
+Here we describe the sources of experimental uncertainty.
+Experimental uncertainties may either affect the shape and normalization of the \mgg distribution or simply the normalization.
+
+Those affecting the shape of the \mgg distribution include:
+\begin{itemize}
+    \item \textbf{Photon energy scale and resolution} This is the uncertainty related to the scale of the photon energy in data and its smearing correction \cite{Scales_AN} in simulation. The variations are evaluated using Zee events by varying the energy regression training scheme, the \RNINE~ distribution, and the selection criteria. The scale uncertainty amounts to $0.05$ to $0.15$ \% for most of the photons, while they can go up to $3$ \% for some.
+    Note that the scales and smearings applied by default in nanoAOD have been validated in the EGM and XPOG groups taken from the following presentations:
+\begin{itemize}
+    \item \href{https://indico.cern.ch/event/1123547/contributions/4716514/attachments/2394644/4097503/CrossPOG_23Feb2022.pdf}{\textcolor{blue}{\underline{XPOG 23 Feb 2022}}}
+    \item \href{https://indico.cern.ch/event/1095390/contributions/4799715/attachments/2421381/4144630/CMSweek_5Apr2022.pdf}{\textcolor{blue}{\underline{CMS Week 5 Apr 2022}}}
+\end{itemize}
+The sytematics are added to the v9 nanoAOD produced centrally. The branches used are the dESigma up and down variations refer from CMSSW \cite{CMSSW_smear}.
+  \end{itemize}
+
+% \begin{itemize}
+%     \item \textbf{Photon energy resolution}: the uncertainty associated with the corrections derived to match the photon energy resolution in simulation with that observed in data. The sytematics are added to the v9 nanoAOD produced centrally. The branches used are the dESigma up and down variations - \href{https://github.com/cms-sw/cmssw/blob/master/PhysicsTools/NanoAOD/python/photons_cff.py#L326-L327}{\textcolor{blue}{\underline{CMSSW reference}}}.
+% \end{itemize}
+\begin{itemize}
+    \item \textbf{Modelling of the material upstream of ECAL} The showering behaveiour of photons is influenced by the material that is in front of ECAL. This systematic variation is associated to the uncertainty in these models. Its impact on the photon energy scale is evaluated by varying the amount of upstream material in the simulation. It amounts to $0.02$ to $0.05$ \% for central photons and goes up to $0.25$ \% for photons in the endcap.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{FNUF uncertainty}: differences in light collection efficiency (LCE) along the length of ECAL crystals result in different responses to electrons and photons. The uncertainty is estimated using the LCE model described in~\cite{Adams:2016viv}, derived from optical simulation~\cite{Gentit:2001ky}.
 \end{itemize}
 
-\subsection{Results of the pNN Classification}
-The output of the pNN is used as the final discriminant to extract the signal in the \(m_{\gamma\gamma}\) distribution. By combining the boosted and resolved topologies, the analysis achieves a 60\% improvement in sensitivity over previous results.
+% Note that the scales and smearings applied by default in nanoAOD have been validated in the EGM and XPOG groups, as shown by the plots in Fig.~\ref{fig:syst_zee} taken from the following presentations:
+% \begin{itemize}
+%     \item \href{https://indico.cern.ch/event/1123547/contributions/4716514/attachments/2394644/4097503/CrossPOG_23Feb2022.pdf}{\textcolor{blue}{\underline{XPOG 23 Feb 2022}}}
+%     \item \href{https://indico.cern.ch/event/1095390/contributions/4799715/attachments/2421381/4144630/CMSweek_5Apr2022.pdf}{\textcolor{blue}{\underline{CMS Week 5 Apr 2022}}}
+% \end{itemize}
 
-\subsection{Summary of pNN Method}
-The parameterized neural network approach provides a powerful method for signal extraction in the \(X \to HH \to WW\gamma\gamma\) analysis. By training across multiple mass hypotheses and incorporating advanced multivariate techniques, the pNN significantly improves the sensitivity to resonant di-Higgs production.
-
-\section{Results}
-Results are interpreted in terms of cross-section limits on \(X \to HH \to WW\gamma\gamma\). Key outcomes include:
+Experimental uncertainties affecting only the normalization of a given process include:
 \begin{itemize}
-    \item At \(m_X = 3000\)~GeV, the observed (expected) limit is 60~fb for \(X \to HH \to WW\gamma\gamma\).
-    \item The analysis shows a 60\% improvement in sensitivity compared to ATLAS at 500~GeV.
-    \item Incorporating leptons inside jets enhances sensitivity, particularly in semi-leptonic topologies.
+    \item \textbf{Integrated luminosity}: An estimated uncorrelated uncertainty of 1.5\% for 2018, 2\% for 2017 and 1\% for 2016 is used  as recommended by the LUMI POG ~\cite{CMS-LUM-17-003,CMS-PAS-LUM-17-004,CMS-PAS-LUM-18-002}. Correlated uncertainties between 2017(0.6\%) and 2018(0.2\%), between 2016(0.6\%), 2017(0.9\%) and 2018(2\%) are used as recommended by the LUMI POG ~\cite{CMS:LUMI}.
+    \item \textbf{L1 prefiring}: the inefficiency due to the prefiring of the L1 trigger during 2016 and 2017 data-taking periods is estimated following the recommended treatment from the JetMET group~\footnote{https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe}. The uncertainty is taken as the maximum between 20\% of the object prefiring probability and the statistical uncertainty associated to the considered bin in the prefiring map. The prefiring central weight and up/down variations are computed using the recipe in \href{https://github.com/cms-nanoAOD/nanoAOD-tools}{\textcolor{blue}{\underline{nanoAOD tools}}}. The corresponding uncertainties on signal efficiency is found to be up to 0.4\%
+    \item \textbf{Trigger}: the trigger efficiency is measured from $Z \to ee$ events using the tag-and-probe technique; the size of the uncertainty varies between the photon categories, which are binned in $R_9$, $\eta$ and $p_T$. Typical values are well below the 1\% level and result in event yield variations of at most 0.1\%.
+    \item \textbf{PU weighting}: the pu central reweighting and up/down variations are computed usign the recipe in \href{https://github.com/cms-nanoAOD/nanoAOD-tools}{\textcolor{blue}{\underline{nanoAOD tools}}}.
+	\item \textbf{Diphoton preselection scale factors}: the uncertainty in the diphoton preselection efficiency is estimated from the ratio of the efficiency as calculated in data versus that calculated in simulation. The corresponding uncertainties on signal efficiency is found to be up to 4.7\% referring to ~\cite{AN-21-025}.
+	\item \textbf{Photon ID MVA scale factors}: The corrections to the modified photonID MVA have been approved by EGammaPOG~\cite{CMS:Egammameetingmodifiedmvasf} and are implemented in the MC samples. The corresponding uncertainties on signal efficiency is found to be around 3\%
+	\item \textbf{Electron Veto scale factors}: similar to the pixel seed veto uncertainty, the uncertainty in the scale factors applied to simulation to match the efficiency of the electron veto, derived using Z $\to \mu\mu$ + $\gamma$ events.
+	\item \textbf{Electron ID and ISO scale factors}: Following the EGamma POG UL Run2 recommendation \cite{CMS:electron}, the corrections of the electron ID with isolation are applied to simulation. The corresponding uncertainties on signal efficiency is found to be up to 1.2\%.
+  \item \textbf{Muon ID and ISO scale factors}: Following the Muon POG recommendation \cite{CMS:muon}, we use scale factors and uncertainties provided for muon ID, isolation, reconstruction efficiency. MC events are reweighted as a function of the muon $\pt$ and $\eta$, except for the muon reconstruction scale factors which are provided as a function of the muon $p$ and $\eta$. The corresponding uncertainties are obtained by varying each scale factor independently by $\pm 1 \sigma$. Tight ID and Tight ISO corrections are applied to isolated muon simulation events, Highpt ID and reconstruction corrections are applied to non-isolated muon simulation events. %FIXME: The reconstruction sf is not applied to isolated muons, but the ID and ISO are.
+  \item \textbf{Shape of the DeepJet b-tag discriminant}:To correct the shape of DeepJet discriminant coming from simulation to match with data, reshaping scale factors are used, depending on \pt, $\eta$ and flavor of the jets.The uncertainty associated with this SFs measurement is obtained by comparing b discriminator distribution between data and simulation.
+  \item \textbf{PUJetID}: Following the JetMET POG recommendation \cite{pileupid}, we use scale factors and uncertainties provided by JetMET POG \cite{JMEjsonpog}for tight PUJetID.
+
+  \item \textbf{Jet Energy scale and resolution}: the JES global up and down variations and the JER variations are used to compute the Jet
+  momentum systematic uncertainties. The MET is affected by the same systematics. Additionally, an uncertainty source sue to the MET
+  unclustered component is considered. The uncertainties are applied using the NanoAOD Tools module \href{https://github.com/shaoweisong/NanoAODTools/blob/HHWWgg/python/postprocessing/modules/jme/jetmetHelperRun2.py}{\textcolor{blue}{\underline{nanoAOD tools}}}. The latest available JES and JER tags derived by the Jet-MET Group \cite{CMS:JER} for AK8 PUPPI and AK4 CHS Jets are used.%namely:
+  \item \textbf{Muon Rochester \( p_T \) corrections}: the latest available muon rochester corrections for run2.v5 are used for the muon scale as recommended by the MUON POG \cite{CMS:muonrocch}. The relative up and down uncertainties are applied. %(do we want rochester muon corrections or muon POG pT is ok?)
+
+  \item \textbf{$H \rightarrow WW$ tagging efficiency}: The uncertainty on the ParT $H_{WW}$ tagger efficiency is applied to the signal yield using the combination of the individual uncertainties described in Section~\ref{sec:sigeff_hww_hh}. This is the dominant uncertainty in this analysis. The corresponding uncertainties on signal efficiency is found to be up to 5\%.
+  % These uncertainties are derived using the Lund Jet Plane reweight method and are estimated to be around 30\%.
+	\item \textbf{ParticleNet W tagging efficiency}: the latest uncertainties on the ParticleNet WvsQCD-MD tagging efficiency derived by JMAR Group \cite{Wtagger} \cite{CMS:wvsqcd} is applied to the signal yield. The corresponding uncertainties on signal efficiency is found to be up to 0.5\%.
+  \item\textbf{\( H \to b\bar{b} \) tagging efficiency} An uncertainty on the ParticleNet \TXbb efficiency is applied as a shape uncertainty to the resonant signal according to the up/down variations shown in Section~\ref{sec:sfBDT}.
 \end{itemize}
 
-\section{Systematic Uncertainties}
-Major systematic uncertainties include:
-\begin{itemize}
-    \item QCD scale variations for high-mass resonances.
-    \item Photon energy resolution and identification efficiency.
-    \item Jet energy scale and resolution.
-\end{itemize}
+\subsection{Impacts}
 
-The impact of these uncertainties is quantified and incorporated into the statistical interpretation.
+
+The expected nuisance parameter impacts and pulls on the signal strength in all categorieds are shown for the mass points 250GeV, 500 GeV and 3000 GeV in Figs.~\ref{fig:impacts_0}-~\ref{fig:impacts_2}. When extracting the impacts and pull, the singal cross section is set to 1 fb and signal strength is set to 1 for each mass point.
+
+Across different mass points, the leading systematics are those from the jet tagger scale factors, diphoton preselection scale factors, the luminosity, and the theoretical uncertainties from single Higgs production.
+
+\begin{figure}[hbt!]
+  \centering
+  \begin{tabular}{c}
+      \includegraphics[width=0.9\linewidth]{figures/Impact/MX250_MH125.pdf} \\
+  \end{tabular}
+\caption{Pulls and impacts of the leading systematic uncertainties for mass point 250 GeV.
+}
+\label{fig:impacts_0}
+\end{figure}
+
+\begin{figure}[hbt!]
+  \centering
+  \begin{tabular}{c}
+      \includegraphics[width=0.9\linewidth]{figures/Impact/MX500_MH125.pdf} \\
+  \end{tabular}
+\caption{Pulls and impacts of the leading systematic uncertainties for mass point 500 GeV.
+}
+\label{fig:impacts_1}
+\end{figure}
+
+
+\begin{figure}[hbt!]
+    \centering
+    \begin{tabular}{c}
+        \includegraphics[width=0.9\linewidth]{figures/Impact/MX3000_MH125.pdf} \\
+    \end{tabular}
+  \caption{Pulls and impacts of the leading systematic uncertainties for mass point 3000 GeV.
+  }
+  \label{fig:impacts_2}
+\end{figure}
+
 
 \section{Signal and Background Modelling}
 \label{sec:signal_background_modelling}
@@ -425,7 +671,7 @@ in Fig.  \ref{fig:FHSignalModel} .
 
 % \begin{figure}[!htbp]
 %   \centering
-%   \includegraphics[width=0.75\textwidth,height=7cm]{Images/AnalyticFitting/Signal/smodel_HHWWggTag_FHDNN_1.pdf}
+%   \includegraphics[width=0.75\textwidth,height=7cm]{figures/AnalyticFitting/Signal/smodel_HHWWggTag_FHDNN_1.pdf}
 %   \caption{FH signal model in the second most sensitive category}
 % \label{fig:FHSignalModel}
 % \end{figure}
@@ -460,7 +706,7 @@ The combination of all categories' signal plus background fits in the range 100 
 
 % \begin{figure}[!htbp]
 %   \centering
-%   \includegraphics[width=0.7\textwidth,height=8cm]{Images/Results/All_combined_SplusB.pdf}
+%   \includegraphics[width=0.7\textwidth,height=8cm]{figures/Results/All_combined_SplusB.pdf}
 %  \caption{The observed diphoton mass distribution including the signal plus background fit (red), the Single-Higgs + continuum background fit (blue) and the continuum background (black dashed line),
 %  with bands covering the $\pm 1\sigma$ and $\pm 2\sigma$ uncertainties in the fitted background where all analysis categories are combined and weighted by S over S$+$B.}
 %   \label{fig:Run2SplusB}
