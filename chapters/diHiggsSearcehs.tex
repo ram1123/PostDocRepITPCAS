@@ -42,46 +42,56 @@ The analysis is performed using the full Run-2 Ultra-Legacy dataset, correspondi
 \end{itemize}
 
 \section{Unique Features of the Analysis}
-This analysis includes several innovative aspects:
+This analysis incorporates several innovative aspects, as detailed below:
+
 \begin{itemize}
-    \item \textbf{Comprehensive Topology Coverage:} For the first time, all jet topologies are tagged in a single analysis,
-    including boosted, semi-boosted, resolved, and cases with leptons reconstructed inside jets.
-    \item \textbf{Signal Definition:} We defined our signal as sum of three di-Higgs decay possibilities, i.e.,
-    \(HH \to WW\gamma\gamma + ZZ\gamma\gamma + bb\gamma\gamma\).  As the hadronic decay has similar topologies for
-    all these three samples and it is challenging to reduce the contamination coming from the other channels ( \(ZZ\gamma\gamma\)
-    and \( bb\gamma\gamma\)) into our main signal of interest, which is \(WW\gamma\gamma\).
-    Another few important things to note about
-    the signal definitions are as follows:
+    \item \textbf{Comprehensive Topology Coverage:}
+    For the first time, all jet topologies are tagged within a single analysis. These include boosted, semi-boosted, resolved, and scenarios where leptons are reconstructed inside jets.
+
+    \item \textbf{Signal Definition:}
+    The signal is defined as the sum of three di-Higgs decay possibilities:
+    \[
+    HH \to WW\gamma\gamma + ZZ\gamma\gamma + bb\gamma\gamma.
+    \]
+    Since the hadronic decay topologies are similar for all three channels, it is challenging to reduce contamination from the \(ZZ\gamma\gamma\) and \(bb\gamma\gamma\) channels in our primary signal of interest, \(WW\gamma\gamma\). The signal definition is further refined with the following considerations:
     \begin{itemize}
-        \item Analysis is optimized for \HH
-        \item For \HH, two decay possibilities for \Wboson are considered, i.e., fully hadronic and semi-leptonic.
-        Optimisation of analysis is performed based on these two final states.
-        \item For \Zboson\Zboson, as the branching fraction is low for this channel and semi-leptonic contribution is further low. So, the semi-leptonic decay is excluded from the analysis.
-        \item The \(bb\gamma\gamma\) channel is added after applying the b-jet veto. This serves two purpose. They are:
+        \item The analysis is optimized for the \(HH \to WW\gamma\gamma\) channel.
+        \item For \(HH \to WW\gamma\gamma\), two decay modes of the \(W\)-bosons are considered: fully hadronic and semi-leptonic. The analysis optimization is performed based on these two final states.
+        \item For \(HH \to ZZ\gamma\gamma\), due to the low branching fraction and negligible semi-leptonic contribution, the semi-leptonic decay mode is excluded from the analysis.
+        \item The \(bb\gamma\gamma\) channel is included after applying a b-jet veto. This serves multiple purposes:
         \begin{enumerate}
-            \item Reduce the contribution coming from \(bb\gamma\gamma\) channel, hence the limit is driven by the \(WW\gamma\gamma\) not the \(bb\gamma\gamma\) channel.
-            \item Our channel become orthogonal to the \(HH \rightarrow bb\gamma\gamma\) analysis.
-            \item Furthermore, we are exploiting those events that are rejected by the \(HH \rightarrow bb\gamma\gamma\) analysis. Thus exploiting more information from the same data.
-            \item Applying the b-jet veto, also rejects some events from the \(HH\rightarrow ZZ\gamma\gamma\), when \Zboson decays to b-quarks.
+            \item It reduces the contribution from the \(bb\gamma\gamma\) channel, ensuring that the limit is primarily driven by the \(WW\gamma\gamma\) channel rather than \(bb\gamma\gamma\).
+            \item It makes the analysis orthogonal to the \(HH \to bb\gamma\gamma\) analysis.
+            \item Events rejected by the \(HH \to bb\gamma\gamma\) analysis are exploited, thereby utilizing additional information from the same dataset.
+            \item The b-jet veto also rejects events from \(HH \to ZZ\gamma\gamma\) where the \(Z\)-bosons decay into b-quarks.
         \end{enumerate}
     \end{itemize}
-    \item \textbf{Mass Ranges:} The resonance \(X\) is studied in the mass range 250~GeV to 3000~GeV.
-    \item \textbf{Leptons Inside Jets:} Events where leptons are reconstructed within jets are included, enhancing sensitivity to
-    specific BSM scenarios.
+
+    \item \textbf{Mass Ranges:}
+    The resonance \(X\) is studied over a mass range of 250~GeV to 3000~GeV.
+
+    \item \textbf{Leptons Inside Jets:}
+    Events where leptons are reconstructed within jets are included, thereby enhancing sensitivity to specific Beyond Standard Model (BSM) scenarios.
 \end{itemize}
 
 \section{Event Selection}
+
+
 The event selection optimizes sensitivity to semi-leptonic and fully hadronic channels, with the following criteria:
 
 \subsection*{Photon Selection}
 \begin{itemize}
-    \item Leading photon \(p_T > 35\)~GeV, subleading photon \(p_T > 25\)~GeV.
-    \item Photon \(p_T/m_{\gamma\gamma} > 0.33\) (leading) and \(> 0.25\) (subleading).
-    \item Diphoton invariant mass \(100 < m_{\gamma\gamma} < 180\)~GeV.
-    \item Photons must satisfy tight identification, including isolation and \(H/E < 0.08\).
-    \item \todo[inline]{ID is missing. Also, cross-check this information from the AN/talk}
-    \item \todo[inline]{Custom Photon ID, details. For this add appendix}
+    \item A boosted decision tree (BDT) classifier is trained to separate photons from jets~\cite{Sirunyan:2018ouh}.
+            The output of this BDT is referred to as the photon ID score
+            \footnote{For the boosted regime, where the two photons are close by, the photon ID score was modified to
+            account for reduced selection efficiency.
+            This modified score is referred to as the ``modified photon ID," detailed in
+            Appendix~\ref{appendix:ModifiedPhotonID}}.
+    \item Leading photon \(p_T > 35\)~GeV and subleading photon \(p_T > 25\)~GeV.
+    \item Photon transverse momentum fractions: \(p_T/m_{\gamma\gamma} > 0.33\) (leading) and \(> 0.25\) (subleading).
+    \item Diphoton invariant mass requirement: \(100 < m_{\gamma\gamma} < 180\)~GeV.
 \end{itemize}
+
 
 \subsection*{Lepton Selection}
 \begin{itemize}
