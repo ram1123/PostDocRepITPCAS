@@ -9,23 +9,23 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \usepackage[colorlinks]{hyperref}
-% \geometry{a4paper, margin=1in}
+\geometry{a4paper, margin=1in}
 
 % Include packages for todo notes
 \usepackage{lineno} % in preamble
 \usepackage[table]{xcolor}
-% \usepackage[colorinlistoftodos]{todonotes}
-\usepackage{todonotes}
-% \usepackage[textwidth=2.5cm]{todonotes}
+\usepackage[colorinlistoftodos]{todonotes}
 % \usepackage[disable]{todonotes}  % To disable todo notes, uncomment this line
-
 
 % Include custom CMS definitions
 \usepackage{ptdr-definitions}
-\usepackage{topcapt}% for captions at top, i.e., tables
+% \usepackage{topcapt} % Deprecated, use caption instead
+\usepackage[justification=centering]{caption}
 
-% For table
+% For table and subfigures
 \usepackage{tabularx}
+% Use one subfigure package only
+\usepackage{subfig}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Style of chapter headings: START
@@ -53,7 +53,6 @@
 % Style of chapter headings: END
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 % Title and Author
 \author{Ram Krishna Sharma}
 \title{New physics searches in the Higgs boson sector at the CMS experiment}
@@ -70,40 +69,45 @@
 
 % Include additional files
 \includeonly{
-    % abstract,
-    % chapters/introduction,
+    abstract,
+    chapters/introduction,
     chapters/diHiggsSearcehs,
-    % chapters/highMassSearches,
-    % chapters/differentialFiducialXS_H4l,
-    % chapters/EFTStudies,
-    % chapters/aTGC,
-    % chapters/massMeasurement,
-    % chapters/VH,
-    % chapters/egamma,
-    % chapters/hgcal,
-    % chapters/results,
-    % chapters/conclusion,
-    % appendix/appendix
+    chapters/highMassSearches,
+    chapters/differentialFiducialXS_H4l,
+    chapters/EFTStudies,
+    chapters/aTGC,
+    chapters/massMeasurement,
+    chapters/VH,
+    chapters/egamma,
+    chapters/hgcal,
+    chapters/results,
+    chapters/conclusion,
+    appendix/appendix,
     appendix/ModifiedPhotonID,
 }
 
 \begin{document}
+% Uncomment for line numbers
 % \linenumbers
-\listoftodos
+% Uncomment for todo notes list
+% \listoftodos
+
 % Title Page
-% \maketitle
-% \preambulo
+\maketitle
+% Replace preambulo
+\chapter*{Preface}
 
 % Abstract
-% \include{abstract}
+\include{abstract}
 
 % Table of Contents
-% \tableofcontents
-% \listoffigures
-% \listoftables
+\tableofcontents
+\listoffigures
+\listoftables
 
-% \cuerpo
-% \setlength{\parskip}{0.75em}
+\cuerpo
+\setlength{\parskip}{0.75em}
+
 % Chapters
 \include{chapters/introduction}
 \include{chapters/diHiggsSearcehs}
@@ -122,7 +126,7 @@
 
 % Bibliography
 \bibliographystyle{unsrt} % or preferred style
-\bibliography{references,references_object_selections}% references.bib
+\bibliography{references,references_object_selections,references_highMassSearches} % references.bib
 
 % Appendices
 \appendix
