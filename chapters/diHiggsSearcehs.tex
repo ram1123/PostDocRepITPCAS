@@ -353,13 +353,114 @@ The output of the pNN serves as the final discriminant for signal extraction in 
 
 The parameterized neural network approach thus provides a powerful framework for signal extraction in the \HHWW analysis. By training across multiple mass hypotheses and incorporating advanced multivariate techniques, the pNN significantly improves the sensitivity to resonant di-Higgs production, particularly in high-mass regions.
 
+\section{Signal and background modelling}
+\label{sec:AnalyticFitting}
+
+For the statistical interpretation of the data, a parametric fit to the \mgg distribution of the event signal candidates is performed.
+The template \mgg distributions of the HH and single-H processes are modeled using the simulated MC events, while the continuum background is modeled from data.
+
+\subsection{HH and single-Higgs modeling}
+\label{sec:SignalFitting}
+Signal shapes for the invariant mass distribution of the diphoton candidate are derived for each process separately by category and data-taking year.
+
+Signal models are formed by an analytic fit of a sum of up to five Gaussians to a binned $\mgg$ distribution.
+The fit for the top two highest DNN score region are shown in Fig.~\ref{fig:smodel_combineFHSL_cat12highpurity_MX3000}.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/Signal_Modeling/MX3000_MH125_smodel_combineFHSL_cat12highpurity.pdf}%
+    \includegraphics[width=0.45\textwidth]{figures/Signal_Modeling/MX3000_MH125_smodel_combineFHSL_cat12lowpurity.pdf}
+    \caption{PNN high (Left) and low purity (Right) categories for $M_X = 3000$ GeV.}
+    \label{fig:smodel_combineFHSL_cat12highpurity_MX3000}
+\end{figure}
+
+
+The effects of anomalous $\kappa_{\lambda}$ values on the Higgs boson branching ratios and on the single Higgs cross sections
+are taken into account using the modeling provided in Reference \cite{Degrassi:2016wml} and \cite{Maltoni:2017ims}.
+
+% \subsection{Single Higgs background}
+
+% There are expected resonant background processes present in the signal region, $115 < \mgg < 135$ GeV, due to $H\rightarrow\gamma\gamma$ processes, which cannot be modeled with a data-driven
+% method using data sideband events. These backgrounds are modeled with MC in the same fashion as the $HH\rightarrow WW\gamma\gamma$ signals as described in Section \ref{sec:SignalFitting}. The single higgs
+% processes considered as resonant backgrounds are the gluon-gluon fusion, vector boson fusion, associated production with a vector boson, and associated production with a top quark pair (ttH), where the Higgs boson decays
+% into two photons. A separate fit is made for each analysis category and production mode. For cases in which there is a very small number of MC statistics, the diphoton shape from
+% the di-Higgs signal model in the same analysis category is taken and scaled to the single higgs yield in this category, and used to model the single higgs shape in this category.
+
+\subsection{Continuum background}
+\label{sec:AnalyticFitting_Background}
+
+The continuum background in the \mgg distribution is modelled from data using the discrete profiling method \cite{Dauncey_2015} to account for the uncertainty related to the background shape.
+This method treats the choice of the background parametrization as a discrete nuisance parameter. The parametric function is selected among a set of function families providing a complete
+description of smoothly falling backgrounds.
+
+% A data-driven background model is produced for each category using the data sidebands in the regions $100 < \mgg < 115$ GeV and $135 < \mgg < 180$ GeV.
+% The aim of this is to model the continuum background.
+% After the event selections and categorizations described in Section \ref{sec:event_selection} are applied, analytic functions are fit to the resulting $\mgg$ distributions in the data sidebands for each category.
+% These are later combined with their corresponding signal models in order to extract final results.
+% As with the signal fitting, an F-Test is performed first in order to obtain initial best-fit estimates for backgrounds functions to the data-sidebands, and to determine which functions will be considered.
+% Bernstein, laurent, exponential, and powerlaw function families are considered as
+% candidates to fit the data, and F-Tests are performed for each of these. The three data taking years are merged together before the F-test and function fitting is performed.
+% After determining which functions pass the F-Test, a best fit function is chosen with the envelope method by treating the choice of function as a discrete nuisance parameter.
+% An uncertainty is then assigned to the chosen fit function based on a combination of the likelihoods of all attempted fit functions. This method is described in
+% Reference \cite{Dauncey_2015}.
+
+% After obtaining signal models, continuum background models and Single-Higgs models for each final state, a signal plus background fit is performed.
+% The combination of all categories' signal plus background fits in the range 100 $<$ $\mgg$ $<$ 180 GeV, where each category is weighted by S$/$(S$+$B), is shown in Figure \ref{fig:Run2SplusB}.
+
+% \begin{figure}[!htbp]
+%   \centering
+%   \includegraphics[width=0.55\textwidth]{Images/Results/All_combined_SplusB.pdf}
+%  \caption{The observed diphoton mass distribution including the signal plus background fit (red), the Single-Higgs + continuum background fit (blue) and the continuum background (black dashed line),
+%  with bands covering the $\pm 1\sigma$ and $\pm 2\sigma$ uncertainties in the fitted background. All analysis categories are combined and weighted by S$/$(S$+$B).}
+%   \label{fig:Run2SplusB}
+% \end{figure}
+
+\section{Results}
+\label{sec:results}
+
+This analysis conducted presents the first search for the resonant production
+of Higgs boson pairs (HH) in
+the $WW\gamma\gamma$ final state performed by the CMS collaboration.
+Utilizing the data collected by the CMS detector between 2016 and 2018, which
+corresponds to an integrated luminosity of 138 fb$^{-1}$ from proton-proton
+collisions at a center-of-mass energy of 13 TeV, we have explored various final
+state categories encompassing semi-leptonic and fully hadronic decay modes of
+$WW$ to explore a wide mass range for potential new resonances X.
+
+% No significant excess over the Standard Model (SM) expectation was observed in the mass spectra.
+% The results were interpreted in the context of spin-0 resonances decaying into HH.
+% The analysis included the study of fully hadronic WW decay mode as well as semi-leptonic WW decay mode where also considered one Higgs boson decays to \( b\bar{b} \) after $bb\gamma\gamma$ killer or \( ZZ \).
+
+% For the spin-0 hypothesis, the search for heavy resonances X decaying into HY was performed over a mass range from 240 GeV to 3000 GeV for mX, and from 60 GeV to 2800 GeV for mY.
+% The results have set upper limits on the production cross section of such resonances, refining the parameter space of BSM theories that accommodate these new particles.
+% The 95\% confidence level (CL) exclusion limits on the production cross-section times branching fraction (\( \sigma \times \text{BR} \)) have been derived for various hypothesized masses of the resonance X and scalar Y.
+
+The expected upper limits on the production cross-section times branching fraction for a spin-0 resonance X (with mass ranging from 250 GeV to 3 TeV)
+decaying into HH pairs are shown in Fig.~\ref{fig:limits_spin0}, where the branching fractions of the standard model
+Higgs boson ($m_{H}$ = 125 GeV) decaying to WW, bb, and ZZ final states have been taken into account for the signal processes.
+The contribution of the $bb\gamma\gamma$ signal after bveto and $ZZ\gamma\gamma$ are already included in the limit result.
+The expected limits in boosted and resolved categories are shown in Fig.~\ref{fig:limits_separate}.
+Compared with ATLAS Run2 published result in Appendix~\ref{app:atlasresults},
+the CMS expected result is more sensitive in the same mass region as the ATLAS result, which has 40\% improvement after scaling the luminosity to 138 fb$^{-1}$.
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/Limit/Run2_HH_limit.pdf}%
+  \caption{Expected 95\% CL upper limits on the production cross-section times branching fraction ($\sigma \times \text{BR}$) for the resonant production of a spin-0 particle decaying into a Higgs boson pair.}
+  \label{fig:limits_spin0}
+\end{figure}
+
+\begin{figure}[htbp!]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/Limit/Run2_HH_limit_cat12.pdf}%
+  \includegraphics[width=0.4\textwidth]{figures/Limit/Run2_HH_limit_cat34.pdf}%
+
+  \includegraphics[width=0.75\textwidth]{figures/Limit/Run2_individual_cats_HH.pdf}%
+  \caption{Individual expected 95\% CL upper limits on the production cross-section times branching fraction ($\sigma \times \text{BR}$) for the resonant production of a spin-0 particle decaying into a Higgs boson pair to the boosted(top left) and resolved(top right) categories and all sub-cateogries(bottom).}
+  \label{fig:limits_separate}
+\end{figure}
+
 
 
 \section{Summary and Outlook}
-This analysis represents the first CMS study of resonant di-Higgs production in the \(WW\gamma\gamma\) channel, covering all possible jet topologies and using advanced machine learning techniques like parameterized neural networks. The results provide significant constraints on BSM scenarios predicting heavy resonances decaying into Higgs boson pairs.
+This analysis represents the first CMS study of resonant di-Higgs production in the \(WW\gamma\gamma\) channel, incorporating all possible jet topologies and utilizing advanced machine learning techniques, such as parameterized neural networks. The findings place stringent constraints on Beyond Standard Model (BSM) scenarios that predict heavy resonances decaying into pairs of Higgs bosons.
 
-Future plans include:
-\begin{itemize}
-    \item Extending the analysis to include non-resonant di-Higgs production.
-    \item Finalizing results for publication with a target timeline of Moriond 2025.
-\end{itemize}
+Looking forward, the study aims to extend its scope to include non-resonant di-Higgs production with an additional scalar particle in the final state. These efforts will enhance sensitivity to di-Higgs processes and broaden the exploration of the Higgs sector, offering deeper insights into potential connections to new physics.

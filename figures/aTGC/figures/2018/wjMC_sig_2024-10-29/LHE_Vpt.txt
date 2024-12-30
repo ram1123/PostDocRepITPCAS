@@ -1,0 +1,4 @@
+ht-binned        1.00 +/-      0.02 (stat)
+WJ_XJLO          1.00 +/-      0.12 (stat)
+W+jets           1.00 +/-      0.01 (stat)
+BACKGROUND    2650.86 +/-    115.72 (stat)

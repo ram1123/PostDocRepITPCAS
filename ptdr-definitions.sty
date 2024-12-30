@@ -13,6 +13,7 @@
 
 % Common Physics Symbols
 \newcommand{\pt}{\ensuremath{p_\mathrm{T}}\xspace} % Transverse momentum
+\newcommand{\PT}{\ensuremath{p_\mathrm{T}}\xspace} % Transverse momentum
 \newcommand{\ET}{\ensuremath{E_\mathrm{T}}\xspace} % Transverse energy
 \newcommand{\MET}{\ensuremath{\not\!\! E_\mathrm{T}}\xspace} % Missing transverse energy
 \newcommand{\HT}{\ensuremath{H_\mathrm{T}}\xspace} % Scalar sum of transverse momentum
@@ -59,14 +60,126 @@
 % X->ZZ->2l2q/2l2nu
 \newcommand{\TwoLTwoQ}{\ensuremath{2l2q}\xspace} % Two leptons, two quarks
 \newcommand{\TwoLTwoNu}{\ensuremath{2l2\nu}\xspace} % Two leptons, two neutrinos
-\newcommand{\XZZ}{\ensuremath{X \rightarrow\Zboson\Zboson\rightarrow\TwoLTwoQ}\xspace}
+% \newcommand{\XZZ}{\ensuremath{X \rightarrow\Zboson\Zboson\rightarrow\TwoLTwoQ}\xspace}
 \newcommand{\XZZv}{\ensuremath{X \rightarrow\Zboson\Zboson\rightarrow\TwoLTwoNu}\xspace}
+\newcommand{\MT}{\ensuremath{m_{\mathrm{T}}\xspace}}
+\newcommand{\POWHEG} {{\textsc{powheg}}\xspace}
+\newcommand{\MCFM} {\textsc{mcfm}\xspace}
+\newcommand{\MADGRAPH} {\textsc{MadGraph}\xspace}
+\newcommand{\MGvATNLO} {\textsc{MadGraph5\_aMC@NLO}\xspace}
+\newcommand{\PYTHIA} {{\textsc{pythia}}\xspace}
+\newcommand{\GEANTfour} {{\textsc{Geant4}}\xspace}
+\newcommand{\JHUGEN} {{\textsc{JHUGen}}\xspace}
+\newcommand{\EMJWG}{\ensuremath{\Pepm\PGmmp}\xspace}
+\newcommand{\PX}{\ensuremath{\mathrm{X}}\xspace}
+\newcommand{\PZ}{\ensuremath{\mathrm{Z}}\xspace}
+\newcommand{\cPZ}{\PZ} % plain Z (no superscript 0)
+\newcommand{\PH}{\ensuremath{\mathrm{H}}\xspace}
+\newcommand{\Pe}{\ensuremath{\mathrm{e}}\xspace}
+\providecommand{\PV}{\ensuremath{\mathrm{V}}\xspace}
+\newcommand{\PQq}{\ensuremath{\mathrm{q}}\xspace}
+\newcommand{\PQb}{\ensuremath{\mathrm{b}}\xspace}
+\newcommand{\cPq}{\PQq} % generic quark
+\newcommand{\cPaq}{\ensuremath{\overline{\PQq}}\xspace} % generic anti-quark
+\newcommand{\cPqb}{\PQb} % b for b quark
+ \newcommand{\PW}{\ensuremath{\mathrm{W}}\xspace}
+ \newcommand{\Pg}{\ensuremath{\mathrm{g}}\xspace}
+ \newcommand{\qqbar}{\ensuremath{\mathrm{q\bar{q}}}\xspace}
+\newcommand{\ggF}{\ensuremath{\Pg\Pg\mathrm{F}}\xspace}
+\newcommand{\Pq}{\ensuremath{\mathrm{q}}\xspace}
+\newcommand{\Paq}{\ensuremath{\overline{\mathrm{q}}}\xspace}
+\newcommand{\Pgmm}{\ensuremath{{\mu^-}}}
+\newcommand{\Pgmp}{\ensuremath{{\mu^+}}}
+\newcommand{\Pgm}{\ensuremath{{\mu}}}
+ \newcommand{\Pgg}{\ensuremath{{\gamma}}}
+\newcommand{\Ho}{\ensuremath{\mathrm{H}}}
+\newcommand{\PAQb}{\ensuremath{\overline{\mathrm{b}}}\xspace}
+\newcommand{\bbbar}{\ensuremath{\PQb\PAQb}\xspace}
+\newcommand{\kt}{\ensuremath{k_{\mathrm{T}}}\xspace}
+\newcommand{\qqZZ}{\ensuremath{\cPq\cPaq\to\cPZ\cPZ}}
+% \newcommand{\sigma}{\ensuremath{\sigma}}
+\newcommand{\pcal}{\@fontswitch{\relax}{\mathcal}}
+% \newcommand{\cal}{\protect\pcal}
+\newcommand{\Z}{\ensuremath{\cPZ}\xspace}
+
+
+% Not confirmed
+\newcommand\sss{}
+\newcommand{\fbinv} {\mbox{\ensuremath{\,\text{fb}^{-1}}}\xspace}
+\newcommand{\usedLumi}{35.9\fbinv}
+\newcommand{\ff}{\ensuremath{4 \textrm{f}}\xspace}
+\newcommand{\ggZZ}{\ensuremath{\Pg\Pg\to\cPZ\cPZ}}
+\newcommand{\GX}{\ensuremath{\Gamma_{\PX}}}
+\newcommand{\mX}{\ensuremath{m_{\PX}}}
+\newcommand{\mZZ}{\ensuremath{m_{\cPZ\cPZ}}}
+\newcommand{\mZZtilde}{\ensuremath{\tilde{m}_{\cPZ\cPZ}}}
+\newcommand{\tltq}{\ensuremath{2 \ell 2 \cPq}}
+% \renewcommand{\LL}{\ensuremath{\ell^+\ell^-}}
+\newcommand{\XZZ}{\ensuremath{\mathrm{X}\to\cPZ\cPZ}}
+\newcommand{\Ztoqq}{\ensuremath{\cPZ\to\qqbar}\xspace}
+\newcommand{\mlljj}{\ensuremath{m_{\ell\ell jj}}}
+\newcommand{\mllJ}{\ensuremath{m_{\ell\ell J}}}
+\newcommand{\nsubj}{\ensuremath{\tau_{21}}}
+\newcommand{\Zhad}{\ensuremath{\cPZ_\textrm{had}}}
+\newcommand{\MZhad}{\ensuremath{m(\Zhad)}}
+\newcommand{\Dbkg}{\ensuremath{D_{\mathrm{bkg}}}}
+\newcommand{\ZJJMELA}{\ensuremath{\mathcal{D}_\textrm{bkg}^\textrm{Zjj}}}
+\newcommand{\VBFMELA}{\ensuremath{\mathcal{D}_\textrm{2jet}^\textrm{VBF}}}
+\newcommand{\ZLEPLOW}{60}
+\newcommand{\ZLEPHIGH}{120}
+\newcommand{\PTLEPHIGH}{40}
+\newcommand{\LSBLOW}{40}
+\newcommand{\LSBHIGH}{70}
+\newcommand{\SRLOW}{70}
+\newcommand{\SRHIGH}{105}
+\newcommand{\USBLOW}{135}
+\newcommand{\USBHIGH}{180}
+\newcommand{\VHADRESOLVEDPTCUT}{100}
+\newcommand{\VHADMERGEDPTCUT}{170}
+\newcommand{\DILEPTONPTCUT}{100}
+\newcommand{\VHADPTSWITCH}{300}
+\newcommand{\DILEPTONPTSWITCH}{200}
+\newcommand{\MZZCUT}{500}
+\newcommand{\TAUCUT}{0.6}
 
 % H->4l channel differential and fiducial cross-section measurement
 \newcommand{\HToFourL}{\ensuremath{H \rightarrow 4\ell}\xspace}
 
 % pp -> W+W- -> lnuqq aTGC
 \newcommand{\WpWm}{\ensuremath{pp \rightarrow \Wboson^+\Wboson^- \rightarrow \ell\nu qq}\xspace}
+\newcommand{\met}{$p_{\text{T}}^{\text{miss}}$\xspace}
+\newcommand{\mt}{$m_{\text{T}}$\xspace}
+\newcommand{\nj}{$N_{\text{jets}}$\xspace}
+\newcommand{\nb}{$N_{\text{b-jets}}$\xspace}
+\newcommand{\ETA}{$|\eta|$\xspace}
+\newcommand{\pT}{\ensuremath{p_\textrm{T}}}
+\newcommand{\msd}{\ensuremath{m_{\text{PUPPI SD}}}\xspace}
+\newcommand{\mwv}{\ensuremath{m_{\PW\PV}}\xspace}
+
+\newcommand{\dr}{$\Delta R$\xspace}
+\newcommand{\dphi}{$\Delta \phi$\xspace}
+\newcommand{\fb}{fb$^{-1}$\xspace}
+\newcommand{\Wj}{\ensuremath{\PW{\text{+jets}}}\xspace}
+\newcommand{\lint}{138\,fb$^{-1}$\xspace}
+\newcommand{\Plepton}{\ensuremath{\ell}}
+\newcommand{\PLepton}{\ensuremath{\ell}}
+\newcommand{\Pcharm}{\ensuremath{\PQc}}
+\newcommand{\ptll}{\ensuremath{\pT^{\ell\ell}}{}}
+\renewcommand{\ie}{{i.e.}\xspace}
+\renewcommand{\eg}{{e.g.}\xspace}
+\newcommand{\WW}{\ensuremath{\PW\PW}\xspace}
+\newcommand{\ZZ}{\ensuremath{\PZ\cPZ}\xspace}
+\newcommand{\WZ}{\ensuremath{\PW\cPZ}\xspace}
+\newcommand{\dphillltwo}{\ensuremath{|\Delta \phi_{ (\ell_1\ell_2,\ell_2)}|}{}}
+\newcommand{\dphill}{\ensuremath{|\Delta \phi_{ (\ell_1,\ell_2)}|}{}}
+\newcommand{\dphiltwomet}{\ensuremath{|\Delta \phi_{ (\ell_2,\ptmiss)}|}{}}
+\newcommand{\Pggx}{\ensuremath{\PGg^{*}}\xspace}
+\newcommand{\ttZ}{\ensuremath{\rm \Ptop\APtop\cPZ}}
+% conflicting redefinitions?
+\newcommand{\Pbottom}{\ensuremath{\PQb}}
+\newcommand{\APbottom}{\ensuremath{\PAQb}}
+\newcommand{\Ptop}{\ensuremath{\PQt}}
+\newcommand{\APtop}{\ensuremath{\PAQt}}
 
 % Higgs mass measurement using H->GammaGamma channel
 \newcommand{\HGG}{\ensuremath{\Higgs\rightarrow\gamma\gamma}\xspace}
